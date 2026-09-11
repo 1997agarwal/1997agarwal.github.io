@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { personalInfo } from '../data/portfolioData';
 
-export default function Navbar({ onOpenContact }) {
+export default function Navbar({ onOpenContact, onOpenResume }) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -57,6 +57,13 @@ export default function Navbar({ onOpenContact }) {
               {link.name}
             </a>
           ))}
+          <button
+            onClick={onOpenResume}
+            className="text-xs lg:text-sm font-semibold text-brand-cyan hover:text-cyan-300 px-3 py-1 rounded-full hover:bg-white/10 transition-all flex items-center gap-1"
+          >
+            <span>Resume</span>
+            <span className="text-[10px] px-1.5 py-0.2 rounded bg-brand-cyan/20 border border-brand-cyan/40">PDF</span>
+          </button>
         </div>
 
         {/* Action Buttons */}
@@ -124,6 +131,12 @@ export default function Navbar({ onOpenContact }) {
               {link.name}
             </a>
           ))}
+          <button
+            onClick={() => { setMobileMenuOpen(false); onOpenResume(); }}
+            className="block w-full text-left text-sm font-medium text-brand-cyan py-2 border-b border-white/5"
+          >
+            View Resume (PDF)
+          </button>
           <div className="pt-2 flex items-center justify-between">
             <div className="flex space-x-3">
               <a href={personalInfo.links.github} target="_blank" rel="noreferrer" className="text-slate-400 hover:text-white">
