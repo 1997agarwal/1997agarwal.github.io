@@ -93,18 +93,18 @@ export default function Hero({ onOpenContact }) {
                 
                 {/* Avatar & Header */}
                 <div className="flex items-center gap-4 mb-5">
-                  <div className="relative">
+                  <div className="relative flex-shrink-0">
                     <img
-                      src={personalInfo.avatar}
+                      src="./avatar.png"
                       alt={personalInfo.name}
-                      className="w-16 h-16 rounded-full ring-2 ring-brand-cyan/50 object-cover"
+                      className="w-16 h-16 rounded-full ring-2 ring-brand-cyan/50 object-cover object-top"
                     />
                     <span className="absolute bottom-0 right-0 w-4 h-4 rounded-full bg-emerald-500 border-2 border-surface-card" />
                   </div>
                   <div>
                     <h3 className="text-white font-bold text-lg">{personalInfo.name}</h3>
                     <p className="text-xs text-brand-cyan font-mono">{personalInfo.location}</p>
-                    <p className="text-xs text-slate-400">{personalInfo.education}</p>
+                    <p className="text-xs text-slate-400">Duke Univ (PGPM) • B.Tech (ECE)</p>
                   </div>
                 </div>
 
@@ -113,23 +113,19 @@ export default function Hero({ onOpenContact }) {
                   "{personalInfo.bio}"
                 </div>
 
-                {/* Quick Info Grid */}
-                <div className="grid grid-cols-2 gap-3 text-xs">
-                  <div className="p-2.5 rounded bg-surface-dark/60 border border-surface-border/40">
-                    <div className="text-slate-400 font-mono uppercase text-[10px]">Current PM</div>
-                    <div className="text-white font-semibold mt-0.5">Tekion Corp</div>
+                {/* Refactored Quick Info Grid (3 clean focus tiles) */}
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 text-xs">
+                  <div className="p-2.5 rounded-lg bg-surface-dark/80 border border-surface-border/60">
+                    <div className="text-slate-400 font-mono uppercase text-[10px] tracking-wider">Role</div>
+                    <div className="text-white font-semibold mt-1">PM @ Tekion</div>
                   </div>
-                  <div className="p-2.5 rounded bg-surface-dark/60 border border-surface-border/40">
-                    <div className="text-slate-400 font-mono uppercase text-[10px]">Core Domain</div>
-                    <div className="text-brand-cyan font-semibold mt-0.5">Fintech & AR</div>
+                  <div className="p-2.5 rounded-lg bg-surface-dark/80 border border-surface-border/60">
+                    <div className="text-slate-400 font-mono uppercase text-[10px] tracking-wider">Domains</div>
+                    <div className="text-brand-cyan font-semibold mt-1">Fintech, Travel, AI</div>
                   </div>
-                  <div className="p-2.5 rounded bg-surface-dark/60 border border-surface-border/40">
-                    <div className="text-slate-400 font-mono uppercase text-[10px]">Alumni</div>
-                    <div className="text-white font-semibold mt-0.5">Tally Solutions</div>
-                  </div>
-                  <div className="p-2.5 rounded bg-surface-dark/60 border border-surface-border/40">
-                    <div className="text-slate-400 font-mono uppercase text-[10px]">Recognition</div>
-                    <div className="text-emerald-400 font-semibold mt-0.5">Tekion 2025 Award</div>
+                  <div className="p-2.5 rounded-lg bg-surface-dark/80 border border-surface-border/60">
+                    <div className="text-slate-400 font-mono uppercase text-[10px] tracking-wider">Alumni</div>
+                    <div className="text-white font-semibold mt-1">Duke & Tally</div>
                   </div>
                 </div>
 
