@@ -21,7 +21,7 @@ export default function Hero({ onOpenContact }) {
 
             {/* Headline */}
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white mb-6 leading-[1.15]">
-              Building scalable <span className="text-gradient">fintech platforms</span> & 0→1 systems.
+              Building scalable <span className="text-gradient">products</span> & 0→1 systems.
             </h1>
 
             {/* Sub-headline */}
@@ -113,7 +113,7 @@ export default function Hero({ onOpenContact }) {
                   "{personalInfo.bio}"
                 </div>
 
-                {/* Refactored Quick Info Grid (3 clean focus tiles) */}
+                {/* Refactored Quick Info Grid */}
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 text-xs">
                   <div className="p-2.5 rounded-lg bg-surface-dark/80 border border-surface-border/60">
                     <div className="text-slate-400 font-mono uppercase text-[10px] tracking-wider">Role</div>
@@ -121,11 +121,11 @@ export default function Hero({ onOpenContact }) {
                   </div>
                   <div className="p-2.5 rounded-lg bg-surface-dark/80 border border-surface-border/60">
                     <div className="text-slate-400 font-mono uppercase text-[10px] tracking-wider">Domains</div>
-                    <div className="text-brand-cyan font-semibold mt-1">Fintech, Travel, AI</div>
+                    <div className="text-brand-cyan font-semibold mt-1">Platform, AI & Travel</div>
                   </div>
                   <div className="p-2.5 rounded-lg bg-surface-dark/80 border border-surface-border/60">
                     <div className="text-slate-400 font-mono uppercase text-[10px] tracking-wider">Alumni</div>
-                    <div className="text-white font-semibold mt-1">Duke & Tally</div>
+                    <div className="text-white font-semibold mt-1">Duke University</div>
                   </div>
                 </div>
 
