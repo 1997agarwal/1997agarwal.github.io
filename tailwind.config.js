@@ -8,18 +8,20 @@ export default {
   theme: {
     extend: {
       colors: {
+        surface: {
+          dark: '#0B0F17',
+          card: '#111827',
+          border: '#1F2937',
+        },
         brand: {
+          cyan: '#06b6d4',
+          blue: '#3b82f6',
+          purple: '#8b5cf6',
           50: '#f0fdf4',
           100: '#dcfce7',
           500: '#22c55e',
           600: '#16a34a',
           700: '#15803d',
-        },
-        dark: {
-          bg: '#0B0F17',
-          card: '#111827',
-          border: '#1F2937',
-          subtle: '#374151'
         }
       },
       fontFamily: {
