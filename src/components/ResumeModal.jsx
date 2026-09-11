@@ -101,7 +101,7 @@ export default function ResumeModal({ isOpen, onClose }) {
                     </a>
                   </div>
                   <div className="font-mono text-[11px] text-indigo-600 space-x-1.5">
-                    <a href="https://bit.ly/portfolio_1997agarwal" target="_blank" rel="noreferrer" className="hover:underline">bit.ly/portfolio_1997agarwal</a> •
+                    <a href="https://1997agarwal.github.io" target="_blank" rel="noreferrer" className="hover:underline">1997agarwal.github.io</a> •
                     <a href="https://www.linkedin.com/in/1997agarwal/" target="_blank" rel="noreferrer" className="hover:underline">linkedin</a> •
                     <a href="https://github.com/1997agarwal" target="_blank" rel="noreferrer" className="hover:underline">github</a>
                   </div>

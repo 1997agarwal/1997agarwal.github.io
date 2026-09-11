@@ -3,7 +3,7 @@
 > Senior Product Manager @ Tekion Corp • Founder & 0-to-1 Systems Builder
 
 Live Production Deployment: **[https://1997agarwal.github.io](https://1997agarwal.github.io)**  
-Shortlink: **[https://bit.ly/portfolio_1997agarwal](https://bit.ly/portfolio_1997agarwal)**
+
 
 ---
 
