@@ -12,7 +12,7 @@ export const PERSONAL_INFO = {
   github: 'https://github.com/1997agarwal',
   twitter: 'https://x.com/1997agarwal',
   medium: 'https://medium.com/@1997agarwal',
-  avatarUrl: 'https://avatars.githubusercontent.com/u/43310705?v=4',
+  avatarUrl: 'https://avatars.githubusercontent.com/u/25814824?v=4',
   yearsExperience: '7+',
   usersScaled: '500K+',
   awardsCount: '7',
