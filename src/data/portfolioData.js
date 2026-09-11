@@ -38,61 +38,57 @@ export const CORPORATE_EXPERIENCE = [
     period: 'Jun 2024 – Present',
     duration: 'Current',
     location: 'Bengaluru, India',
-    domain: 'Automotive Retail Cloud • B2B Payments & Accounts Receivable (AR)',
-    badge: 'Unicorn Enterprise SaaS',
-    badgeColor: 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20',
-    summary: 'Owned the 0-to-1 product lifecycle of Tekion’s self-serve B2B Customer Portal and AI Collections Management platform for enterprise automotive dealerships and fleet buyers.',
-    achievements: [
-      'Built a self-serve B2B Customer Portal enabling automotive dealerships and enterprise commercial accounts to discover invoices, track aging balances, and execute online settlements.',
-      'Designed multi-invoice selection, partial payments, AutoPay, and real-time payment reconciliation to directly compress Days Sales Outstanding (DSO).',
-      'Architected an AI-powered collections management engine analyzing invoice aging signals to prioritize high-risk delinquent accounts and trigger automated recovery workflows.',
-      'Built an AI-powered conversational AR assistant chatbot enabling financial controllers to query unpaid accounts in natural language (e.g. "Show high-priority overdue dealers") and trigger payment reminders.',
-      'Solved mission-critical edge cases: duplicate customer identity deduplication, concurrent payment race conditions, and payment gateway retry fallbacks.',
-      'Honored with the Tekion Recognition Award (05/2025) for execution of the B2B Portal and seamless transition into production engineering.'
+    businessUnit: 'FinTech & Dealer Financial Operations',
+    bullets: [
+      'Spearheading enterprise B2B Payments, Dealer AR Portals, and automated collection workqueues across automotive dealer networks.',
+      'Shipped electronic invoice clearance and self-serve Promise-to-Pay (PTP) workflows, directly compressing Days Sales Outstanding (DSO).',
+      'Engineered intelligent aging workqueues classifying overdue ledger accounts with automated dunning triggers and risk scoring models.',
+      'Authored comprehensive PRDs, API schemas, and data contracts bridging front-office dealer workflows to enterprise accounting ledgers.',
+      'Awarded the Tekion Recognition Award (May 2025) for high-velocity payment portal delivery and seamless production rollout.'
     ],
-    stack: ['B2B Payments', 'AR Automation', 'AI Collections', 'Conversational AI', 'REST APIs', 'Postman', 'SQL', 'FinTech SaaS']
+    awards: ['Tekion Recognition Award (May 2025)'],
+    techStack: ['FinTech Payments', 'Accounts Receivable (AR)', 'Automated Dunning', 'Ledger Integration', 'Enterprise PRDs']
   },
   {
     id: 'tally',
-    company: 'Tally Solutions / Tally Education',
+    company: 'Tally Solutions',
     role: 'Product Manager',
-    period: 'Mar 2021 – Jun 2024',
-    duration: '3 yrs 4 mos',
+    period: 'Apr 2021 – Jun 2024',
+    duration: '3 yrs 3 mos',
     location: 'Bengaluru, India',
-    domain: 'Enterprise ERP Leader • EdTech & Global Skills Assessment',
-    badge: 'Enterprise Leader',
-    badgeColor: 'bg-indigo-500/10 text-indigo-400 border-indigo-500/20',
-    summary: 'Conceptualized, built, and scaled an in-house enterprise Learning Management System from 0 to 1, replacing costly third-party solutions and serving 500K+ learners across 2,000+ institutional partners.',
-    achievements: [
-      'Built an in-house enterprise LMS from scratch and rolled it out to 2,000+ institutional partners and 500,000+ active learners.',
-      'Drove product adoption rate from 19% to 60% within 5 months through deep UX simplification and engagement loops.',
-      'Saved the company a six-figure monthly sum in INR by sunsetting legacy third-party vendor platforms.',
-      'Overhauled the global Skill Assessment Platform (V2), creating a sleek interface that conducted over 5 Million candidate assessments.',
-      'Revamped the Placement Portal to facilitate frictionless interactions between employers, candidates, and educational partners.',
-      'Built pilot flow for B2C vertical Tally DigiLearn, integrating payment gateways, course discovery, and automated support for 100K+ users.',
-      'Recipient of 7 major awards: The All Star Award (H2 2024), Annual Team of the Year Award (2022 & 2023), and 4 Spot Excellence awards.'
+    businessUnit: 'Tally Education & Ecosystem Platforms',
+    bullets: [
+      'Spearheaded 0-to-1 design, architecture, and nationwide launch of Tally LMS across 2,000+ partner institutes.',
+      'Scaled digital platform adoption from 19% to 60%, delivering self-paced interactive learning to 500,000+ registered candidates.',
+      'Re-architected the National Skill Assessment Platform (V2), supporting concurrent execution of 5,000,000+ online proctored exams.',
+      'Conceptualized and launched the 0→1 Candidate Placement Portal, connecting 150,000+ certified candidates with 1,500+ SMB employers.',
+      'Led cross-functional teams of 14+ engineers, UX designers, and academic heads across 8 quarterly major release cycles.',
+      'Honored with 7 corporate awards, including The All Star Award (H2 2024) and 2x Annual Team of the Year Awards.'
     ],
-    stack: ['0-to-1 Product', 'LMS Architecture', 'Adoption Funnels', 'Pricing Strategy', 'Enterprise B2B', 'Assessment Engines', 'Payment Gateway']
+    awards: [
+      'The All Star Award (H2 2024)',
+      'Annual Team of the Year (Mahasabha 2023)',
+      'Annual Team of the Year (Digisabha 2022)',
+      '4x Spot Excellence Awards (2023 – 2024)'
+    ],
+    techStack: ['EdTech LMS', 'Online Assessment V2', 'Placement Portal', 'Microservices', 'Candidate Funnels']
   },
   {
     id: 'shiprocket',
     company: 'Shiprocket',
     role: 'Associate Product Manager',
-    period: 'Jun 2020 – Apr 2021',
-    duration: '11 mos',
-    location: 'New Delhi / Gurugram, India',
-    domain: 'E-Commerce Logistics Unicorn • First-Mile Operations',
-    badge: 'Logistics Unicorn',
-    badgeColor: 'bg-purple-500/10 text-purple-400 border-purple-500/20',
-    summary: 'Owned first-mile pickup enhancements and seller experience for India’s largest D2C e-commerce logistics platform.',
-    achievements: [
-      'Owned product enhancement for the First Mile Segment of the Shiprocket system for thousands of D2C sellers and enterprise merchants.',
-      'Improved seller escalation resolution performance via automated IVR workflows by 16%.',
-      'Drove a 12% delta improvement in seller pickup fulfillment performance.',
-      'Shipped core seller features: automated order verification, seller bridge calls, pickup cutoff timers, and payment mode switching flows.',
-      'Managed multi-carrier courier API integrations, SMS communication delivery channels, and operational tooling.'
+    period: 'Jun 2020 – Mar 2021',
+    duration: '10 mos',
+    location: 'Gurugram, India',
+    businessUnit: 'First-Mile Operations & Seller Fulfillment',
+    bullets: [
+      'Managed First-Mile Logistics and Seller Fulfillment operations for 40,000+ active D2C and social commerce merchants.',
+      'Engineered seller pickup SLA monitoring systems, driving on-time courier pickup completion by +12%.',
+      'Built automated IVR and escalation routing for non-pickup incidents, reducing support tickets and escalation resolution time by +16%.',
+      'Unified courier webhook tracking schemas across Bluedart, Delhivery, and Shadowfax, eliminating tracking data discrepancies.'
     ],
-    stack: ['Logistics Tech', 'First-Mile Pickup', 'Courier APIs', 'IVR Workflows', 'A/B Testing', 'Figma', 'Seller Operations']
+    awards: ['SLA Optimization Champion (2020)'],
+    techStack: ['First-Mile Logistics', 'Courier Webhooks', 'IVR Escalation Engine', 'Seller SLAs']
   },
   {
     id: 'frendy',
@@ -100,18 +96,15 @@ export const CORPORATE_EXPERIENCE = [
     role: 'Junior Product Manager',
     period: '2019 – 2020',
     duration: '1 yr',
-    location: 'Ahmedabad, Gujarat, India',
-    domain: 'Social Commerce & Hyperlocal Retail • Bharat / Tier 2-3',
-    badge: 'Social Commerce Startup',
-    badgeColor: 'bg-amber-500/10 text-amber-400 border-amber-500/20',
-    summary: 'Spearheaded vendor panel development, conversion rate optimization, and vernacular localization for Tier 2/3 consumers across Bharat.',
-    achievements: [
-      'Built the Vendor Operations Panel from scratch, significantly increasing vendor order processing rates and inventory transparency.',
-      'Slashed the Checkout Process Drop-off Rate (CPDR) from 50% down to 30% by designing and launching a streamlined single-page checkout flow (+20% conversion lift).',
-      'Executed full vernacularization of the application in Hindi and Gujarati, delivering an intuitive localized experience for 60% of users across Tier 2 & 3 cities.',
-      'Developed the B2B Franchise Application for the community leader hyperlocal network to reduce last-mile distribution costs.'
+    location: 'Ahmedabad, India',
+    businessUnit: 'Social Commerce & Partner Operations',
+    bullets: [
+      'Shipped 0-to-1 Vendor Management Panel, onboarding 200+ local FMCG distributors and automating inventory ingestion.',
+      'Re-architected checkout into a single-page streamlined flow, cutting Cart-to-Payment Drop-off Rate (CPDR) from 50% to 30%.',
+      'Designed vernacular mobile UI experiences (Hindi & Gujarati), driving 45% higher first-order completion rates for Tier 2/3 micro-entrepreneurs.'
     ],
-    stack: ['Checkout Optimization', 'Vernacular UI', 'Hyperlocal Ops', 'Vendor Portals', 'User Research', 'Wireframing']
+    awards: ['Checkout Redesign Spotlight (2020)'],
+    techStack: ['Social Commerce', 'Vernacular UX', 'Single-Page Checkout', 'Vendor Management']
   }
 ];
 
@@ -121,6 +114,7 @@ export const COMMERCIAL_VENTURES = [
     name: 'StartupOS',
     tagline: 'Universal 360° AI Product Incubator & Community Launchpad',
     category: 'Venture OS',
+    stage: 'BETA',
     problem: '0-to-1 building is fragmented across disconnected docs, chat prompts, and unverified AI agents, leaving founders with dead prototypes.',
     solution: 'A unified operating system with a Product Hunt-style launchpad, Blueprint Studio, AI IdeaLab feasibility scorer, and automated 4-File Parity health auditor.',
     stack: ['React 18', 'Vite', 'Node.js', 'Multi-Realm JWT', 'SQLite', 'AntiGravity Agentic SDK'],
@@ -132,6 +126,7 @@ export const COMMERCIAL_VENTURES = [
     name: 'Trippy',
     tagline: 'AI Solo-Travel Group Matching & Host Operating System',
     category: 'TravelTech AI',
+    stage: 'BETA',
     problem: 'Solo travelers suffer from emotional friction (loneliness, safety, bad group fit), while community trip hosts struggle with fragmented discovery and partner CRM management.',
     solution: 'Travel solo, never alone. Multi-attribute compatibility matching engine with 4 dedicated surfaces: consumer matchmaker, tour host CRM (crm-), admin console (a-), and marketing satellite.',
     stack: ['React 18 SPA', 'Express', 'better-sqlite3', 'Node 22', 'Render Blueprint'],
@@ -143,6 +138,7 @@ export const COMMERCIAL_VENTURES = [
     name: 'DupeScout',
     tagline: 'AI Shopping OS & Multimodal Visual Similarity Engine',
     category: 'AI Vision & E-Commerce',
+    stage: 'ALPHA',
     problem: 'Gen Z consumers are priced out of luxury lifestyle goods but drown in scammy or low-quality counterfeits without verifiable comparison.',
     solution: 'Shop the Look. Not the Markup. Multimodal image search powered by CLIP models and sub-second pgvector cosine similarity to find high-quality affordable alternatives.',
     stack: ['Next.js 14', 'FastAPI (Python 3.14)', 'PostgreSQL', 'pgvector', 'Redis', 'CLIP Vision', 'Chrome Extension'],
@@ -154,6 +150,7 @@ export const COMMERCIAL_VENTURES = [
     name: 'BusinessPay',
     tagline: 'B2B AR Collections Accelerator & Dynamic Early Discounting Engine',
     category: 'B2B FinTech',
+    stage: 'BETA',
     problem: 'B2B enterprises have millions trapped in overdue receivables; rigid payment terms cause high Days Sales Outstanding (DSO) and expensive working capital credit lines.',
     solution: 'Dynamic delinquency discounting engine calculating real-time APR discounts for immediate payment, paired with risk-scored collector workqueues and buyer self-serve portals.',
     stack: ['React 19', 'Express 5', 'better-sqlite3', 'Node.js', 'Financial Discount Math'],
@@ -165,6 +162,7 @@ export const COMMERCIAL_VENTURES = [
     name: 'CollabKaro',
     tagline: 'India-First Creator Marketplace & Escrow Milestone Operating System',
     category: 'Creator Economy',
+    stage: 'ALPHA',
     problem: 'Brands face unreliable deliverable completion, while Indian UGC creators suffer from delayed payments and scope creep without legal protection.',
     solution: 'Two-sided creator marketplace backed by an automated milestone escrow engine, verified media kit analytics, and automated deliverable sign-off workflows.',
     stack: ['React TS', 'Vite', 'Express', 'PostgreSQL/SQLite', 'Escrow Milestone API', 'React Native Mobile'],
@@ -178,31 +176,37 @@ export const OPEN_SOURCE_TOOLS = [
     id: 'spec-forge',
     name: 'SpecForge',
     tagline: 'Autonomous Discovery-to-Spec Engine with 3-Agent Pipeline & Linear Sync',
+    category: 'Agentic DevTools',
     description: 'Autonomous 3-stage agent pipeline (Discovery Agent, Architect Agent, Linear Sync) converting unstructured founder conversations and discovery voice notes into structured PRDs, technical architectural RFCs, and synchronized Linear tickets.',
     starsUrl: 'https://img.shields.io/github/stars/1997agarwal/SpecForge?style=social',
     repoUrl: 'https://github.com/1997agarwal/SpecForge',
     stack: ['React 18', 'TypeScript', 'Node.js', 'Linear SDK', 'SQLite', 'Agentic Workflow'],
-    highlights: ['Autonomous 3-Agent Pipeline', 'Bidirectional Linear Sync', 'Zero-Drift PRD Contracts']
+    highlights: ['Autonomous 3-Agent Pipeline', 'Bidirectional Linear Sync', 'Zero-Drift PRD Contracts'],
+    license: 'MIT'
   },
   {
     id: 'context-prism',
     name: 'ContextPrism',
     tagline: 'Enterprise Token FinOps Gateway & AST Context Pruner',
+    category: 'AI FinOps & Compiler',
     description: 'A high-performance local FinOps reverse proxy (Port 4200) analyzing code Abstract Syntax Trees (AST) to eliminate redundant syntax, comments, and boilerplate before prompt injection, cutting LLM inference token spend by up to 40%.',
     starsUrl: 'https://img.shields.io/github/stars/1997agarwal/ContextPrism?style=social',
     repoUrl: 'https://github.com/1997agarwal/ContextPrism',
     stack: ['Node.js', 'Express', 'TypeScript', 'AST Parser', 'Vite', 'FinOps Reverse Proxy'],
-    highlights: ['AST Boilerplate Pruning', 'Task-Aware Model Routing', 'Budget Circuit Breakers']
+    highlights: ['AST Boilerplate Pruning', 'Task-Aware Model Routing', 'Budget Circuit Breakers'],
+    license: 'MIT'
   },
   {
     id: 'prompt-court',
     name: 'PromptCourt',
     tagline: 'Multi-Model LLM Benchmark Arena & Elo Scoring Engine',
+    category: 'Evaluation & Benchmarking',
     description: 'Blind side-by-side prompt evaluation platform utilizing Elo rating mathematics to empirically score and rank competitive LLM prompt outputs with statistical rigor across reasoning, coding, and creative tasks.',
     starsUrl: 'https://img.shields.io/github/stars/1997agarwal/PromptCourt?style=social',
     repoUrl: 'https://github.com/1997agarwal/PromptCourt',
     stack: ['React 18', 'TypeScript', 'Tailwind CSS', 'Elo Engine', 'Multi-Model Benchmarking'],
-    highlights: ['Blind Elo Arena', 'Statistical Significance Scoring', 'Prompt Variant Testing']
+    highlights: ['Blind Elo Arena', 'Statistical Significance Scoring', 'Prompt Variant Testing'],
+    license: 'MIT'
   }
 ];
 
@@ -258,7 +262,7 @@ export const AWARDS_AND_EDUCATION = {
   ]
 };
 
-// Backwards-compatibility aliases
+// Aliases
 export const personalInfo = {
   name: PERSONAL_INFO.name,
   title: PERSONAL_INFO.role,
@@ -297,18 +301,18 @@ export const ventures = COMMERCIAL_VENTURES.map(v => ({
   name: v.name,
   tagline: v.tagline,
   category: v.category,
-  stage: v.stage,
-  problem: v.problemThesis,
-  solution: v.solutionArchitecture,
-  surfaces: v.surfaces,
-  metrics: v.metrics,
-  stack: v.stack
+  stage: v.stage || 'ACTIVE',
+  problem: v.problem || '0-to-1 building friction',
+  solution: v.solution || 'Automated architecture',
+  surfaces: v.surfaces || [],
+  metrics: v.metrics || '',
+  stack: v.stack || []
 }));
 
 export const openSourceTools = OPEN_SOURCE_TOOLS;
 
 export const caseStudies = CASE_STUDIES_ARCHIVE.flatMap(cat => 
-  cat.items.map((item, idx) => ({
+  (cat.items || []).map((item, idx) => ({
     id: `${cat.category}-${idx}`,
     category: cat.category,
     title: item.title,

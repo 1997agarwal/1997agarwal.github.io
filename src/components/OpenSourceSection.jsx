@@ -19,7 +19,7 @@ export default function OpenSourceSection() {
 
       {/* Grid */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-        {openSourceTools.map((tool) => (
+        {(openSourceTools || []).map((tool) => (
           <div
             key={tool.name}
             className="bg-surface-card border border-surface-border rounded-2xl p-6 flex flex-col justify-between hover:border-emerald-500/40 transition-all hover:shadow-xl hover:shadow-emerald-500/5 group"
@@ -28,7 +28,7 @@ export default function OpenSourceSection() {
               {/* Badge & Stars */}
               <div className="flex items-center justify-between mb-4">
                 <span className="text-xs font-mono font-bold px-2.5 py-1 rounded bg-surface-dark text-emerald-400 border border-surface-border">
-                  {tool.category}
+                  {tool.category || 'Developer Tool'}
                 </span>
                 <a
                   href={tool.repoUrl}
@@ -61,7 +61,7 @@ export default function OpenSourceSection() {
                 <span className="text-[11px] font-mono text-slate-400 uppercase tracking-wider block mb-1">
                   Core Engineering Primitives
                 </span>
-                {tool.highlights.map((h, idx) => (
+                {(tool.highlights || []).map((h, idx) => (
                   <div key={idx} className="flex items-start gap-2 text-xs text-slate-300">
                     <span className="text-emerald-400 font-bold">✓</span>
                     <span>{h}</span>
@@ -71,7 +71,7 @@ export default function OpenSourceSection() {
 
               {/* Stack Chips */}
               <div className="flex flex-wrap gap-1.5 mb-6">
-                {tool.stack.map((tech, idx) => (
+                {(tool.stack || []).map((tech, idx) => (
                   <span key={idx} className="text-xs px-2 py-0.5 rounded bg-surface-dark text-slate-300 border border-surface-border font-mono">
                     {tech}
                   </span>
@@ -82,7 +82,7 @@ export default function OpenSourceSection() {
             {/* Bottom Actions */}
             <div className="pt-4 border-t border-surface-border flex items-center justify-between">
               <span className="text-xs font-mono text-slate-400">
-                License: {tool.license}
+                License: {tool.license || 'MIT'}
               </span>
               <a
                 href={tool.repoUrl}
