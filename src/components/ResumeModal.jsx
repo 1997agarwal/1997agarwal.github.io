@@ -1,7 +1,21 @@
-import React from 'react';
-import { personalInfo, experiences, education, accolades, certifications } from '../data/portfolioData';
+import React, { useEffect } from 'react';
+import { personalInfo, experiences } from '../data/portfolioData';
 
 export default function ResumeModal({ isOpen, onClose }) {
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') onClose();
+    };
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+      window.addEventListener('keydown', handleKeyDown);
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [isOpen, onClose]);
+
   if (!isOpen) return null;
 
   const handlePrint = () => {
@@ -9,101 +23,132 @@ export default function ResumeModal({ isOpen, onClose }) {
   };
 
   return (
-    <div className="fixed inset-0 z-50 overflow-y-auto bg-black/85 backdrop-blur-md flex items-center justify-center p-2 sm:p-4 print:p-0 print:bg-white print:static animate-fadeIn">
+    <div className="fixed inset-0 z-50 overflow-y-auto bg-slate-950/90 backdrop-blur-md flex flex-col items-center justify-start p-3 sm:p-6 print:p-0 print:bg-white print:static animate-fadeIn">
       
-      {/* Container / Paper Surface */}
-      <div className="bg-white text-slate-900 w-full max-w-4xl rounded-2xl shadow-2xl border border-slate-200 overflow-hidden my-8 print:my-0 print:border-none print:shadow-none print:rounded-none">
-        
-        {/* Modal Controls Bar (Hidden during Print) */}
-        <div className="bg-slate-900 text-white px-6 py-3.5 flex items-center justify-between border-b border-slate-800 print:hidden">
-          <div className="flex items-center gap-2 text-xs font-mono">
-            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-            <span>Interactive Executive Resume • ATS Optimized</span>
-          </div>
-          <div className="flex items-center gap-3">
-            <button
-              onClick={handlePrint}
-              className="px-4 py-1.5 rounded-lg bg-brand-cyan hover:bg-cyan-400 text-slate-950 font-bold text-xs flex items-center gap-1.5 transition-all shadow-md shadow-cyan-500/20"
-            >
-              <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" />
-              </svg>
-              <span>Download PDF / Print</span>
-            </button>
-            <button
-              onClick={onClose}
-              className="p-1.5 text-slate-400 hover:text-white rounded-lg hover:bg-slate-800 transition-colors"
-            >
-              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            </button>
-          </div>
+      {/* Top Floating Control Bar (Always visible on screen, hidden in print) */}
+      <div className="w-full max-w-4xl mb-4 flex items-center justify-between bg-slate-900/95 border border-slate-700/80 px-4 sm:px-6 py-3 rounded-xl shadow-2xl print:hidden sticky top-3 z-50 backdrop-blur-lg">
+        {/* Left: Back / Close button */}
+        <button
+          onClick={onClose}
+          className="inline-flex items-center gap-2 text-xs font-semibold text-slate-300 hover:text-white bg-slate-800 hover:bg-slate-700 px-3.5 py-2 rounded-lg border border-slate-600/60 transition-all group"
+        >
+          <svg className="w-4 h-4 text-brand-cyan group-hover:-translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+          </svg>
+          <span>Back to Portfolio</span>
+        </button>
+
+        {/* Center: Recruiter Title */}
+        <div className="hidden md:flex items-center gap-2 text-xs text-slate-300 font-mono">
+          <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+          <span>ATS-Friendly Executive Resume • Single-Page Layout</span>
         </div>
 
-        {/* Printable Resume Sheet */}
-        <div className="p-8 sm:p-12 print:p-6 text-[13px] leading-relaxed font-sans text-slate-800">
+        {/* Right: Download PDF Action */}
+        <div className="flex items-center gap-2">
+          <button
+            onClick={handlePrint}
+            className="px-4 py-2 rounded-lg bg-brand-cyan hover:bg-cyan-400 text-slate-950 font-bold text-xs flex items-center gap-2 transition-all shadow-lg shadow-cyan-500/20 active:scale-95"
+            title="Save as PDF or Print"
+          >
+            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+            </svg>
+            <span>Download PDF / Print</span>
+          </button>
           
-          {/* Header */}
-          <header className="border-b-2 border-slate-900 pb-5 mb-6">
-            <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-2">
+          <button
+            onClick={onClose}
+            className="p-2 text-slate-400 hover:text-white hover:bg-slate-800 rounded-lg transition-colors"
+            title="Close"
+          >
+            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      {/* Main Resume Sheet */}
+      <div className="bg-white text-slate-900 w-full max-w-4xl rounded-2xl shadow-2xl border border-slate-200 overflow-hidden print:m-0 print:p-0 print:border-none print:shadow-none print:rounded-none">
+        
+        <div className="p-8 sm:p-12 print:p-8 text-[13px] leading-relaxed font-sans text-slate-800">
+          
+          {/* Header Block with Name, Role, and Tagline */}
+          <header className="border-b-2 border-slate-900 pb-5 mb-5">
+            <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4">
               <div>
-                <h1 className="text-3xl font-extrabold tracking-tight text-slate-950 uppercase">
-                  {personalInfo.name}
+                <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-950 uppercase">
+                  HARSHIT AGARWAL
                 </h1>
-                <p className="text-sm font-semibold text-indigo-700 mt-0.5 tracking-wide">
-                  AI-Native Product Manager • 0→1 Systems Builder • Platform Architect
+                <p className="text-sm sm:text-base font-bold text-indigo-700 mt-1">
+                  Product Manager • 0→1 Systems Builder
+                </p>
+                <p className="text-xs text-slate-600 mt-1 max-w-xl italic">
+                  "Turning ambiguous, high-friction problems into scalable software products with customer-backed metrics and cross-functional leadership."
                 </p>
               </div>
-              <div className="text-xs text-slate-600 sm:text-right font-medium space-y-0.5">
-                <div>{personalInfo.location.split('•')[0]} • +91 8130803028</div>
+
+              {/* Direct Contact Metadata */}
+              <div className="text-xs text-slate-600 sm:text-right font-medium space-y-1">
+                <div>Bengaluru, India • +91 8130803028</div>
                 <div>
-                  <a href={`mailto:${personalInfo.email}`} className="text-indigo-600 hover:underline">{personalInfo.email}</a>
+                  <a href="mailto:agarwal.harshit97@gmail.com" className="text-indigo-600 font-semibold hover:underline">
+                    agarwal.harshit97@gmail.com
+                  </a>
                 </div>
-                <div className="space-x-2 font-mono text-[11px]">
-                  <a href="https://1997agarwal.github.io" className="text-indigo-600 hover:underline">1997agarwal.github.io</a> •
-                  <a href={personalInfo.links.linkedin} className="text-indigo-600 hover:underline">linkedin.com/in/1997agarwal</a> •
-                  <a href={personalInfo.links.github} className="text-indigo-600 hover:underline">github.com/1997agarwal</a>
+                <div className="font-mono text-[11px] text-indigo-600 space-x-1.5">
+                  <a href="https://1997agarwal.github.io" target="_blank" rel="noreferrer" className="hover:underline">portfolio</a> •
+                  <a href="https://www.linkedin.com/in/1997agarwal/" target="_blank" rel="noreferrer" className="hover:underline">linkedin</a> •
+                  <a href="https://github.com/1997agarwal" target="_blank" rel="noreferrer" className="hover:underline">github</a>
                 </div>
               </div>
             </div>
           </header>
 
           {/* Executive Summary */}
-          <section className="mb-6">
+          <section className="mb-5">
             <h2 className="text-xs font-bold uppercase tracking-wider text-slate-900 border-b border-slate-300 pb-1 mb-2">
               Executive Profile
             </h2>
             <p className="text-xs text-slate-700 leading-normal text-justify">
-              Product Manager with 7+ years of experience building, scaling, and architecting 0-to-1 enterprise fintech platforms, SaaS products, and high-growth consumer logistics. Proven track record scaling platforms to 500,000+ active users, driving +41% ecosystem adoption deltas, and compressing Days Sales Outstanding (DSO). Hands-on builder combining customer discovery, data modeling, and master PRDs with multi-agent AI pipelines and production engineering.
+              Product Manager with 7+ years of experience conceptualizing, scaling, and architecting 0-to-1 enterprise platforms, B2B SaaS, and consumer tech. Proven track record scaling platforms to 500,000+ active users, driving +41% ecosystem adoption deltas, and compressing Days Sales Outstanding (DSO). Combines deep user research, market sizing, and master PRDs with modern AI-assisted product delivery and data-informed roadmap prioritization.
             </p>
           </section>
 
-          {/* Core Competencies */}
-          <section className="mb-6">
+          {/* PM-Grounded Core Competencies (No misleading developer claims) */}
+          <section className="mb-5">
             <h2 className="text-xs font-bold uppercase tracking-wider text-slate-900 border-b border-slate-300 pb-1 mb-2">
-              Core Competencies & Technical Skills
+              Core Competencies & Product Skills
             </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 text-xs text-slate-700">
-              <div>
-                <strong className="text-slate-900 block font-semibold">Product Leadership:</strong>
-                0→1 Discovery, Master PRDs, Customer Journey Mapping, GTM Strategy, Unit Economics (CAC/LTV, DSO, GMV).
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs text-slate-700">
+              <div className="bg-slate-50 p-2.5 rounded-lg border border-slate-200">
+                <strong className="text-slate-950 block font-bold mb-1 text-[11px] uppercase tracking-wide">
+                  Product Leadership & Strategy
+                </strong>
+                0→1 Product Discovery, Master PRDs, User Journey Mapping, Feature Prioritization, Customer Feedback Loops, Go-To-Market (GTM) Execution, Stakeholder Alignment.
               </div>
-              <div>
-                <strong className="text-slate-900 block font-semibold">AI & Systems:</strong>
-                Autonomous Agent Pipelines, Multi-Model Prompt Evaluation, Vector Similarity (pgvector), AST Context FinOps.
+
+              <div className="bg-slate-50 p-2.5 rounded-lg border border-slate-200">
+                <strong className="text-slate-950 block font-bold mb-1 text-[11px] uppercase tracking-wide">
+                  AI & Product Innovation
+                </strong>
+                AI Product Scoping, Multi-Agent Workflow Design, LLM Prompt Architecture, Multimodal Feature Design, Human-in-the-Loop Workflows, Model Benchmarking.
               </div>
-              <div>
-                <strong className="text-slate-900 block font-semibold">Platforms & Engineering:</strong>
-                Enterprise B2B Payments, AR Portals, React, Node.js, Express, SQL, RESTful APIs, 4-File Parity Governance.
+
+              <div className="bg-slate-50 p-2.5 rounded-lg border border-slate-200">
+                <strong className="text-slate-950 block font-bold mb-1 text-[11px] uppercase tracking-wide">
+                  Metrics, Data & Process
+                </strong>
+                North Star Metrics, Retention & Funnel Analytics, Unit Economics (CAC/LTV, DSO), Agile/Scrum Sprint Leadership, API Contract Scoping, User Story Mapping.
               </div>
             </div>
           </section>
 
           {/* Professional Corporate Experience */}
-          <section className="mb-6">
+          <section className="mb-5">
             <h2 className="text-xs font-bold uppercase tracking-wider text-slate-900 border-b border-slate-300 pb-1 mb-3">
-              Professional Corporate Experience
+              Professional Experience
             </h2>
 
             <div className="space-y-4">
@@ -132,31 +177,31 @@ export default function ResumeModal({ isOpen, onClose }) {
             </div>
           </section>
 
-          {/* 0-to-1 Ventures & Open Source DevTools */}
-          <section className="mb-6">
+          {/* 0-to-1 Ventures & Developer Tooling */}
+          <section className="mb-5">
             <h2 className="text-xs font-bold uppercase tracking-wider text-slate-900 border-b border-slate-300 pb-1 mb-2.5">
-              0→1 Ventures & Open-Source AI Infrastructure
+              0→1 Ventures & Public Developer Infrastructure
             </h2>
 
             <div className="space-y-2 text-xs text-slate-700">
               <div>
-                <span className="font-bold text-slate-950">Open-Source DevTools</span>
+                <span className="font-bold text-slate-950">Open-Source Developer Infrastructure</span>
                 <span className="text-slate-500 font-mono text-[11px]"> (github.com/1997agarwal)</span>:
                 <div className="mt-1 space-y-1">
-                  <div>• <strong>SpecForge:</strong> Autonomous 3-agent pipeline converting user discovery voice notes into PRDs, RFCs, and synchronized Linear tickets.</div>
-                  <div>• <strong>ContextPrism:</strong> High-performance local token FinOps reverse proxy analyzing code ASTs to cut LLM inference tokens by up to 40%.</div>
-                  <div>• <strong>PromptCourt:</strong> Multi-model LLM benchmark arena scoring prompt variations with Elo rating mathematics and statistical rigor.</div>
+                  <div>• <strong>SpecForge:</strong> Productized 3-stage agent pipeline converting unstructured user discovery calls into master PRDs and synchronized Linear tickets.</div>
+                  <div>• <strong>ContextPrism:</strong> High-performance local token FinOps gateway analyzing code ASTs to eliminate prompt bloat, reducing inference token spend by up to 40%.</div>
+                  <div>• <strong>PromptCourt:</strong> Multi-model LLM benchmark arena scoring competing prompt outputs using Elo rating mathematics and statistical significance.</div>
                 </div>
               </div>
 
               <div className="pt-1">
-                <span className="font-bold text-slate-950">Commercial 0→1 Platforms</span>:
-                Architected 5 venture platforms: <strong>StartupOS</strong> (AI founder launchpad), <strong>Trippy</strong> (solo travel matching OS), <strong>DupeScout</strong> (CLIP + pgvector multimodal search), <strong>BusinessPay</strong> (B2B AR collections accelerator), and <strong>CollabKaro</strong> (creator escrow marketplace).
+                <span className="font-bold text-slate-950">Commercial Software Platforms (0→1 Concept to Release)</span>:
+                Architected 5 venture solutions: <strong>StartupOS</strong> (founder incubator), <strong>Trippy</strong> (AI solo-travel matching OS), <strong>DupeScout</strong> (visual similarity shopping engine), <strong>BusinessPay</strong> (B2B early discount accelerator), and <strong>CollabKaro</strong> (creator escrow milestone marketplace).
               </div>
             </div>
           </section>
 
-          {/* Education & Accolades */}
+          {/* Education, Credentials & Honours */}
           <section>
             <h2 className="text-xs font-bold uppercase tracking-wider text-slate-900 border-b border-slate-300 pb-1 mb-2">
               Education, Credentials & Honours
@@ -165,12 +210,12 @@ export default function ResumeModal({ isOpen, onClose }) {
               <div>
                 <strong className="text-slate-900 block font-semibold">Education & Certifications:</strong>
                 <div>• <strong>Duke Corporate Education:</strong> Post-Graduate Program in Product Management (2020)</div>
-                <div>• <strong>JIIT Noida:</strong> B.Tech in Electronics & Communication Engineering (2015 – 2019)</div>
-                <div>• <strong>Credentials:</strong> Udacity Growth PM Nanodegree, Y Combinator Startup School</div>
+                <div>• <strong>Jaypee Institute of Information Technology (JIIT):</strong> B.Tech in Electronics & Communication (2015 – 2019)</div>
+                <div>• <strong>Certifications:</strong> Udacity Growth PM Nanodegree, Y Combinator Startup School</div>
               </div>
               <div>
-                <strong className="text-slate-900 block font-semibold">Honours & Recognition:</strong>
-                <div>• <strong>Tekion Recognition Award (May 2025):</strong> B2B Payment Portal execution</div>
+                <strong className="text-slate-900 block font-semibold">Major Honors & Awards:</strong>
+                <div>• <strong>Tekion Recognition Award (May 2025):</strong> B2B Payment Portal rollout</div>
                 <div>• <strong>NITI Aayog (Govt. of India):</strong> Top 5 Startup Ideas in India (IoT Road Safety)</div>
                 <div>• <strong>Tally Solutions:</strong> The All Star Award (2024), 2x Annual Team of the Year Awards</div>
                 <div>• <strong>Techfest, IIT Bombay:</strong> Robotics Zonal Winner, Autonomous Navigation (2016)</div>
