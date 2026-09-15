@@ -225,9 +225,9 @@ export default function ResumeModal({ isOpen, onClose }) {
                   <span className="font-bold text-slate-950">Open-Source Developer Infrastructure</span>
                   <span className="text-slate-500 font-mono text-[11px]"> (github.com/1997agarwal)</span>:
                   <div className="mt-1 space-y-1">
-                    <div>• <strong>SpecForge:</strong> Productized 3-stage agent pipeline converting unstructured user discovery calls into master PRDs and synchronized Linear tickets.</div>
-                    <div>• <strong>ContextPrism:</strong> High-performance local token FinOps gateway analyzing code ASTs to eliminate prompt bloat, reducing inference token spend by up to 40%.</div>
-                    <div>• <strong>TicTacCourt:</strong> AI-native tactical strategy arena breaking classic Tic-Tac-Toe stalemates using plain-English persuasion, dynamic board mutations, and an autonomous AI Arbiter.</div>
+                    <div>• <strong>SpecForge:</strong> Productized 3-stage agent pipeline converting customer discovery calls into master PRDs, Gherkin BDD user stories, and Linear/GitHub tickets; features 1-click Markdown/Jira export & 3-scenario testing.</div>
+                    <div>• <strong>ContextPrism:</strong> Enterprise token FinOps gateway with dual-language (TS & Python) AST compression, zero-cost semantic caching, and real-time ROI calculator cutting LLM inference costs by up to 90%.</div>
+                    <div>• <strong>TicTacCourt:</strong> AI-native strategy arena eliminating Tic-Tac-Toe draws via plain-English persuasion, 3 AI Arbiter personalities, and cascading Sudden Death; live playable on GitHub Pages.</div>
                   </div>
                 </div>
 

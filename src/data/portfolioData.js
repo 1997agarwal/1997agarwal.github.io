@@ -177,11 +177,11 @@ export const OPEN_SOURCE_TOOLS = [
     name: 'SpecForge',
     tagline: 'Autonomous Discovery-to-Spec Engine with 3-Agent Pipeline & Linear Sync',
     category: 'Agentic DevTools',
-    description: 'Autonomous 3-stage agent pipeline (Discovery Agent, Architect Agent, Linear Sync) converting unstructured founder conversations and discovery voice notes into structured PRDs, technical architectural RFCs, and synchronized Linear tickets.',
+    description: 'Autonomous 3-stage agent pipeline converting customer discovery calls into technical PRDs, Gherkin BDD user stories, and Linear/GitHub tickets. Features 1-click Markdown/Jira export and a 3-scenario discovery switcher.',
     starsUrl: 'https://img.shields.io/github/stars/1997agarwal/SpecForge?style=social',
     repoUrl: 'https://github.com/1997agarwal/SpecForge',
     stack: ['React 18', 'TypeScript', 'Node.js', 'Linear SDK', 'SQLite', 'Agentic Workflow'],
-    highlights: ['Autonomous 3-Agent Pipeline', 'Bidirectional Linear Sync', 'Zero-Drift PRD Contracts'],
+    highlights: ['1-Click PRD & Jira BDD Export', '3-Scenario Discovery Switcher', 'Autonomous 3-Agent Linear Sync'],
     license: 'MIT'
   },
   {
@@ -189,11 +189,11 @@ export const OPEN_SOURCE_TOOLS = [
     name: 'ContextPrism',
     tagline: 'Enterprise Token FinOps Gateway & AST Context Pruner',
     category: 'AI FinOps & Compiler',
-    description: 'A high-performance local FinOps reverse proxy (Port 4200) analyzing code Abstract Syntax Trees (AST) to eliminate redundant syntax, comments, and boilerplate before prompt injection, cutting LLM inference token spend by up to 40%.',
+    description: 'Enterprise Token FinOps Gateway and AST context pruner supporting dual-language (TypeScript & Python) compression. Features task-aware model routing, a zero-cost semantic cache ($0, 2ms), and an interactive Token FinOps ROI Calculator cutting LLM bills by up to 90%.',
     starsUrl: 'https://img.shields.io/github/stars/1997agarwal/ContextPrism?style=social',
     repoUrl: 'https://github.com/1997agarwal/ContextPrism',
-    stack: ['Node.js', 'Express', 'TypeScript', 'AST Parser', 'Vite', 'FinOps Reverse Proxy'],
-    highlights: ['AST Boilerplate Pruning', 'Task-Aware Model Routing', 'Budget Circuit Breakers'],
+    stack: ['Node.js', 'Express', 'TypeScript & Python', 'AST Parser', 'Token FinOps ROI Calculator'],
+    highlights: ['Dual-Language AST Pruning (-85%)', 'Token FinOps ROI Calculator', 'Zero-Cost Semantic Cache ($0)'],
     license: 'MIT'
   },
   {
@@ -201,11 +201,12 @@ export const OPEN_SOURCE_TOOLS = [
     name: 'TicTacCourt',
     tagline: 'AI-Native Tactical Strategy Arena & Autonomous Arbiter with Zero-Draw Guarantee',
     category: 'AI Gaming & Interactive LLMs',
-    description: 'An AI-native strategy game breaking the 1,000-year-old mathematically solved stalemate loop of classic Tic-Tac-Toe. Players persuade an autonomous AI Arbiter in plain English to bend rules, trigger dynamic board mutations (Swap, Freeze, Expand to 4×4), and eliminate draws through automated Sudden Death protocols.',
+    description: 'An AI-native tactical strategy arena breaking the 1,000-year-old solved draw loop of Tic-Tac-Toe. Features live browser gameplay on GitHub Pages, 3 AI Arbiter personalities (Strict, Comedian, Merciful), dynamic board mutations, and an infinite Sudden Death protocol mathematically guaranteeing zero draws.',
     starsUrl: 'https://img.shields.io/github/stars/1997agarwal/TicTacCourt?style=social',
     repoUrl: 'https://github.com/1997agarwal/TicTacCourt',
-    stack: ['React 18', 'TypeScript', 'Tailwind CSS', 'Gemini AI Arbiter', 'Autonomous Tool Calling'],
-    highlights: ['Zero-Draw Guarantee', 'Plain-English Persuasion', 'Dynamic Grid Mutation'],
+    demoUrl: 'https://1997agarwal.github.io/TicTacCourt',
+    stack: ['React 18', 'TypeScript', 'Gemini AI Arbiter', 'GitHub Pages Live', 'Autonomous Tool Calling'],
+    highlights: ['Live Playable on GitHub Pages', '3 Arbiter Personalities (Strict/Comedian/Merciful)', 'Zero-Draw Sudden Death Protocol'],
     license: 'MIT'
   }
 ];

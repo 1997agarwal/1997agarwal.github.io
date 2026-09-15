@@ -80,21 +80,34 @@ export default function OpenSourceSection() {
             </div>
 
             {/* Bottom Actions */}
-            <div className="pt-4 border-t border-surface-border flex items-center justify-between">
+            <div className="pt-4 border-t border-surface-border flex items-center justify-between gap-2">
               <span className="text-xs font-mono text-slate-400">
                 License: {tool.license || 'MIT'}
               </span>
-              <a
-                href={tool.repoUrl}
-                target="_blank"
-                rel="noreferrer"
-                className="px-3.5 py-1.5 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-semibold text-xs transition-all flex items-center gap-1.5 shadow-md shadow-emerald-500/20"
-              >
-                <span>View on GitHub</span>
-                <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                </svg>
-              </a>
+              <div className="flex items-center gap-2">
+                {tool.demoUrl && (
+                  <a
+                    href={tool.demoUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="px-3 py-1.5 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-xs transition-all flex items-center gap-1.5 shadow-md shadow-indigo-600/20"
+                    title="Play Live Hosted Demo"
+                  >
+                    <span>Play Live Demo ↗</span>
+                  </a>
+                )}
+                <a
+                  href={tool.repoUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="px-3.5 py-1.5 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-semibold text-xs transition-all flex items-center gap-1.5 shadow-md shadow-emerald-500/20"
+                >
+                  <span>GitHub</span>
+                  <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                  </svg>
+                </a>
+              </div>
             </div>
 
           </div>
