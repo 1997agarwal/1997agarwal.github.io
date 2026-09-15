@@ -227,7 +227,7 @@ export default function ResumeModal({ isOpen, onClose }) {
                   <div className="mt-1 space-y-1">
                     <div>• <strong>SpecForge:</strong> Productized 3-stage agent pipeline converting unstructured user discovery calls into master PRDs and synchronized Linear tickets.</div>
                     <div>• <strong>ContextPrism:</strong> High-performance local token FinOps gateway analyzing code ASTs to eliminate prompt bloat, reducing inference token spend by up to 40%.</div>
-                    <div>• <strong>PromptCourt:</strong> Multi-model LLM benchmark arena scoring competing prompt outputs using Elo rating mathematics and statistical significance.</div>
+                    <div>• <strong>TicTacCourt:</strong> AI-native tactical strategy arena breaking classic Tic-Tac-Toe stalemates using plain-English persuasion, dynamic board mutations, and an autonomous AI Arbiter.</div>
                   </div>
                 </div>
 

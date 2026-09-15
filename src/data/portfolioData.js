@@ -26,7 +26,7 @@ export const METRICS = [
   { label: 'Learners Scaled at Tally', value: '500K+', suffix: 'Users', desc: 'In-house LMS adopted across 2,000+ partner institutes' },
   { label: 'Corporate Awards', value: '7', suffix: 'Accolades', desc: 'Tekion Recognition, Tally All Star, 2x Team of the Year' },
   { label: 'Commercial Ventures', value: '5', suffix: 'Ventures', desc: 'StartupOS, Trippy, DupeScout, BusinessPay, CollabKaro' },
-  { label: 'Open Source AI DevTools', value: '3', suffix: 'Public Tools', desc: 'SpecForge, ContextPrism, PromptCourt' },
+  { label: 'Open Source AI DevTools', value: '3', suffix: 'Public Tools', desc: 'SpecForge, ContextPrism, TicTacCourt' },
   { label: 'Builder Community', value: '15K+', suffix: 'Followers', desc: 'Creator of @prod.tech101 on Product & AI' },
 ];
 
@@ -197,15 +197,15 @@ export const OPEN_SOURCE_TOOLS = [
     license: 'MIT'
   },
   {
-    id: 'prompt-court',
-    name: 'PromptCourt',
-    tagline: 'Multi-Model LLM Benchmark Arena & Elo Scoring Engine',
-    category: 'Evaluation & Benchmarking',
-    description: 'Blind side-by-side prompt evaluation platform utilizing Elo rating mathematics to empirically score and rank competitive LLM prompt outputs with statistical rigor across reasoning, coding, and creative tasks.',
-    starsUrl: 'https://img.shields.io/github/stars/1997agarwal/PromptCourt?style=social',
-    repoUrl: 'https://github.com/1997agarwal/PromptCourt',
-    stack: ['React 18', 'TypeScript', 'Tailwind CSS', 'Elo Engine', 'Multi-Model Benchmarking'],
-    highlights: ['Blind Elo Arena', 'Statistical Significance Scoring', 'Prompt Variant Testing'],
+    id: 'tictac-court',
+    name: 'TicTacCourt',
+    tagline: 'AI-Native Tactical Strategy Arena & Autonomous Arbiter with Zero-Draw Guarantee',
+    category: 'AI Gaming & Interactive LLMs',
+    description: 'An AI-native strategy game breaking the 1,000-year-old mathematically solved stalemate loop of classic Tic-Tac-Toe. Players persuade an autonomous AI Arbiter in plain English to bend rules, trigger dynamic board mutations (Swap, Freeze, Expand to 4×4), and eliminate draws through automated Sudden Death protocols.',
+    starsUrl: 'https://img.shields.io/github/stars/1997agarwal/TicTacCourt?style=social',
+    repoUrl: 'https://github.com/1997agarwal/TicTacCourt',
+    stack: ['React 18', 'TypeScript', 'Tailwind CSS', 'Gemini AI Arbiter', 'Autonomous Tool Calling'],
+    highlights: ['Zero-Draw Guarantee', 'Plain-English Persuasion', 'Dynamic Grid Mutation'],
     license: 'MIT'
   }
 ];
