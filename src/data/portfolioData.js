@@ -180,6 +180,7 @@ export const OPEN_SOURCE_TOOLS = [
     description: 'Autonomous 3-stage agent pipeline converting customer discovery calls into technical PRDs, Gherkin BDD user stories, and Linear/GitHub tickets. Features 1-click Markdown/Jira export and a 3-scenario discovery switcher.',
     starsUrl: 'https://img.shields.io/github/stars/1997agarwal/SpecForge?style=social',
     repoUrl: 'https://github.com/1997agarwal/SpecForge',
+    demoUrl: 'https://1997agarwal.github.io/SpecForge',
     stack: ['React 18', 'TypeScript', 'Node.js', 'Linear SDK', 'SQLite', 'Agentic Workflow'],
     highlights: ['1-Click PRD & Jira BDD Export', '3-Scenario Discovery Switcher', 'Autonomous 3-Agent Linear Sync'],
     license: 'MIT'
@@ -192,6 +193,7 @@ export const OPEN_SOURCE_TOOLS = [
     description: 'Enterprise Token FinOps Gateway and AST context pruner supporting dual-language (TypeScript & Python) compression. Features task-aware model routing, a zero-cost semantic cache ($0, 2ms), and an interactive Token FinOps ROI Calculator cutting LLM bills by up to 90%.',
     starsUrl: 'https://img.shields.io/github/stars/1997agarwal/ContextPrism?style=social',
     repoUrl: 'https://github.com/1997agarwal/ContextPrism',
+    demoUrl: 'https://1997agarwal.github.io/ContextPrism',
     stack: ['Node.js', 'Express', 'TypeScript & Python', 'AST Parser', 'Token FinOps ROI Calculator'],
     highlights: ['Dual-Language AST Pruning (-85%)', 'Token FinOps ROI Calculator', 'Zero-Cost Semantic Cache ($0)'],
     license: 'MIT'
