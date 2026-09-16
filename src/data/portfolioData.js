@@ -17,7 +17,7 @@ export const PERSONAL_INFO = {
   usersScaled: '500K+',
   awardsCount: '7',
   venturesCount: '5',
-  openSourceCount: '3',
+  openSourceCount: '4',
   communityFollowers: '15K+'
 };
 
@@ -26,7 +26,7 @@ export const METRICS = [
   { label: 'Learners Scaled at Tally', value: '500K+', suffix: 'Users', desc: 'In-house LMS adopted across 2,000+ partner institutes' },
   { label: 'Corporate Awards', value: '7', suffix: 'Accolades', desc: 'Tekion Recognition, Tally All Star, 2x Team of the Year' },
   { label: 'Commercial Ventures', value: '5', suffix: 'Ventures', desc: 'StartupOS, Trippy, DupeScout, BusinessPay, CollabKaro' },
-  { label: 'Open Source AI DevTools', value: '3', suffix: 'Public Tools', desc: 'SpecForge, ContextPrism, TicTacCourt' },
+  { label: 'Open Source AI DevTools', value: '4', suffix: 'Public Tools', desc: 'SpecForge, ContextPrism, TicTacCourt, BrainGym' },
   { label: 'Builder Community', value: '15K+', suffix: 'Followers', desc: 'Creator of @prod.tech101 on Product & AI' },
 ];
 
@@ -209,6 +209,19 @@ export const OPEN_SOURCE_TOOLS = [
     demoUrl: 'https://1997agarwal.github.io/TicTacCourt',
     stack: ['React 18', 'TypeScript', 'Gemini AI Arbiter', 'GitHub Pages Live', 'Autonomous Tool Calling'],
     highlights: ['Live Playable on GitHub Pages', '3 Arbiter Personalities (Strict/Comedian/Merciful)', 'Zero-Draw Sudden Death Protocol'],
+    license: 'MIT'
+  },
+  {
+    id: 'brain-gym',
+    name: 'BrainGym',
+    tagline: 'Daily Mental Resistance Training to Counteract AI-Induced Cognitive Atrophy',
+    category: 'Cognitive AI & EdTech',
+    description: 'An AI-native mental workout arena engineered to preserve critical human reasoning in the generative AI era. Features Fermi estimation drills, Hallucination Hunter logic audits, spatial Memory Fortress exercises, a 15-level progression map, and offline algorithmic judges.',
+    starsUrl: 'https://img.shields.io/github/stars/1997agarwal/BrainGym?style=social',
+    repoUrl: 'https://github.com/1997agarwal/BrainGym',
+    demoUrl: 'https://1997agarwal.github.io/BrainGym',
+    stack: ['React 18', 'TypeScript', 'Vite 6', 'Web Audio API', 'Node.js CLI Engine'],
+    highlights: ['Live Browser Play on GitHub Pages', 'Fermi Drills & Hallucination Hunter', 'Standalone CLI Engine (npm run cli)'],
     license: 'MIT'
   }
 ];

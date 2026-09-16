@@ -228,6 +228,7 @@ export default function ResumeModal({ isOpen, onClose }) {
                     <div>• <strong>SpecForge:</strong> Productized 3-stage agent pipeline converting customer discovery calls into master PRDs, Gherkin BDD user stories, and Linear/GitHub tickets; features 1-click Markdown/Jira export & 3-scenario testing.</div>
                     <div>• <strong>ContextPrism:</strong> Enterprise token FinOps gateway with dual-language (TS & Python) AST compression, zero-cost semantic caching, and real-time ROI calculator cutting LLM inference costs by up to 90%.</div>
                     <div>• <strong>TicTacCourt:</strong> AI-native strategy arena eliminating Tic-Tac-Toe draws via plain-English persuasion, 3 AI Arbiter personalities, and cascading Sudden Death; live playable on GitHub Pages.</div>
+                    <div>• <strong>BrainGym:</strong> Daily mental resistance training arena counteracting AI-induced cognitive atrophy; features Fermi speed drills, lateral puzzles, architecture showdowns, and 15-level progression; live on GitHub Pages.</div>
                   </div>
                 </div>
 
