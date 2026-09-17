@@ -156,6 +156,7 @@ export const COMMERCIAL_VENTURES = [
     solution: 'Dynamic delinquency discounting engine calculating real-time APR discounts for immediate payment, paired with risk-scored collector workqueues and buyer self-serve portals.',
     stack: ['React 19', 'Express 5', 'better-sqlite3', 'Node.js', 'Financial Discount Math'],
     access: 'Private Commercial IP',
+    demoUrl: 'https://business-tribe.github.io/BusinessPay-Website',
     surfaces: ['Collector Workqueue', 'Buyer Portal Simulation', 'Dynamic Discount Engine', 'Admin Analytics']
   },
   {
