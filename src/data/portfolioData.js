@@ -110,6 +110,21 @@ export const CORPORATE_EXPERIENCE = [
 
 export const COMMERCIAL_VENTURES = [
   {
+    id: 'trippy',
+    name: 'Trippy',
+    tagline: 'AI Solo-Travel Group Matching & Host Operating System (Lead Startup Venture)',
+    category: 'TravelTech AI',
+    stage: 'BETA',
+    isPrimaryStartup: true,
+    badge: 'Flagship Startup Venture',
+    problem: 'Solo travelers suffer from emotional friction (loneliness, safety, bad group fit), while community tour operators, bike clubs, and hostels struggle with fragmented discovery, payments, and partner CRM operations.',
+    solution: 'Travel solo, never alone. In active beta testing with real traveler and host cohorts. Features multi-attribute compatibility scoring across 4 operational surfaces: Consumer Matchmaker, Tour & Bike Expedition Host CRM (crm-), Trust & Safety Admin (a-), and Marketing Satellite. Transitioning to dedicated custom domain and corporate incorporation under Nomad-Tribe.',
+    stack: ['React 18 SPA', 'Express', 'better-sqlite3', 'Node 22', 'Multi-Realm JWT', 'Docker / Cloud Run'],
+    access: 'Private Commercial IP',
+    demoUrl: 'https://nomad-tribe.github.io/trippy-website',
+    surfaces: ['Consumer Matchmaker', 'Host Partner CRM', 'Trust & Safety Admin', 'Motorcycle & Road Trips', 'Hostel Group Connect', 'Marketing Satellite']
+  },
+  {
     id: 'startup-os',
     name: 'StartupOS',
     tagline: 'Universal 360° AI Product Incubator & Community Launchpad',
@@ -121,18 +136,6 @@ export const COMMERCIAL_VENTURES = [
     access: 'Private Commercial IP',
     demoUrl: 'https://builder-tribe.github.io/StartupOS-Website',
     surfaces: ['Launchpad Feed', 'Blueprint Studio', 'IdeaLab Scorer', 'LMS Hub']
-  },
-  {
-    id: 'trippy',
-    name: 'Trippy',
-    tagline: 'AI Solo-Travel Group Matching & Host Operating System',
-    category: 'TravelTech AI',
-    stage: 'BETA',
-    problem: 'Solo travelers suffer from emotional friction (loneliness, safety, bad group fit), while community trip hosts struggle with fragmented discovery and partner CRM management.',
-    solution: 'Travel solo, never alone. Multi-attribute compatibility matching engine with 4 dedicated surfaces: consumer matchmaker, tour host CRM (crm-), admin console (a-), and marketing satellite.',
-    stack: ['React 18 SPA', 'Express', 'better-sqlite3', 'Node 22', 'Render Blueprint'],
-    access: 'Private Commercial IP',
-    surfaces: ['Consumer Matchmaker', 'Host Partner CRM', 'Trust & Safety Admin', 'Marketing Site']
   },
   {
     id: 'dupe-scout',
@@ -322,6 +325,8 @@ export const ventures = COMMERCIAL_VENTURES.map(v => ({
   tagline: v.tagline,
   category: v.category,
   stage: v.stage || 'ACTIVE',
+  isPrimaryStartup: v.isPrimaryStartup || false,
+  badge: v.badge || null,
   problem: v.problem || '0-to-1 building friction',
   solution: v.solution || 'Automated architecture',
   surfaces: v.surfaces || [],

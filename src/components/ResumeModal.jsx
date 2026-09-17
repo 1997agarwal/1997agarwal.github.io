@@ -234,7 +234,7 @@ export default function ResumeModal({ isOpen, onClose }) {
 
                 <div className="pt-1">
                   <span className="font-bold text-slate-950">Commercial Software Platforms (0→1 Concept to Release)</span>:
-                  Architected 5 venture solutions: <strong>StartupOS</strong> (universal founder incubator with live showcase at builder-tribe.github.io/StartupOS-Website), <strong>CollabKaro</strong> (creator escrow milestone marketplace with live showcase at collab-tribe.github.io/CollabKaro-Website), <strong>BusinessPay</strong> (B2B early discount accelerator with live showcase at business-tribe.github.io/BusinessPay-Website), <strong>DupeScout</strong> (visual similarity shopping engine with live showcase at trend-tribe.github.io/dupescout-website), and <strong>Trippy</strong> (AI solo-travel matching OS).
+                  Architected 5 venture solutions, led by flagship startup <strong>Trippy</strong> (AI solo-travel matching OS & host CRM with live showcase at nomad-tribe.github.io/trippy-website; active beta testing in-flight with real cohorts ahead of dedicated domain launch), alongside <strong>StartupOS</strong> (universal founder incubator at builder-tribe.github.io/StartupOS-Website), <strong>CollabKaro</strong> (creator escrow milestone marketplace at collab-tribe.github.io/CollabKaro-Website), <strong>BusinessPay</strong> (B2B early discount accelerator at business-tribe.github.io/BusinessPay-Website), and <strong>DupeScout</strong> (visual similarity shopping engine at trend-tribe.github.io/dupescout-website).
                 </div>
               </div>
             </section>
