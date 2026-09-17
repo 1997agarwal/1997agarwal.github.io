@@ -14,6 +14,7 @@ export default function Navbar({ onOpenContact, onOpenResume }) {
   }, []);
 
   const navLinks = [
+    { name: 'Trippy (Founder)', href: '#trippy' },
     { name: 'Experience', href: '#experience' },
     { name: 'Ventures', href: '#ventures' },
     { name: 'Open Source', href: '#opensource' },

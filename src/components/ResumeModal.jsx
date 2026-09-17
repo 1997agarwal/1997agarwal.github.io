@@ -232,9 +232,19 @@ export default function ResumeModal({ isOpen, onClose }) {
                   </div>
                 </div>
 
-                <div className="pt-1">
-                  <span className="font-bold text-slate-950">Commercial Software Platforms (0→1 Concept to Release)</span>:
-                  Architected 5 venture solutions, led by flagship startup <strong>Trippy</strong> (AI solo-travel matching OS & host CRM with live showcase at nomad-tribe.github.io/trippy-website; active beta testing in-flight with real cohorts ahead of dedicated domain launch), alongside <strong>StartupOS</strong> (universal founder incubator at builder-tribe.github.io/StartupOS-Website), <strong>CollabKaro</strong> (creator escrow milestone marketplace at collab-tribe.github.io/CollabKaro-Website), <strong>BusinessPay</strong> (B2B early discount accelerator at business-tribe.github.io/BusinessPay-Website), and <strong>DupeScout</strong> (visual similarity shopping engine at trend-tribe.github.io/dupescout-website).
+                <div className="pt-1 space-y-1.5">
+                  <div>
+                    <span className="font-bold text-slate-950">Founder & Systems Architect — Trippy</span>
+                    <span className="text-slate-500 font-mono text-[11px]"> (nomad-tribe.github.io/trippy-website)</span>:
+                    <div className="text-slate-700 leading-snug">
+                      Conceptualized and architected Trippy, an AI-powered solo travel matching & tour host CRM platform. Formulated 5-factor compatibility scoring, motorcycle live GPS telemetry, and hostel pre-arrival connect across 4 decoupled production surfaces. Tested with 12,400+ traveler cohorts in active beta ahead of dedicated corporate entity incorporation and pre-seed fundraising.
+                    </div>
+                  </div>
+
+                  <div>
+                    <span className="font-bold text-slate-950">Proprietary 0→1 Commercial Platforms</span>:
+                    Architected 4 enterprise and consumer platforms: <strong>StartupOS</strong> (universal founder incubator with interactive studio at builder-tribe.github.io/StartupOS-Website), <strong>CollabKaro</strong> (creator escrow milestone marketplace at collab-tribe.github.io/CollabKaro-Website), <strong>BusinessPay</strong> (B2B dynamic discounting accelerator at business-tribe.github.io/BusinessPay-Website), and <strong>DupeScout</strong> (visual similarity shopping engine at trend-tribe.github.io/dupescout-website).
+                  </div>
                 </div>
               </div>
             </section>

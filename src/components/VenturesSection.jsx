@@ -47,31 +47,15 @@ export default function VenturesSection({ onRequestWalkthrough }) {
           {filteredVentures.map((item) => (
             <div
               key={item.name}
-              className={`bg-surface-card border rounded-2xl p-6 flex flex-col justify-between transition-all group relative ${
-                item.isPrimaryStartup
-                  ? 'border-amber-400/60 shadow-xl shadow-amber-500/10 ring-1 ring-amber-400/40 hover:border-amber-300'
-                  : 'border-surface-border hover:border-brand-cyan/50 hover:shadow-xl hover:shadow-cyan-500/5'
-              }`}
+              className="bg-surface-card border border-surface-border rounded-2xl p-6 flex flex-col justify-between hover:border-brand-cyan/50 transition-all hover:shadow-xl hover:shadow-cyan-500/5 group"
             >
               {/* Card Top */}
               <div>
-                {item.isPrimaryStartup && (
-                  <div className="mb-3 flex items-center gap-1.5">
-                    <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold bg-gradient-to-r from-amber-400/20 to-brand-cyan/20 text-amber-300 border border-amber-400/40">
-                      <span>👑</span> Flagship Startup Venture · Active Beta
-                    </span>
-                  </div>
-                )}
-
                 <div className="flex items-center justify-between mb-4">
                   <span className="text-xs font-mono font-bold px-2.5 py-1 rounded bg-surface-dark text-brand-cyan border border-surface-border">
                     {item.category}
                   </span>
-                  <span className={`text-[11px] font-mono px-2 py-0.5 rounded border ${
-                    item.isPrimaryStartup 
-                      ? 'bg-amber-400/15 text-amber-300 border-amber-400/30 font-bold'
-                      : 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20'
-                  }`}>
+                  <span className="text-[11px] font-mono px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
                     {item.stage}
                   </span>
                 </div>
@@ -130,17 +114,17 @@ export default function VenturesSection({ onRequestWalkthrough }) {
                       href={item.demoUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-xs font-semibold text-emerald-400 hover:text-emerald-300 flex items-center gap-1 transition-colors"
+                      className="text-xs font-semibold text-brand-cyan hover:text-cyan-300 flex items-center gap-1 transition-colors px-2 py-1 rounded bg-brand-cyan/10 border border-brand-cyan/20"
                     >
-                      <span>Live Showcase ↗</span>
+                      <span>▶ Launch Web Studio ↗</span>
                     </a>
                   )}
 
                   <button
                     onClick={() => onRequestWalkthrough(item.name)}
-                    className="text-xs font-semibold text-brand-cyan hover:text-white flex items-center gap-1 transition-colors"
+                    className="text-xs font-semibold text-slate-300 hover:text-white flex items-center gap-1 transition-colors"
                   >
-                    <span>Request Demo</span>
+                    <span>Request Walkthrough</span>
                     <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                     </svg>

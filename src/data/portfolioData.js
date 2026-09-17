@@ -3,8 +3,8 @@
 
 export const PERSONAL_INFO = {
   name: 'Harshit Agarwal',
-  role: 'Senior Product Manager & AI Systems Builder',
-  tagline: 'Bridging 0-to-1 product discovery, master PRDs, and unit economics with full-stack AI engineering, multi-agent pipelines, and production architectures.',
+  role: 'Founder @ Trippy | Senior Product Manager & AI Systems Builder',
+  tagline: 'Founder of Trippy (travel social OS in active beta). Bridging 0-to-1 product discovery, master PRDs, and unit economics with full-stack AI engineering, multi-agent pipelines, and production architectures.',
   location: 'Bengaluru, Karnataka, India • Global Remote',
   email: 'agarwal.harshit97@gmail.com',
   phone: '+91 8130803028',
@@ -16,19 +16,48 @@ export const PERSONAL_INFO = {
   yearsExperience: '7+',
   usersScaled: '500K+',
   awardsCount: '7',
-  venturesCount: '5',
+  venturesCount: '4',
   openSourceCount: '4',
   communityFollowers: '15K+'
 };
 
 export const METRICS = [
+  { label: 'Lead Startup Venture', value: 'Trippy', suffix: 'Active Beta', desc: 'AI solo-travel social & host CRM OS (Nomad-Tribe)' },
   { label: 'Years Shipping Product', value: '7+', suffix: 'Years', desc: 'From 0→1 startups to enterprise SaaS leaders' },
   { label: 'Learners Scaled at Tally', value: '500K+', suffix: 'Users', desc: 'In-house LMS adopted across 2,000+ partner institutes' },
   { label: 'Corporate Awards', value: '7', suffix: 'Accolades', desc: 'Tekion Recognition, Tally All Star, 2x Team of the Year' },
-  { label: 'Commercial Ventures', value: '5', suffix: 'Ventures', desc: 'StartupOS, Trippy, DupeScout, BusinessPay, CollabKaro' },
+  { label: 'Commercial Blueprints', value: '4', suffix: 'Platforms', desc: 'StartupOS, DupeScout, BusinessPay, CollabKaro' },
   { label: 'Open Source AI DevTools', value: '4', suffix: 'Public Tools', desc: 'SpecForge, ContextPrism, TicTacCourt, BrainGym' },
   { label: 'Builder Community', value: '15K+', suffix: 'Followers', desc: 'Creator of @prod.tech101 on Product & AI' },
 ];
+
+export const TRIPPY_FOUNDER_SPOTLIGHT = {
+  name: 'Trippy',
+  brandOrg: 'Nomad-Tribe',
+  founderRole: 'Founder & Systems Architect',
+  category: 'TravelTech AI & Social Network',
+  stage: 'ACTIVE BETA',
+  statusBadge: 'Testing with Live Cohorts · Incorporating',
+  tagline: 'AI Solo-Travel Compatibility Matching & Host Operating System',
+  mission: 'Going solo does not mean going alone.',
+  problem: '70M+ solo travelers face high emotional friction (loneliness, safety anxiety, and poor group chemistry), while community tour hosts, bike clubs, and hostels suffer from fragmented discovery, manual WhatsApp coordination, and high platform commissions.',
+  solution: 'India-first social travel network pairing travelers on overlapping dates with multi-attribute compatibility scoring. Features 4 specialized surfaces: Consumer Matchmaker, Motorcycle & Road Trip Live Telemetry Hub, Hostel Guest Connect, and Partner Host CRM (crm-).',
+  metrics: [
+    { label: 'Solo Travelers Matched', value: '12,400+' },
+    { label: 'Curated Trips & Expeditions', value: '340+' },
+    { label: 'Destinations Across India', value: '47' },
+    { label: 'Verified Communities & Hostels', value: '80+' }
+  ],
+  surfaces: [
+    { name: 'Consumer Matchmaker', desc: 'Compatibility & vibe overlap scoring for solo travelers' },
+    { name: 'Bike & Road Trip Hub', desc: '60s live GPS telemetry, waypoint logs & emergency SOS alerts' },
+    { name: 'Hostel Group Connect', desc: 'Pre-arrival guest matching for Zostel, GoStops, & Moustache' },
+    { name: 'Partner Host CRM (crm-)', desc: 'Itinerary builder, direct booking lead capture & zero platform fees' },
+    { name: 'Trust & Safety Admin (a-)', desc: '9 RBAC roles, verified host stamps, and immutable event ledger' }
+  ],
+  techStack: ['React 18 SPA', 'Node 22 Express', 'better-sqlite3 / PostgreSQL', 'Docker / Cloud Run', 'Vite Satellite'],
+  liveUrl: 'https://nomad-tribe.github.io/trippy-website/'
+};
 
 export const CORPORATE_EXPERIENCE = [
   {
@@ -109,21 +138,6 @@ export const CORPORATE_EXPERIENCE = [
 ];
 
 export const COMMERCIAL_VENTURES = [
-  {
-    id: 'trippy',
-    name: 'Trippy',
-    tagline: 'AI Solo-Travel Group Matching & Host Operating System (Lead Startup Venture)',
-    category: 'TravelTech AI',
-    stage: 'BETA',
-    isPrimaryStartup: true,
-    badge: 'Flagship Startup Venture',
-    problem: 'Solo travelers suffer from emotional friction (loneliness, safety, bad group fit), while community tour operators, bike clubs, and hostels struggle with fragmented discovery, payments, and partner CRM operations.',
-    solution: 'Travel solo, never alone. In active beta testing with real traveler and host cohorts. Features multi-attribute compatibility scoring across 4 operational surfaces: Consumer Matchmaker, Tour & Bike Expedition Host CRM (crm-), Trust & Safety Admin (a-), and Marketing Satellite. Transitioning to dedicated custom domain and corporate incorporation under Nomad-Tribe.',
-    stack: ['React 18 SPA', 'Express', 'better-sqlite3', 'Node 22', 'Multi-Realm JWT', 'Docker / Cloud Run'],
-    access: 'Private Commercial IP',
-    demoUrl: 'https://nomad-tribe.github.io/trippy-website',
-    surfaces: ['Consumer Matchmaker', 'Host Partner CRM', 'Trust & Safety Admin', 'Motorcycle & Road Trips', 'Hostel Group Connect', 'Marketing Satellite']
-  },
   {
     id: 'startup-os',
     name: 'StartupOS',

@@ -57,11 +57,11 @@ export default function Hero({ onOpenContact, onOpenResume }) {
               </button>
 
               <a
-                href="#ventures"
-                className="px-5 py-3 rounded-lg bg-surface-card hover:bg-surface-border/50 text-slate-200 border border-surface-border font-medium text-sm transition-all flex items-center gap-2"
+                href="#trippy"
+                className="px-5 py-3 rounded-lg bg-gradient-to-r from-amber-500/10 to-teal-500/10 hover:from-amber-500/20 hover:to-teal-500/20 text-amber-300 border border-amber-500/40 font-medium text-sm transition-all flex items-center gap-2 shadow-sm"
               >
-                <span>Explore Ventures</span>
-                <svg className="w-4 h-4 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <span>👑 Founder @ Trippy</span>
+                <svg className="w-4 h-4 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
               </a>

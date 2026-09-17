@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import MetricsRibbon from './components/MetricsRibbon';
+import TrippyFounderSpotlight from './components/TrippyFounderSpotlight';
 import ExperienceSection from './components/ExperienceSection';
 import VenturesSection from './components/VenturesSection';
 import OpenSourceSection from './components/OpenSourceSection';
@@ -45,6 +46,7 @@ export default function App() {
           onOpenResume={handleOpenResume}
         />
         <MetricsRibbon />
+        <TrippyFounderSpotlight onRequestWalkthrough={handleRequestWalkthrough} />
         <ExperienceSection />
         <VenturesSection onRequestWalkthrough={handleRequestWalkthrough} />
         <OpenSourceSection />
