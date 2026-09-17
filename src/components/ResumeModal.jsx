@@ -234,7 +234,7 @@ export default function ResumeModal({ isOpen, onClose }) {
 
                 <div className="pt-1">
                   <span className="font-bold text-slate-950">Commercial Software Platforms (0→1 Concept to Release)</span>:
-                  Architected 5 venture solutions: <strong>StartupOS</strong> (universal founder incubator with live showcase at builder-tribe.github.io/StartupOS-Website), <strong>Trippy</strong> (AI solo-travel matching OS), <strong>DupeScout</strong> (visual similarity shopping engine), <strong>BusinessPay</strong> (B2B early discount accelerator), and <strong>CollabKaro</strong> (creator escrow milestone marketplace).
+                  Architected 5 venture solutions: <strong>StartupOS</strong> (universal founder incubator with live showcase at builder-tribe.github.io/StartupOS-Website), <strong>CollabKaro</strong> (creator escrow milestone marketplace with live showcase at collab-tribe.github.io/CollabKaro-Website), <strong>Trippy</strong> (AI solo-travel matching OS), <strong>DupeScout</strong> (visual similarity shopping engine), and <strong>BusinessPay</strong> (B2B early discount accelerator).
                 </div>
               </div>
             </section>

@@ -168,6 +168,7 @@ export const COMMERCIAL_VENTURES = [
     solution: 'Two-sided creator marketplace backed by an automated milestone escrow engine, verified media kit analytics, and automated deliverable sign-off workflows.',
     stack: ['React TS', 'Vite', 'Express', 'PostgreSQL/SQLite', 'Escrow Milestone API', 'React Native Mobile'],
     access: 'Private Commercial IP',
+    demoUrl: 'https://collab-tribe.github.io/CollabKaro-Website',
     surfaces: ['Brand & Agency Portal', 'Creator Media Kit Hub', 'Escrow Admin Console', 'Mobile App']
   }
 ];
