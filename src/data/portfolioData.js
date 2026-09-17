@@ -144,6 +144,7 @@ export const COMMERCIAL_VENTURES = [
     solution: 'Shop the Look. Not the Markup. Multimodal image search powered by CLIP models and sub-second pgvector cosine similarity to find high-quality affordable alternatives.',
     stack: ['Next.js 14', 'FastAPI (Python 3.14)', 'PostgreSQL', 'pgvector', 'Redis', 'CLIP Vision', 'Chrome Extension'],
     access: 'Private Commercial IP',
+    demoUrl: 'https://trend-tribe.github.io/dupescout-website',
     surfaces: ['Next.js App', 'FastAPI API', 'Chrome Extension', 'Vector Pipeline']
   },
   {
