@@ -119,6 +119,7 @@ export const COMMERCIAL_VENTURES = [
     solution: 'A unified operating system with a Product Hunt-style launchpad, Blueprint Studio, AI IdeaLab feasibility scorer, and automated 4-File Parity health auditor.',
     stack: ['React 18', 'Vite', 'Node.js', 'Multi-Realm JWT', 'SQLite', 'AntiGravity Agentic SDK'],
     access: 'Private Commercial IP',
+    demoUrl: 'https://builder-tribe.github.io/StartupOS-Website',
     surfaces: ['Launchpad Feed', 'Blueprint Studio', 'IdeaLab Scorer', 'LMS Hub']
   },
   {
@@ -322,6 +323,7 @@ export const ventures = COMMERCIAL_VENTURES.map(v => ({
   solution: v.solution || 'Automated architecture',
   surfaces: v.surfaces || [],
   metrics: v.metrics || '',
+  demoUrl: v.demoUrl || null,
   stack: v.stack || []
 }));
 
