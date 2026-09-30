@@ -3,10 +3,13 @@ import { caseStudies } from '../data/portfolioData';
 
 export default function CaseStudiesArchive() {
   const [filter, setFilter] = useState('ALL');
+  const [showAll, setShowAll] = useState(false);
 
-  const filtered = filter === 'ALL'
+  const INITIAL_COUNT = 6;
+  const matching = filter === 'ALL'
     ? caseStudies
     : caseStudies.filter(c => c.category === filter);
+  const filtered = showAll ? matching : matching.slice(0, INITIAL_COUNT);
 
   const categories = ['ALL', ...new Set(caseStudies.map(c => c.category))];
 
@@ -32,8 +35,9 @@ export default function CaseStudiesArchive() {
           {categories.map((cat) => (
             <button
               key={cat}
-              onClick={() => setFilter(cat)}
-              className={`px-3.5 py-1.5 rounded-lg text-xs font-mono transition-all ${
+              onClick={() => { setFilter(cat); setShowAll(false); }}
+              aria-pressed={filter === cat}
+              className={`px-3.5 py-2 rounded-lg text-xs font-mono transition-all ${
                 filter === cat
                   ? 'bg-brand-purple text-white font-bold shadow-md shadow-purple-500/20'
                   : 'bg-surface-card text-slate-400 border border-surface-border hover:text-white'
@@ -56,28 +60,14 @@ export default function CaseStudiesArchive() {
                   <span className="px-2 py-0.5 rounded bg-surface-dark border border-surface-border text-brand-purple">
                     {study.category}
                   </span>
-                  <span>{study.date}</span>
                 </div>
 
                 <h4 className="text-xl font-bold text-white group-hover:text-brand-purple transition-colors mb-2">
                   {study.title}
                 </h4>
-                <p className="text-xs text-slate-300 mb-4 font-medium">
-                  {study.subtitle}
-                </p>
-                <p className="text-xs text-slate-400 leading-relaxed mb-4">
+                <p className="text-sm text-slate-300 leading-relaxed mb-6">
                   {study.description}
                 </p>
-
-                {/* Highlights */}
-                <div className="space-y-1.5 mb-6">
-                  {study.highlights.map((h, i) => (
-                    <div key={i} className="text-[11px] text-slate-300 flex items-start gap-1.5 font-mono">
-                      <span className="text-brand-purple font-bold">›</span>
-                      <span>{h}</span>
-                    </div>
-                  ))}
-                </div>
               </div>
 
               {/* Action Button */}
@@ -104,6 +94,17 @@ export default function CaseStudiesArchive() {
             </div>
           ))}
         </div>
+
+        {matching.length > INITIAL_COUNT && (
+          <div className="mt-10 text-center">
+            <button
+              onClick={() => setShowAll((v) => !v)}
+              className="px-6 py-2.5 rounded-lg bg-surface-card hover:bg-slate-800 border border-surface-border hover:border-brand-purple/50 text-xs font-mono text-slate-200 transition-all"
+            >
+              {showAll ? 'Show fewer' : `Show all ${matching.length} case studies`}
+            </button>
+          </div>
+        )}
 
       </div>
     </section>

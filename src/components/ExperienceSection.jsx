@@ -70,7 +70,7 @@ export default function ExperienceSection() {
             {/* Direct LinkedIn / Proof Indicator */}
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-surface-dark border border-surface-border text-xs text-slate-300 font-mono">
               <span className="w-2 h-2 rounded-full bg-emerald-400" />
-              <span>Verified Track Record</span>
+              <span>Track Record</span>
             </div>
           </div>
 

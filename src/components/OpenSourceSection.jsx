@@ -1,5 +1,6 @@
 import React from 'react';
 import { openSourceTools } from '../data/portfolioData';
+import Expandable from './Expandable';
 
 export default function OpenSourceSection() {
   return (
@@ -7,7 +8,7 @@ export default function OpenSourceSection() {
       {/* Header */}
       <div className="text-center max-w-3xl mx-auto mb-16">
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-xs font-mono text-emerald-400 mb-3">
-          <span>100% Public Open Source</span>
+          <span>03 · Open Source</span>
         </div>
         <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
           Developer Tooling & Agentic AI Infrastructure
@@ -18,11 +19,11 @@ export default function OpenSourceSection() {
       </div>
 
       {/* Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
         {(openSourceTools || []).map((tool) => (
           <div
             key={tool.name}
-            className="bg-surface-card border border-surface-border rounded-2xl p-6 flex flex-col justify-between hover:border-emerald-500/40 transition-all hover:shadow-xl hover:shadow-emerald-500/5 group"
+            className="bg-surface-card border border-surface-border rounded-2xl p-5 sm:p-6 flex flex-col justify-between hover:border-emerald-500/40 transition-all hover:shadow-xl hover:shadow-emerald-500/5 group"
           >
             <div>
               {/* Badge & Stars */}
@@ -49,9 +50,11 @@ export default function OpenSourceSection() {
               <h3 className="text-2xl font-bold text-white group-hover:text-emerald-400 transition-colors mb-2">
                 {tool.name}
               </h3>
-              <p className="text-xs font-semibold text-slate-300 mb-4">
+              <p className="text-sm font-semibold text-slate-300 mb-5">
                 {tool.tagline}
               </p>
+
+              <Expandable label="details & stack" className="mb-6">
               <p className="text-xs text-slate-400 leading-relaxed mb-6">
                 {tool.description}
               </p>
@@ -70,17 +73,18 @@ export default function OpenSourceSection() {
               </div>
 
               {/* Stack Chips */}
-              <div className="flex flex-wrap gap-1.5 mb-6">
+              <div className="flex flex-wrap gap-1.5">
                 {(tool.stack || []).map((tech, idx) => (
                   <span key={idx} className="text-xs px-2 py-0.5 rounded bg-surface-dark text-slate-300 border border-surface-border font-mono">
                     {tech}
                   </span>
                 ))}
               </div>
+              </Expandable>
             </div>
 
             {/* Bottom Actions */}
-            <div className="pt-4 border-t border-surface-border flex items-center justify-between gap-2">
+            <div className="pt-4 border-t border-surface-border flex flex-wrap items-center justify-between gap-3">
               <span className="text-xs font-mono text-slate-400">
                 License: {tool.license || 'MIT'}
               </span>
@@ -90,7 +94,7 @@ export default function OpenSourceSection() {
                     href={tool.demoUrl}
                     target="_blank"
                     rel="noreferrer"
-                    className="px-3 py-1.5 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-xs transition-all flex items-center gap-1.5 shadow-md shadow-indigo-600/20"
+                    className="px-3.5 py-2 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-xs transition-all flex items-center gap-1.5 shadow-md shadow-indigo-600/20"
                     title="Play Live Hosted Demo"
                   >
                     <span>Play Live Demo ↗</span>
@@ -100,7 +104,7 @@ export default function OpenSourceSection() {
                   href={tool.repoUrl}
                   target="_blank"
                   rel="noreferrer"
-                  className="px-3.5 py-1.5 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-semibold text-xs transition-all flex items-center gap-1.5 shadow-md shadow-emerald-500/20"
+                  className="px-3.5 py-2 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-semibold text-xs transition-all flex items-center gap-1.5 shadow-md shadow-emerald-500/20"
                 >
                   <span>GitHub</span>
                   <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">

@@ -3,11 +3,10 @@
 
 export const PERSONAL_INFO = {
   name: 'Harshit Agarwal',
-  role: 'Founder @ Trippy | Senior Product Manager & AI Systems Builder',
-  tagline: 'Founder of Trippy (travel social OS in active beta). Bridging 0-to-1 product discovery, master PRDs, and unit economics with full-stack AI engineering, multi-agent pipelines, and production architectures.',
+  role: 'Senior Product Manager & AI Systems Builder',
+  tagline: 'Bridging 0-to-1 product discovery, master PRDs, and unit economics with full-stack AI engineering, multi-agent pipelines, and production architectures. Currently building Trippy, a travel social OS in active beta.',
   location: 'Bengaluru, Karnataka, India • Global Remote',
   email: 'agarwal.harshit97@gmail.com',
-  phone: '+91 8130803028',
   linkedin: 'https://www.linkedin.com/in/1997agarwal/',
   github: 'https://github.com/1997agarwal',
   twitter: 'https://x.com/1997agarwal',
@@ -22,10 +21,9 @@ export const PERSONAL_INFO = {
 };
 
 export const METRICS = [
-  { label: 'Lead Startup Venture', value: 'Trippy', suffix: 'Active Beta', desc: 'AI solo-travel social & host CRM OS (Nomad-Tribe)' },
   { label: 'Years Shipping Product', value: '7+', suffix: 'Years', desc: 'From 0→1 startups to enterprise SaaS leaders' },
   { label: 'Learners Scaled at Tally', value: '500K+', suffix: 'Users', desc: 'In-house LMS adopted across 2,000+ partner institutes' },
-  { label: 'Corporate Awards', value: '7', suffix: 'Accolades', desc: 'Tekion Recognition, Tally All Star, 2x Team of the Year' },
+  { label: 'Awards & Honors', value: '7', suffix: 'Accolades', desc: 'Tekion, 4 at Tally, NITI Aayog & Techfest IIT Bombay' },
   { label: 'Commercial Blueprints', value: '4', suffix: 'Platforms', desc: 'StartupOS, DupeScout, BusinessPay, CollabKaro' },
   { label: 'Open Source AI DevTools', value: '4', suffix: 'Public Tools', desc: 'SpecForge, ContextPrism, TicTacCourt, BrainGym' },
   { label: 'Builder Community', value: '15K+', suffix: 'Followers', desc: 'Creator of @prod.tech101 on Product & AI' },
@@ -37,23 +35,24 @@ export const TRIPPY_FOUNDER_SPOTLIGHT = {
   founderRole: 'Founder & Systems Architect',
   category: 'TravelTech AI & Social Network',
   stage: 'ACTIVE BETA',
-  statusBadge: 'Testing with Live Cohorts · Incorporating',
+  statusBadge: 'Active Beta · Pre-Incorporation',
   tagline: 'AI Solo-Travel Compatibility Matching & Host Operating System',
   mission: 'Going solo does not mean going alone.',
-  problem: '70M+ solo travelers face high emotional friction (loneliness, safety anxiety, and poor group chemistry), while community tour hosts, bike clubs, and hostels suffer from fragmented discovery, manual WhatsApp coordination, and high platform commissions.',
-  solution: 'India-first social travel network pairing travelers on overlapping dates with multi-attribute compatibility scoring. Features 4 specialized surfaces: Consumer Matchmaker, Motorcycle & Road Trip Live Telemetry Hub, Hostel Guest Connect, and Partner Host CRM (crm-).',
-  metrics: [
-    { label: 'Solo Travelers Matched', value: '12,400+' },
-    { label: 'Curated Trips & Expeditions', value: '340+' },
-    { label: 'Destinations Across India', value: '47' },
-    { label: 'Verified Communities & Hostels', value: '80+' }
+  problem: 'Solo travelers face high emotional friction (loneliness, safety anxiety, and poor group chemistry), while community tour hosts, bike clubs, and hostels suffer from fragmented discovery, manual WhatsApp coordination, and high platform commissions.',
+  solution: 'India-first social travel network pairing travelers on overlapping dates with multi-attribute compatibility scoring. Built as a family of specialized surfaces: Consumer Matchmaker, Motorcycle & Road Trip Live Telemetry Hub, Hostel Guest Connect, and Partner Host CRM.',
+  pillars: [
+    { label: 'Compatibility-Led Matching', desc: 'Travelers paired on dates, vibe and travel style' },
+    { label: 'Safety by Design', desc: 'Live telemetry, SOS alerts and verified hosts' },
+    { label: 'Zero-Commission Hosts', desc: 'Direct bookings, no platform fees' },
+    { label: 'India-First Network', desc: 'Built for Indian routes, hostels and communities' }
   ],
+  resumeSummary: 'Conceptualized and architected Trippy, an AI-powered solo travel matching & tour host CRM platform. Formulated multi-attribute compatibility scoring, motorcycle live GPS telemetry, and hostel pre-arrival connect across decoupled production surfaces. Currently in active beta ahead of corporate entity incorporation and pre-seed fundraising.',
   surfaces: [
     { name: 'Consumer Matchmaker', desc: 'Compatibility & vibe overlap scoring for solo travelers' },
-    { name: 'Bike & Road Trip Hub', desc: '60s live GPS telemetry, waypoint logs & emergency SOS alerts' },
+    { name: 'Bike & Road Trip Hub', desc: 'Live GPS telemetry, waypoint logs & emergency SOS alerts' },
     { name: 'Hostel Group Connect', desc: 'Pre-arrival guest matching for Zostel, GoStops, & Moustache' },
-    { name: 'Partner Host CRM (crm-)', desc: 'Itinerary builder, direct booking lead capture & zero platform fees' },
-    { name: 'Trust & Safety Admin (a-)', desc: '9 RBAC roles, verified host stamps, and immutable event ledger' }
+    { name: 'Partner Host CRM', desc: 'Itinerary builder, direct booking lead capture & zero platform fees' },
+    { name: 'Trust & Safety Admin', desc: 'Role-based access, verified host stamps, and immutable event ledger' }
   ],
   techStack: ['React 18 SPA', 'Node 22 Express', 'better-sqlite3 / PostgreSQL', 'Docker / Cloud Run', 'Vite Satellite'],
   liveUrl: 'https://nomad-tribe.github.io/trippy-website/'
@@ -92,13 +91,13 @@ export const CORPORATE_EXPERIENCE = [
       'Re-architected the National Skill Assessment Platform (V2), supporting concurrent execution of 5,000,000+ online proctored exams.',
       'Conceptualized and launched the 0→1 Candidate Placement Portal, connecting 150,000+ certified candidates with 1,500+ SMB employers.',
       'Led cross-functional teams of 14+ engineers, UX designers, and academic heads across 8 quarterly major release cycles.',
-      'Honored with 7 corporate awards, including The All Star Award (H2 2024) and 2x Annual Team of the Year Awards.'
+      'Honored with 4 Tally awards, including The All Star Award (H2, Mar 2024), 2x Annual Team of the Year, and Spot Excellence Awards.'
     ],
     awards: [
-      'The All Star Award (H2 2024)',
+      'The All Star Award (H2, Mar 2024)',
       'Annual Team of the Year (Mahasabha 2023)',
       'Annual Team of the Year (Digisabha 2022)',
-      '4x Spot Excellence Awards (2023 – 2024)'
+      'Excellence & Collaboration Champion — 4x Spot Awards (2023 – 2024)'
     ],
     techStack: ['EdTech LMS', 'Online Assessment V2', 'Placement Portal', 'Microservices', 'Candidate Funnels']
   },
@@ -149,6 +148,7 @@ export const COMMERCIAL_VENTURES = [
     stack: ['React 18', 'Vite', 'Node.js', 'Multi-Realm JWT', 'SQLite', 'AntiGravity Agentic SDK'],
     access: 'Private Commercial IP',
     demoUrl: 'https://builder-tribe.github.io/StartupOS-Website',
+    resumeBlurb: 'universal founder incubator with interactive studio',
     surfaces: ['Launchpad Feed', 'Blueprint Studio', 'IdeaLab Scorer', 'LMS Hub']
   },
   {
@@ -162,6 +162,7 @@ export const COMMERCIAL_VENTURES = [
     stack: ['Next.js 14', 'FastAPI (Python 3.14)', 'PostgreSQL', 'pgvector', 'Redis', 'CLIP Vision', 'Chrome Extension'],
     access: 'Private Commercial IP',
     demoUrl: 'https://trend-tribe.github.io/dupescout-website',
+    resumeBlurb: 'visual similarity shopping engine',
     surfaces: ['Next.js App', 'FastAPI API', 'Chrome Extension', 'Vector Pipeline']
   },
   {
@@ -175,6 +176,7 @@ export const COMMERCIAL_VENTURES = [
     stack: ['React 19', 'Express 5', 'better-sqlite3', 'Node.js', 'Financial Discount Math'],
     access: 'Private Commercial IP',
     demoUrl: 'https://business-tribe.github.io/BusinessPay-Website',
+    resumeBlurb: 'B2B dynamic discounting accelerator',
     surfaces: ['Collector Workqueue', 'Buyer Portal Simulation', 'Dynamic Discount Engine', 'Admin Analytics']
   },
   {
@@ -188,6 +190,7 @@ export const COMMERCIAL_VENTURES = [
     stack: ['React TS', 'Vite', 'Express', 'PostgreSQL/SQLite', 'Escrow Milestone API', 'React Native Mobile'],
     access: 'Private Commercial IP',
     demoUrl: 'https://collab-tribe.github.io/CollabKaro-Website',
+    resumeBlurb: 'creator escrow milestone marketplace',
     surfaces: ['Brand & Agency Portal', 'Creator Media Kit Hub', 'Escrow Admin Console', 'Mobile App']
   }
 ];
@@ -204,7 +207,8 @@ export const OPEN_SOURCE_TOOLS = [
     demoUrl: 'https://1997agarwal.github.io/SpecForge',
     stack: ['React 18', 'TypeScript', 'Node.js', 'Linear SDK', 'SQLite', 'Agentic Workflow'],
     highlights: ['1-Click PRD & Jira BDD Export', '3-Scenario Discovery Switcher', 'Autonomous 3-Agent Linear Sync'],
-    license: 'MIT'
+    license: 'MIT',
+    resumeSummary: 'Productized 3-stage agent pipeline converting customer discovery calls into master PRDs, Gherkin BDD user stories, and Linear/GitHub tickets; features 1-click Markdown/Jira export & 3-scenario testing.'
   },
   {
     id: 'context-prism',
@@ -217,7 +221,8 @@ export const OPEN_SOURCE_TOOLS = [
     demoUrl: 'https://1997agarwal.github.io/ContextPrism',
     stack: ['Node.js', 'Express', 'TypeScript & Python', 'AST Parser', 'Token FinOps ROI Calculator'],
     highlights: ['Dual-Language AST Pruning (-85%)', 'Token FinOps ROI Calculator', 'Zero-Cost Semantic Cache ($0)'],
-    license: 'MIT'
+    license: 'MIT',
+    resumeSummary: 'Enterprise token FinOps gateway with dual-language (TS & Python) AST compression, zero-cost semantic caching, and real-time ROI calculator cutting LLM inference costs by up to 90%.'
   },
   {
     id: 'tictac-court',
@@ -230,7 +235,8 @@ export const OPEN_SOURCE_TOOLS = [
     demoUrl: 'https://1997agarwal.github.io/TicTacCourt',
     stack: ['React 18', 'TypeScript', 'Gemini AI Arbiter', 'GitHub Pages Live', 'Autonomous Tool Calling'],
     highlights: ['Live Playable on GitHub Pages', '3 Arbiter Personalities (Strict/Comedian/Merciful)', 'Zero-Draw Sudden Death Protocol'],
-    license: 'MIT'
+    license: 'MIT',
+    resumeSummary: 'AI-native strategy arena eliminating Tic-Tac-Toe draws via plain-English persuasion, 3 AI Arbiter personalities, and cascading Sudden Death; live playable on GitHub Pages.'
   },
   {
     id: 'brain-gym',
@@ -243,7 +249,8 @@ export const OPEN_SOURCE_TOOLS = [
     demoUrl: 'https://1997agarwal.github.io/BrainGym',
     stack: ['React 18', 'TypeScript', 'Vite 6', 'Web Audio API', 'Node.js CLI Engine'],
     highlights: ['Live Browser Play on GitHub Pages', 'Fermi Drills & Hallucination Hunter', 'Standalone CLI Engine (npm run cli)'],
-    license: 'MIT'
+    license: 'MIT',
+    resumeSummary: 'Daily mental resistance training arena counteracting AI-induced cognitive atrophy; features Fermi speed drills, lateral puzzles, architecture showdowns, and 15-level progression; live on GitHub Pages.'
   }
 ];
 
@@ -279,11 +286,11 @@ export const CASE_STUDIES_ARCHIVE = [
 
 export const AWARDS_AND_EDUCATION = {
   awards: [
-    { title: 'Tekion Recognition Award', org: 'Tekion Corp', date: 'May 2025', desc: 'For rapid execution of the B2B Payment Portal and seamless transition into production engineering.' },
-    { title: 'The All Star Award (H2)', org: 'Tally RnR, Tally Education', date: 'Mar 2024', desc: 'Highest individual honor for architecting and rolling out the Candidate Placement Portal.' },
-    { title: 'Annual Team of the Year Award', org: 'Tally Mahasabha RnR', date: 'May 2023', desc: 'For scaling the in-house Learning Management System to 500,000+ active learners.' },
-    { title: 'Annual Team of the Year Award', org: 'Tally Digisabha RnR', date: 'May 2022', desc: 'For conceptualizing and launching the B2C vertical Tally DigiLearn.' },
-    { title: 'Top 5 Startup Ideas in India', org: 'Niti Aayog (Govt. of India)', date: 'Apr 2017', desc: 'National recognition for IoT safety hardware device mitigating road accident after-effects.' },
+    { title: 'Tekion Recognition Award', org: 'Tekion Corp', date: 'May 2025', resumeNote: 'B2B Payment Portal execution', featured: true, desc: 'For rapid execution of the B2B Payment Portal and seamless transition into production engineering.' },
+    { title: 'The All Star Award (H2)', org: 'Tally RnR, Tally Education', date: 'Mar 2024', resumeNote: 'Candidate Placement Portal', featured: true, desc: 'Highest individual honor for architecting and rolling out the Candidate Placement Portal.' },
+    { title: 'Annual Team of the Year Award', org: 'Tally Mahasabha RnR', date: 'May 2023', resumeNote: 'Learning Management System', featured: true, desc: 'For scaling the in-house Learning Management System to 500,000+ active learners.' },
+    { title: 'Annual Team of the Year Award', org: 'Tally Digisabha RnR', date: 'May 2022', resumeNote: 'DigiLearn', featured: true, desc: 'For conceptualizing and launching the B2C vertical Tally DigiLearn.' },
+    { title: 'Top 5 Startup Ideas in India', org: 'Niti Aayog (Govt. of India)', date: 'Apr 2017', resumeNote: 'IoT Road Safety Device', featured: true, desc: 'National recognition for IoT safety hardware device mitigating road accident after-effects.' },
     { title: 'Robotics Zonal Winner', org: 'Techfest, IIT Bombay', date: 'Oct 2016', desc: 'Winner in autonomous robotics navigation at Asia’s largest science and technology festival.' },
     { title: 'Excellence & Collaboration Champion', org: 'Tally Education', date: '2023 – 2024', desc: '4x Spot Awards from Product Leads and Department Heads for sprint excellence.' }
   ],
@@ -305,7 +312,7 @@ export const personalInfo = {
   title: PERSONAL_INFO.role,
   summary: PERSONAL_INFO.tagline,
   bio: "The best product managers don't just manage the backlog — they understand the system, prototype the future, and ship value.",
-  status: "Senior Product Manager @ Tekion Corp • 0→1 Founder",
+  status: "Product Manager @ Tekion Corp • Founder @ Trippy",
   location: PERSONAL_INFO.location,
   education: "Duke Univ (PGPM) • B.Tech (ECE)",
   email: PERSONAL_INFO.email,
@@ -339,13 +346,11 @@ export const ventures = COMMERCIAL_VENTURES.map(v => ({
   tagline: v.tagline,
   category: v.category,
   stage: v.stage || 'ACTIVE',
-  isPrimaryStartup: v.isPrimaryStartup || false,
-  badge: v.badge || null,
   problem: v.problem || '0-to-1 building friction',
   solution: v.solution || 'Automated architecture',
   surfaces: v.surfaces || [],
-  metrics: v.metrics || '',
   demoUrl: v.demoUrl || null,
+  resumeBlurb: v.resumeBlurb || '',
   stack: v.stack || []
 }));
 
@@ -358,8 +363,6 @@ export const caseStudies = CASE_STUDIES_ARCHIVE.flatMap(cat =>
     title: item.title,
     subtitle: item.desc,
     description: item.desc,
-    date: '2020-2021',
-    highlights: ['Deep Market Research', 'User Journey Mapping', 'Unit Economics Breakdown'],
     link: item.url
   }))
 );
@@ -368,18 +371,19 @@ export const accolades = AWARDS_AND_EDUCATION.awards.map(a => ({
   title: a.title,
   issuer: a.org,
   year: a.date,
-  detail: a.desc
+  detail: a.desc,
+  featured: a.featured || false,
+  resumeNote: a.resumeNote || ''
 }));
 
 export const education = AWARDS_AND_EDUCATION.education.map(e => ({
   degree: e.program,
   institution: e.school,
   period: e.period,
-  grade: 'Alumnus'
+  program: e.program
 }));
 
 export const certifications = AWARDS_AND_EDUCATION.certifications.map(c => ({
   name: c.title,
-  issuer: c.issuer,
-  date: 'Verified'
+  issuer: c.issuer
 }));

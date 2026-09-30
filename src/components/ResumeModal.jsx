@@ -1,17 +1,30 @@
 import React, { useEffect } from 'react';
-import { personalInfo, experiences } from '../data/portfolioData';
+import {
+  personalInfo,
+  experiences,
+  ventures,
+  openSourceTools,
+  accolades,
+  education,
+  certifications,
+  TRIPPY_FOUNDER_SPOTLIGHT,
+} from '../data/portfolioData';
+
+const stripProtocol = (url) => url.replace(/^https?:\/\//, '').replace(/\/$/, '');
+const featuredAwards = accolades.filter((a) => a.featured);
 
 export default function ResumeModal({ isOpen, onClose }) {
   useEffect(() => {
     const handleKeyDown = (e) => {
       if (e.key === 'Escape') onClose();
     };
-    if (isOpen) {
-      document.body.style.overflow = 'hidden';
-      window.addEventListener('keydown', handleKeyDown);
-    }
+    if (!isOpen) return undefined;
+    document.body.style.overflow = 'hidden';
+    document.documentElement.classList.add('resume-open'); // lets print CSS show only the resume
+    window.addEventListener('keydown', handleKeyDown);
     return () => {
       document.body.style.overflow = 'unset';
+      document.documentElement.classList.remove('resume-open');
       window.removeEventListener('keydown', handleKeyDown);
     };
   }, [isOpen, onClose]);
@@ -23,7 +36,7 @@ export default function ResumeModal({ isOpen, onClose }) {
   };
 
   return (
-    <div className="fixed inset-0 z-50 overflow-y-auto overflow-x-hidden bg-slate-950/90 backdrop-blur-md p-3 sm:p-6 print:p-0 print:bg-white print:static animate-fadeIn">
+    <div role="dialog" aria-modal="true" aria-label="Resume" className="fixed inset-0 z-50 overflow-y-auto overflow-x-hidden bg-slate-950/90 backdrop-blur-md p-3 sm:p-6 print:p-0 print:bg-white print:static animate-fadeIn">
       
       {/* Centering / Max-width Wrapper */}
       <div className="max-w-4xl mx-auto flex flex-col items-center">
@@ -64,6 +77,7 @@ export default function ResumeModal({ isOpen, onClose }) {
               onClick={onClose}
               className="p-2 text-slate-400 hover:text-white hover:bg-slate-800 rounded-lg transition-colors cursor-pointer"
               title="Close"
+              aria-label="Close resume"
             >
               <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -94,16 +108,16 @@ export default function ResumeModal({ isOpen, onClose }) {
 
                 {/* Direct Contact Metadata */}
                 <div className="text-xs text-slate-600 sm:text-right font-medium space-y-1">
-                  <div>Bengaluru, India • +91 8130803028</div>
+                  <div>Bengaluru, India</div>
                   <div>
-                    <a href="mailto:agarwal.harshit97@gmail.com" className="text-indigo-600 font-semibold hover:underline">
-                      agarwal.harshit97@gmail.com
+                    <a href={`mailto:${personalInfo.email}`} className="text-indigo-600 font-semibold hover:underline">
+                      {personalInfo.email}
                     </a>
                   </div>
                   <div className="font-mono text-[11px] text-indigo-600 space-x-1.5">
                     <a href="https://1997agarwal.github.io" target="_blank" rel="noreferrer" className="hover:underline">1997agarwal.github.io</a> •
-                    <a href="https://www.linkedin.com/in/1997agarwal/" target="_blank" rel="noreferrer" className="hover:underline">linkedin</a> •
-                    <a href="https://github.com/1997agarwal" target="_blank" rel="noreferrer" className="hover:underline">github</a>
+                    <a href={personalInfo.links.linkedin} target="_blank" rel="noreferrer" className="hover:underline">linkedin</a> •
+                    <a href={personalInfo.links.github} target="_blank" rel="noreferrer" className="hover:underline">github</a>
                   </div>
                 </div>
               </div>
@@ -225,25 +239,30 @@ export default function ResumeModal({ isOpen, onClose }) {
                   <span className="font-bold text-slate-950">Open-Source Developer Infrastructure</span>
                   <span className="text-slate-500 font-mono text-[11px]"> (github.com/1997agarwal)</span>:
                   <div className="mt-1 space-y-1">
-                    <div>• <strong>SpecForge:</strong> Productized 3-stage agent pipeline converting customer discovery calls into master PRDs, Gherkin BDD user stories, and Linear/GitHub tickets; features 1-click Markdown/Jira export & 3-scenario testing.</div>
-                    <div>• <strong>ContextPrism:</strong> Enterprise token FinOps gateway with dual-language (TS & Python) AST compression, zero-cost semantic caching, and real-time ROI calculator cutting LLM inference costs by up to 90%.</div>
-                    <div>• <strong>TicTacCourt:</strong> AI-native strategy arena eliminating Tic-Tac-Toe draws via plain-English persuasion, 3 AI Arbiter personalities, and cascading Sudden Death; live playable on GitHub Pages.</div>
-                    <div>• <strong>BrainGym:</strong> Daily mental resistance training arena counteracting AI-induced cognitive atrophy; features Fermi speed drills, lateral puzzles, architecture showdowns, and 15-level progression; live on GitHub Pages.</div>
+                    {openSourceTools.map((tool) => (
+                      <div key={tool.id}>• <strong>{tool.name}:</strong> {tool.resumeSummary}</div>
+                    ))}
                   </div>
                 </div>
 
                 <div className="pt-1 space-y-1.5">
                   <div>
                     <span className="font-bold text-slate-950">Founder & Systems Architect — Trippy</span>
-                    <span className="text-slate-500 font-mono text-[11px]"> (nomad-tribe.github.io/trippy-website)</span>:
+                    <span className="text-slate-500 font-mono text-[11px]"> ({stripProtocol(TRIPPY_FOUNDER_SPOTLIGHT.liveUrl)})</span>:
                     <div className="text-slate-700 leading-snug">
-                      Conceptualized and architected Trippy, an AI-powered solo travel matching & tour host CRM platform. Formulated 5-factor compatibility scoring, motorcycle live GPS telemetry, and hostel pre-arrival connect across 4 decoupled production surfaces. Tested with 12,400+ traveler cohorts in active beta ahead of dedicated corporate entity incorporation and pre-seed fundraising.
+                      {TRIPPY_FOUNDER_SPOTLIGHT.resumeSummary}
                     </div>
                   </div>
 
                   <div>
                     <span className="font-bold text-slate-950">Proprietary 0→1 Commercial Platforms</span>:
-                    Architected 4 enterprise and consumer platforms: <strong>StartupOS</strong> (universal founder incubator with interactive studio at builder-tribe.github.io/StartupOS-Website), <strong>CollabKaro</strong> (creator escrow milestone marketplace at collab-tribe.github.io/CollabKaro-Website), <strong>BusinessPay</strong> (B2B dynamic discounting accelerator at business-tribe.github.io/BusinessPay-Website), and <strong>DupeScout</strong> (visual similarity shopping engine at trend-tribe.github.io/dupescout-website).
+                    {' '}Architected {ventures.length} enterprise and consumer platforms:{' '}
+                    {ventures.map((v, i) => (
+                      <React.Fragment key={v.name}>
+                        <strong>{v.name}</strong> ({v.resumeBlurb} at {stripProtocol(v.demoUrl)})
+                        {i < ventures.length - 1 ? ', ' : '.'}
+                      </React.Fragment>
+                    ))}
                   </div>
                 </div>
               </div>
@@ -257,16 +276,16 @@ export default function ResumeModal({ isOpen, onClose }) {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-slate-700">
                 <div>
                   <strong className="text-slate-900 block font-semibold">Education & Certifications:</strong>
-                  <div>• <strong>Duke Corporate Education:</strong> Post-Graduate Program in Product Management (2020)</div>
-                  <div>• <strong>Jaypee Institute of Information Technology (JIIT):</strong> Bachelor of Technology - ECE (2015 – 2019)</div>
-                  <div>• <strong>Certifications:</strong> Udacity Growth PM Nanodegree, Product School, Y Combinator Startup School</div>
+                  {education.map((edu) => (
+                    <div key={edu.institution}>• <strong>{edu.institution}:</strong> {edu.degree} ({edu.period})</div>
+                  ))}
+                  <div>• <strong>Certifications:</strong> {certifications.map((c) => `${c.name} (${c.issuer})`).join(', ')}</div>
                 </div>
                 <div>
                   <strong className="text-slate-900 block font-semibold">Top Achievements & Awards:</strong>
-                  <div>• <strong>Tekion Recognition Award (05/2025):</strong> B2B Payment Portal execution</div>
-                  <div>• <strong>Tally RnR The All Star Award H2 (03/2024):</strong> Candidate Placement Portal</div>
-                  <div>• <strong>Tally RnR Annual Team Award (2022, 2023):</strong> Learning Management System & DigiLearn</div>
-                  <div>• <strong>Top 5 Startup Ideas in India by Niti Aayog (04/2017):</strong> IoT Road Safety Device</div>
+                  {featuredAwards.map((a) => (
+                    <div key={`${a.title}-${a.year}`}>• <strong>{a.title} ({a.year}):</strong> {a.issuer} — {a.resumeNote}</div>
+                  ))}
                 </div>
               </div>
             </section>

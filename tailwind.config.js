@@ -26,6 +26,7 @@ export default {
       },
       fontFamily: {
         sans: [
+          '"Plus Jakarta Sans"',
           '-apple-system',
           'BlinkMacSystemFont',
           '"Segoe UI"',
@@ -36,7 +37,16 @@ export default {
           '"Apple Color Emoji"',
           '"Segoe UI Emoji"'
         ],
-      }
+      },
+      keyframes: {
+        fadeIn: {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
+        },
+      },
+      animation: {
+        fadeIn: 'fadeIn 0.2s ease-out',
+      },
     },
   },
   plugins: [],

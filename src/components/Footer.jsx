@@ -20,7 +20,8 @@ export default function Footer({ onOpenContact }) {
           {/* Nav Links */}
           <div className="flex flex-wrap justify-center gap-6 font-mono text-xs">
             <a href="#experience" className="hover:text-brand-cyan transition-colors">Experience</a>
-            <a href="#ventures" className="hover:text-brand-cyan transition-colors">Ventures</a>
+            <a href="#trippy" className="hover:text-brand-cyan transition-colors">Trippy</a>
+            <a href="#ventures" className="hover:text-brand-cyan transition-colors">Platforms</a>
             <a href="#opensource" className="hover:text-brand-cyan transition-colors">Open Source</a>
             <a href="#casestudies" className="hover:text-brand-cyan transition-colors">Case Studies</a>
             <a href="#accolades" className="hover:text-brand-cyan transition-colors">Accolades</a>

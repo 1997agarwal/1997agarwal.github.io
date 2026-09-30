@@ -3,7 +3,7 @@ import { personalInfo } from '../data/portfolioData';
 
 export default function Hero({ onOpenContact, onOpenResume }) {
   return (
-    <header className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden">
+    <header className="relative pt-28 pb-14 md:pt-40 md:pb-28 overflow-hidden">
       {/* Background Glows */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-brand-cyan/10 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute top-1/3 left-1/4 -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-brand-blue/10 rounded-full blur-3xl pointer-events-none" />
@@ -60,7 +60,7 @@ export default function Hero({ onOpenContact, onOpenResume }) {
                 href="#trippy"
                 className="px-5 py-3 rounded-lg bg-gradient-to-r from-amber-500/10 to-teal-500/10 hover:from-amber-500/20 hover:to-teal-500/20 text-amber-300 border border-amber-500/40 font-medium text-sm transition-all flex items-center gap-2 shadow-sm"
               >
-                <span>👑 Founder @ Trippy</span>
+                <span>👑 Meet Trippy</span>
                 <svg className="w-4 h-4 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
@@ -79,20 +79,6 @@ export default function Hero({ onOpenContact, onOpenResume }) {
               </a>
             </div>
 
-            {/* Mini Trust Credibility Badges */}
-            <div className="mt-10 pt-8 border-t border-surface-border/50 flex flex-wrap items-center justify-center md:justify-start gap-6 text-xs text-slate-400 font-mono">
-              <span className="flex items-center gap-1.5">
-                <span className="text-brand-cyan font-bold">14+</span> Software Platforms
-              </span>
-              <span>•</span>
-              <span className="flex items-center gap-1.5">
-                <span className="text-brand-cyan font-bold">5M+</span> End Users Served
-              </span>
-              <span>•</span>
-              <span className="flex items-center gap-1.5">
-                <span className="text-brand-cyan font-bold">NITI Aayog</span> Awardee
-              </span>
-            </div>
           </div>
 
           {/* Right Column: Interactive Profile Card */}
@@ -118,12 +104,12 @@ export default function Hero({ onOpenContact, onOpenResume }) {
                 </div>
 
                 {/* Core Philosophy */}
-                <div className="p-3 rounded-lg bg-surface-dark border border-surface-border/60 text-xs text-slate-300 italic mb-5 leading-relaxed">
+                <div className="hidden md:block p-3 rounded-lg bg-surface-dark border border-surface-border/60 text-xs text-slate-300 italic mb-5 leading-relaxed">
                   "{personalInfo.bio}"
                 </div>
 
                 {/* Refactored Quick Info Grid */}
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 text-xs">
+                <div className="hidden md:grid grid-cols-1 sm:grid-cols-3 gap-2.5 text-xs">
                   <div className="p-2.5 rounded-lg bg-surface-dark/80 border border-surface-border/60">
                     <div className="text-slate-400 font-mono uppercase text-[10px] tracking-wider">Role</div>
                     <div className="text-white font-semibold mt-1">PM @ Tekion</div>
@@ -139,7 +125,7 @@ export default function Hero({ onOpenContact, onOpenResume }) {
                 </div>
 
                 {/* Social Quick Links */}
-                <div className="mt-5 pt-4 border-t border-surface-border/40 flex items-center justify-between text-xs text-slate-400">
+                <div className="md:mt-5 md:pt-4 md:border-t border-surface-border/40 flex items-center justify-between text-xs text-slate-400 mt-1">
                   <span className="font-mono">Handle: @1997agarwal</span>
                   <div className="flex gap-3">
                     <a href={personalInfo.links.linkedin} target="_blank" rel="noreferrer" className="hover:text-brand-cyan transition-colors">
