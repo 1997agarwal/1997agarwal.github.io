@@ -90,7 +90,7 @@ export default function ExperienceSection() {
       <SectionHeader
         eyebrow="Career Timeline"
         title="7+ Years Delivering Enterprise & Consumer Scale"
-        subtitle="From B2B payments and AI collections at Tekion to 500K+ learners at Tally and logistics automation at Shiprocket."
+        subtitle="From high-frequency B2B payment rails at Tekion to 500K+ learners at Tally and logistics automation at Shiprocket."
       />
       <ol>
         {experiences.map((exp) => (

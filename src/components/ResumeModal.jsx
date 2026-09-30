@@ -164,7 +164,7 @@ export default function ResumeModal({ isOpen, onClose, initialTab = 'quick' }) {
                 Executive Profile
               </h2>
               <p className="text-xs text-slate-700 leading-normal text-justify">
-                Product Manager with 7+ years of experience conceptualizing, scaling, and architecting 0-to-1 enterprise platforms, B2B SaaS, and consumer tech. Proven track record scaling platforms to 500,000+ active users, driving +41% ecosystem adoption deltas, and now building B2B payments and AI collections products to reduce Days Sales Outstanding (DSO). Combines deep user research, market sizing, and master PRDs with modern AI-assisted product delivery and data-informed roadmap prioritization.
+                Product Manager with 7+ years of experience conceptualizing, scaling, and architecting 0-to-1 enterprise platforms, B2B SaaS, and consumer tech. Proven track record scaling platforms to 500,000+ active users, driving +41% ecosystem adoption deltas, and compressing Days Sales Outstanding (DSO). Combines deep user research, market sizing, and master PRDs with modern AI-assisted product delivery and data-informed roadmap prioritization.
               </p>
             </section>
 
