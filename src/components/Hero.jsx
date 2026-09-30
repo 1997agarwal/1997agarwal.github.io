@@ -115,8 +115,8 @@ export default function Hero({ onOpenContact, onOpenResume }) {
                     <div className="text-white font-semibold mt-1">PM @ Tekion</div>
                   </div>
                   <div className="p-2.5 rounded-lg bg-surface-dark/80 border border-surface-border/60">
-                    <div className="text-slate-400 font-mono uppercase text-xs tracking-wider">Domains</div>
-                    <div className="text-brand-cyan font-semibold mt-1">Platform, AI & Travel</div>
+                    <div className="text-slate-400 font-mono uppercase text-xs tracking-wider">Focus</div>
+                    <div className="text-brand-cyan font-semibold mt-1">Product, AI & Building</div>
                   </div>
                   <div className="p-2.5 rounded-lg bg-surface-dark/80 border border-surface-border/60">
                     <div className="text-slate-400 font-mono uppercase text-xs tracking-wider">Alumni</div>

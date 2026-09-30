@@ -134,7 +134,7 @@ export default function ResumeModal({ isOpen, onClose, initialTab = 'quick' }) {
                     HARSHIT AGARWAL
                   </h1>
                   <p className="text-sm sm:text-base font-bold text-indigo-700 mt-1">
-                    Product Manager with 7+ Years of Experience
+                    Senior Product Manager · AI · Builder — 7+ Years of Experience
                   </p>
                   <p className="text-xs text-slate-600 mt-1 max-w-xl italic">
                     "Built products for leading tech companies and early-stage consumer tech startups across AI, Automotive Retail, Ed-Tech, E-commerce, and Logistics."
@@ -164,7 +164,7 @@ export default function ResumeModal({ isOpen, onClose, initialTab = 'quick' }) {
                 Executive Profile
               </h2>
               <p className="text-xs text-slate-700 leading-normal text-justify">
-                Product Manager with 7+ years of experience conceptualizing, scaling, and architecting 0-to-1 enterprise platforms, B2B SaaS, and consumer tech. Proven track record scaling platforms to 500,000+ active users, driving +41% ecosystem adoption deltas, and compressing Days Sales Outstanding (DSO). Combines deep user research, market sizing, and master PRDs with modern AI-assisted product delivery and data-informed roadmap prioritization.
+                Senior Product Manager with 7+ years of experience conceptualizing, scaling, and architecting 0-to-1 enterprise platforms, B2B SaaS, and consumer tech. Proven track record scaling platforms to 500,000+ active users, growing platform adoption from 19% to 60%, and compressing Days Sales Outstanding (DSO). Combines deep user research, market sizing, and master PRDs with modern AI-assisted product delivery and data-informed roadmap prioritization.
               </p>
             </section>
 
