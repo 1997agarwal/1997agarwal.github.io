@@ -54,7 +54,7 @@ export default function ProductsOverview() {
             href={t.href}
             className={`group block p-5 rounded-2xl bg-surface-card border transition-all hover:-translate-y-0.5 ${t.accent.split(' ').slice(0, 2).join(' ')}`}
           >
-            <div className={`text-[11px] font-mono font-bold uppercase tracking-wider mb-2 ${t.accent.split(' ').slice(2).join(' ')}`}>
+            <div className={`text-xs font-mono font-bold uppercase tracking-wider mb-2 ${t.accent.split(' ').slice(2).join(' ')}`}>
               {t.step} · {t.label}
             </div>
             <div className="text-lg font-bold text-white mb-1">{t.title}</div>

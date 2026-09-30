@@ -8,6 +8,7 @@ export default function Navbar({ onOpenContact, onOpenResume }) {
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
+      if (window.scrollY < 300) setActiveId(''); // above the first section
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
@@ -51,7 +52,7 @@ export default function Navbar({ onOpenContact, onOpenResume }) {
         
         {/* Brand / Logo */}
         <a href="#" className="flex items-center space-x-3 group">
-          <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-cyan via-brand-blue to-brand-purple p-[2px] transition-transform group-hover:scale-105 shadow-md shadow-cyan-500/20">
+          <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-cyan via-brand-blue to-brand-cyan p-[2px] transition-transform group-hover:scale-105 shadow-md shadow-cyan-500/20">
             <div className="w-full h-full bg-[#0B0F17] rounded-[10px] flex items-center justify-center">
               <span className="text-white font-bold text-lg font-mono">HA</span>
             </div>
@@ -85,7 +86,7 @@ export default function Navbar({ onOpenContact, onOpenResume }) {
             className="text-xs lg:text-sm font-semibold text-brand-cyan hover:text-cyan-300 px-3 py-1 rounded-full hover:bg-white/10 transition-all flex items-center gap-1"
           >
             <span>Resume</span>
-            <span className="text-[10px] px-1.5 py-0.2 rounded bg-brand-cyan/20 border border-brand-cyan/40">PDF</span>
+            <span className="text-xs px-1.5 py-0.2 rounded bg-brand-cyan/20 border border-brand-cyan/40">PDF</span>
           </button>
         </div>
 

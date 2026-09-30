@@ -7,13 +7,13 @@
     @apply bg-[#0B0F17] text-slate-100 font-sans;
     background-image: 
       radial-gradient(at 0% 0%, rgba(6, 182, 212, 0.08) 0px, transparent 50%),
-      radial-gradient(at 100% 100%, rgba(139, 92, 246, 0.06) 0px, transparent 50%);
+      radial-gradient(at 100% 100%, rgba(59, 130, 246, 0.07) 0px, transparent 50%);
     background-attachment: fixed;
   }
 }
 
 .text-gradient {
-  background: linear-gradient(135deg, #06b6d4 0%, #3b82f6 50%, #8b5cf6 100%);
+  background: linear-gradient(135deg, #22d3ee 0%, #06b6d4 45%, #3b82f6 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -39,6 +39,16 @@ section[id] {
   }
 }
 
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.reveal-in {
+  opacity: 1;
+  transform: none;
+}
+
 .scrollbar-none {
   scrollbar-width: none;
 }
@@ -47,6 +57,18 @@ section[id] {
 }
 
 @media print {
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  @page {
+    size: A4;
+    margin: 8mm;
+  }
   body {
     background: white !important;
     color: black !important;

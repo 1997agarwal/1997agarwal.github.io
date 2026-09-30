@@ -20,9 +20,25 @@ export const PERSONAL_INFO = {
   communityFollowers: '15K+'
 };
 
+// Content for the 7-second recruiter Quick View in the resume modal
+export const QUICK_VIEW = {
+  headline: 'Product Manager · Payments, EdTech & AI · 7+ years',
+  summary: 'I take products from 0→1 to scale: enterprise B2B payments at Tekion, an LMS used by 500K+ learners at Tally, and my own startup, Trippy. I also build and open-source AI tooling.',
+  stats: [
+    { value: '7+', label: 'Years in product' },
+    { value: '500K+', label: 'Learners on Tally LMS' },
+    { value: '19→60%', label: 'Platform adoption at Tally' },
+    { value: '150K+', label: 'Candidates on Placement Portal' }
+  ],
+  building: 'Founder of Trippy (AI solo-travel network, active beta) · 4 commercial platforms · 4 open-source AI tools',
+  topAwards: [
+    'Tekion Recognition Award (2025)',
+    'Tally All Star Award (H2, Mar 2024)',
+    'Top 5 Startup Ideas in India, NITI Aayog (2017)'
+  ]
+};
+
 export const METRICS = [
-  { label: 'Years Shipping Product', value: '7+', suffix: 'Years', desc: 'From 0→1 startups to enterprise SaaS leaders' },
-  { label: 'Learners Scaled at Tally', value: '500K+', suffix: 'Users', desc: 'In-house LMS adopted across 2,000+ partner institutes' },
   { label: 'Awards & Honors', value: '7', suffix: 'Accolades', desc: 'Tekion, 4 at Tally, NITI Aayog & Techfest IIT Bombay' },
   { label: 'Commercial Blueprints', value: '4', suffix: 'Platforms', desc: 'StartupOS, DupeScout, BusinessPay, CollabKaro' },
   { label: 'Open Source AI DevTools', value: '4', suffix: 'Public Tools', desc: 'SpecForge, ContextPrism, TicTacCourt, BrainGym' },
@@ -67,6 +83,7 @@ export const CORPORATE_EXPERIENCE = [
     duration: 'Current',
     location: 'Bengaluru, India',
     businessUnit: 'FinTech & Dealer Financial Operations',
+    quickLine: 'B2B payments, dealer AR portals and collections workqueues; Tekion Recognition Award (2025).',
     bullets: [
       'Spearheading enterprise B2B Payments, Dealer AR Portals, and automated collection workqueues across automotive dealer networks.',
       'Shipped electronic invoice clearance and self-serve Promise-to-Pay (PTP) workflows, directly compressing Days Sales Outstanding (DSO).',
@@ -85,6 +102,7 @@ export const CORPORATE_EXPERIENCE = [
     duration: '3 yrs 3 mos',
     location: 'Bengaluru, India',
     businessUnit: 'Tally Education & Ecosystem Platforms',
+    quickLine: 'Launched Tally LMS to 500K+ learners across 2,000+ institutes; 4 Tally awards.',
     bullets: [
       'Spearheaded 0-to-1 design, architecture, and nationwide launch of Tally LMS across 2,000+ partner institutes.',
       'Scaled digital platform adoption from 19% to 60%, delivering self-paced interactive learning to 500,000+ registered candidates.',
@@ -109,6 +127,7 @@ export const CORPORATE_EXPERIENCE = [
     duration: '10 mos',
     location: 'Gurugram, India',
     businessUnit: 'First-Mile Operations & Seller Fulfillment',
+    quickLine: 'First-mile SLAs and courier webhooks for 40K+ sellers; +12% on-time pickups.',
     bullets: [
       'Managed First-Mile Logistics and Seller Fulfillment operations for 40,000+ active D2C and social commerce merchants.',
       'Engineered seller pickup SLA monitoring systems, driving on-time courier pickup completion by +12%.',
@@ -126,6 +145,7 @@ export const CORPORATE_EXPERIENCE = [
     duration: '1 yr',
     location: 'Ahmedabad, India',
     businessUnit: 'Social Commerce & Partner Operations',
+    quickLine: 'Vendor panel and checkout redesign; cart-to-payment drop-off cut from 50% to 30%.',
     bullets: [
       'Shipped 0-to-1 Vendor Management Panel, onboarding 200+ local FMCG distributors and automating inventory ingestion.',
       'Re-architected checkout into a single-page streamlined flow, cutting Cart-to-Payment Drop-off Rate (CPDR) from 50% to 30%.',
@@ -336,6 +356,8 @@ export const experiences = CORPORATE_EXPERIENCE.map(c => ({
   role: c.role,
   period: c.period,
   location: c.location,
+  businessUnit: c.businessUnit,
+  quickLine: c.quickLine,
   highlights: c.bullets,
   awards: c.awards,
   skills: c.techStack

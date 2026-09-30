@@ -86,7 +86,7 @@ export default function TrippyFounderSpotlight({ onRequestWalkthrough }) {
               {/* Market Thesis & 0-to-1 Architecture */}
               <div className="space-y-3 text-xs sm:text-sm">
                 <div className="p-4 rounded-xl bg-surface-dark/90 border border-surface-border">
-                  <span className="font-mono text-rose-400 uppercase tracking-wider block text-[11px] font-bold mb-1">
+                  <span className="font-mono text-rose-400 uppercase tracking-wider block text-xs font-bold mb-1">
                     Market Friction & Founder Thesis
                   </span>
                   <p className="text-slate-300 leading-relaxed">
@@ -95,7 +95,7 @@ export default function TrippyFounderSpotlight({ onRequestWalkthrough }) {
                 </div>
 
                 <div className="p-4 rounded-xl bg-surface-dark/90 border border-surface-border">
-                  <span className="font-mono text-teal-300 uppercase tracking-wider block text-[11px] font-bold mb-1">
+                  <span className="font-mono text-teal-300 uppercase tracking-wider block text-xs font-bold mb-1">
                     0→1 Product Solution & Compatibility Engine
                   </span>
                   <p className="text-slate-300 leading-relaxed">
@@ -115,7 +115,7 @@ export default function TrippyFounderSpotlight({ onRequestWalkthrough }) {
                       <span className="text-teal-400 mt-0.5">✦</span>
                       <div>
                         <div className="text-xs font-bold text-slate-100">{s.name}</div>
-                        <div className="text-[11px] text-slate-400 leading-tight">{s.desc}</div>
+                        <div className="text-xs text-slate-400 leading-tight">{s.desc}</div>
                       </div>
                     </div>
                   ))}
@@ -144,7 +144,7 @@ export default function TrippyFounderSpotlight({ onRequestWalkthrough }) {
               {/* Tech Stack Chips */}
               <Expandable label="engineering stack">
                 <div className="p-4 rounded-2xl bg-surface-dark/70 border border-surface-border">
-                  <span className="text-[11px] font-mono text-slate-400 block mb-2 uppercase font-semibold">
+                  <span className="text-xs font-mono text-slate-400 block mb-2 uppercase font-semibold">
                     Production Engineering Stack
                   </span>
                   <div className="flex flex-wrap gap-1.5">

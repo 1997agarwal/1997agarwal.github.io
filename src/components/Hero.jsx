@@ -1,5 +1,5 @@
 import React from 'react';
-import { personalInfo } from '../data/portfolioData';
+import { personalInfo, QUICK_VIEW } from '../data/portfolioData';
 
 export default function Hero({ onOpenContact, onOpenResume }) {
   return (
@@ -21,7 +21,7 @@ export default function Hero({ onOpenContact, onOpenResume }) {
 
             {/* Headline */}
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white mb-6 leading-[1.15]">
-              Building scalable <span className="text-gradient">products</span> & 0→1 systems.
+              Shipping <span className="text-gradient">0→1</span> products that scale to 500K+ users.
             </h1>
 
             {/* Sub-headline */}
@@ -33,6 +33,17 @@ export default function Hero({ onOpenContact, onOpenResume }) {
             <p className="text-base text-slate-400 max-w-2xl mb-8 leading-relaxed">
               {personalInfo.summary}
             </p>
+
+            {/* 7-second proof points */}
+            <dl className="grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-2xl mx-auto md:mx-0 mb-8">
+              {QUICK_VIEW.stats.map((s) => (
+                <div key={s.label} className="px-3 py-3 rounded-xl bg-white/[0.04] border border-white/10 text-left">
+                  <dt className="sr-only">{s.label}</dt>
+                  <dd className="text-xl sm:text-2xl font-extrabold text-brand-cyan font-mono leading-none">{s.value}</dd>
+                  <dd className="text-[11px] text-slate-400 mt-1.5 leading-tight">{s.label}</dd>
+                </div>
+              ))}
+            </dl>
 
             {/* Action CTAs */}
             <div className="flex flex-wrap items-center justify-center md:justify-start gap-3">
@@ -83,7 +94,7 @@ export default function Hero({ onOpenContact, onOpenResume }) {
 
           {/* Right Column: Interactive Profile Card */}
           <div className="w-full md:w-auto flex justify-center">
-            <div className="relative p-1 rounded-2xl bg-gradient-to-br from-brand-cyan/30 via-slate-800/50 to-brand-purple/30 shadow-2xl backdrop-blur-sm max-w-sm">
+            <div className="relative p-1 rounded-2xl bg-gradient-to-br from-brand-cyan/30 via-slate-800/50 to-brand-blue/30 shadow-2xl backdrop-blur-sm max-w-sm">
               <div className="bg-surface-card rounded-xl p-6 border border-surface-border">
                 
                 {/* Avatar & Header */}
@@ -111,15 +122,15 @@ export default function Hero({ onOpenContact, onOpenResume }) {
                 {/* Refactored Quick Info Grid */}
                 <div className="hidden md:grid grid-cols-1 sm:grid-cols-3 gap-2.5 text-xs">
                   <div className="p-2.5 rounded-lg bg-surface-dark/80 border border-surface-border/60">
-                    <div className="text-slate-400 font-mono uppercase text-[10px] tracking-wider">Role</div>
+                    <div className="text-slate-400 font-mono uppercase text-xs tracking-wider">Role</div>
                     <div className="text-white font-semibold mt-1">PM @ Tekion</div>
                   </div>
                   <div className="p-2.5 rounded-lg bg-surface-dark/80 border border-surface-border/60">
-                    <div className="text-slate-400 font-mono uppercase text-[10px] tracking-wider">Domains</div>
+                    <div className="text-slate-400 font-mono uppercase text-xs tracking-wider">Domains</div>
                     <div className="text-brand-cyan font-semibold mt-1">Platform, AI & Travel</div>
                   </div>
                   <div className="p-2.5 rounded-lg bg-surface-dark/80 border border-surface-border/60">
-                    <div className="text-slate-400 font-mono uppercase text-[10px] tracking-wider">Alumni</div>
+                    <div className="text-slate-400 font-mono uppercase text-xs tracking-wider">Alumni</div>
                     <div className="text-white font-semibold mt-1">Duke University</div>
                   </div>
                 </div>

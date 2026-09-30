@@ -34,6 +34,11 @@ jobs:
         env:
           VITE_CONTACT_FORM_ENDPOINT: ${{ vars.CONTACT_FORM_ENDPOINT }}
 
+      - name: Generate Resume PDF
+        run: npm run build:pdf
+        env:
+          CHROME_PATH: /usr/bin/google-chrome
+
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
