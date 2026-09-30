@@ -103,6 +103,12 @@ export const CORPORATE_EXPERIENCE = [
     location: 'Bengaluru, India',
     businessUnit: 'Tally Education & Ecosystem Platforms',
     quickLine: 'Launched Tally LMS to 500K+ learners across 2,000+ institutes; 4 Tally awards.',
+    impact: [
+      { value: '19→60%', label: 'platform adoption' },
+      { value: '500K+', label: 'learners' },
+      { value: '5M+', label: 'proctored exams' },
+      { value: '150K+', label: 'candidates on placement portal' }
+    ],
     bullets: [
       'Spearheaded 0-to-1 design, architecture, and nationwide launch of Tally LMS across 2,000+ partner institutes.',
       'Scaled digital platform adoption from 19% to 60%, delivering self-paced interactive learning to 500,000+ registered candidates.',
@@ -128,6 +134,11 @@ export const CORPORATE_EXPERIENCE = [
     location: 'Gurugram, India',
     businessUnit: 'First-Mile Operations & Seller Fulfillment',
     quickLine: 'First-mile SLAs and courier webhooks for 40K+ sellers; +12% on-time pickups.',
+    impact: [
+      { value: '40K+', label: 'merchants served' },
+      { value: '+12%', label: 'on-time pickups' },
+      { value: '+16%', label: 'escalation resolution' }
+    ],
     bullets: [
       'Managed First-Mile Logistics and Seller Fulfillment operations for 40,000+ active D2C and social commerce merchants.',
       'Engineered seller pickup SLA monitoring systems, driving on-time courier pickup completion by +12%.',
@@ -146,6 +157,11 @@ export const CORPORATE_EXPERIENCE = [
     location: 'Ahmedabad, India',
     businessUnit: 'Social Commerce & Partner Operations',
     quickLine: 'Vendor panel and checkout redesign; cart-to-payment drop-off cut from 50% to 30%.',
+    impact: [
+      { value: '50→30%', label: 'cart-to-payment drop-off' },
+      { value: '200+', label: 'distributors onboarded' },
+      { value: '45%', label: 'higher first-order completion' }
+    ],
     bullets: [
       'Shipped 0-to-1 Vendor Management Panel, onboarding 200+ local FMCG distributors and automating inventory ingestion.',
       'Re-architected checkout into a single-page streamlined flow, cutting Cart-to-Payment Drop-off Rate (CPDR) from 50% to 30%.',
@@ -358,6 +374,7 @@ export const experiences = CORPORATE_EXPERIENCE.map(c => ({
   location: c.location,
   businessUnit: c.businessUnit,
   quickLine: c.quickLine,
+  impact: c.impact || [],
   highlights: c.bullets,
   awards: c.awards,
   skills: c.techStack
