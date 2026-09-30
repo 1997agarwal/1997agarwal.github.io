@@ -13,7 +13,7 @@ export default function Footer({ onOpenContact }) {
               Harshit Agarwal
             </div>
             <p className="text-slate-400 max-w-sm">
-              Product Manager by profession. Founder and 0→1 systems builder.
+              Senior Product Manager · AI · Builder. Founder of Trippy.
             </p>
           </div>
 
