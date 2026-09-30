@@ -30,7 +30,7 @@ function RoleCard({ exp, defaultOpen }) {
         <p className="text-sm sm:text-base text-slate-200 leading-relaxed font-medium">{exp.quickLine}</p>
 
         {exp.impact.length > 0 && (
-          <dl className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 mt-4">
+          <dl className={`grid grid-cols-2 gap-2.5 mt-4 ${exp.impact.length === 3 ? 'sm:grid-cols-3' : 'sm:grid-cols-4'}`}>
             {exp.impact.map((m) => (
               <div key={m.label} className="rounded-xl bg-surface-dark/80 border border-surface-border px-3 py-2.5">
                 <dd className="text-lg sm:text-xl font-extrabold text-brand-cyan font-mono leading-none">{m.value}</dd>
@@ -90,7 +90,7 @@ export default function ExperienceSection() {
       <SectionHeader
         eyebrow="Career Timeline"
         title="7+ Years Delivering Enterprise & Consumer Scale"
-        subtitle="From B2B payment rails at Tekion to 500K+ learners at Tally and logistics automation at Shiprocket."
+        subtitle="From B2B payments and AI collections at Tekion to 500K+ learners at Tally and logistics automation at Shiprocket."
       />
       <ol>
         {experiences.map((exp) => (

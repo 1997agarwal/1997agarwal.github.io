@@ -82,14 +82,21 @@ export const CORPORATE_EXPERIENCE = [
     period: 'Jun 2024 – Present',
     duration: 'Current',
     location: 'Bengaluru, India',
-    businessUnit: 'FinTech & Dealer Financial Operations',
-    quickLine: 'B2B payments, dealer AR portals and collections workqueues; Tekion Recognition Award (2025).',
+    businessUnit: 'Tekion Accounting Product',
+    quickLine: 'Building a B2B self-service Customer Portal and AI-powered collections; pre-launch, with 200+ dealers in the first rollout.',
+    impact: [
+      { value: '$1.5–2M', label: 'projected annual direct revenue' },
+      { value: '200+', label: 'dealers in initial rollout' },
+      { value: '1,000+', label: 'dealerships on global roadmap' }
+    ],
     bullets: [
-      'Spearheading enterprise B2B Payments, Dealer AR Portals, and automated collection workqueues across automotive dealer networks.',
-      'Shipped electronic invoice clearance and self-serve Promise-to-Pay (PTP) workflows, directly compressing Days Sales Outstanding (DSO).',
-      'Engineered intelligent aging workqueues classifying overdue ledger accounts with automated dunning triggers and risk scoring models.',
-      'Authored comprehensive PRDs, API schemas, and data contracts bridging front-office dealer workflows to enterprise accounting ledgers.',
-      'Awarded the Tekion Recognition Award (May 2025) for high-velocity payment portal delivery and seamless production rollout.'
+      'Building Customer Portal, a B2B self-service platform where dealer customers view invoices, track statements and make payments, improving dealer cash flow and reducing receivables.',
+      'Owned end-to-end spec creation, design and tech handoffs, and multiple feedback loops to craft a seamless user experience.',
+      'Solved complex edge cases around customer duplicacy, payment concurrency and gateway failures for operational robustness from Day 1.',
+      'Projected to generate $1.5–2M in direct annual revenue, making it one of Tekion\'s first self-serve products with immediate monetization impact. Initial rollout to 200+ dealers, with a roadmap to 1,000+ dealerships globally.',
+      'Building an AI-powered Collections Management platform with intelligent prioritization, automated follow-ups and data-driven insights so dealerships focus on high-impact accounts and improve recovery rates.',
+      'Developing an AI-powered AR assistant chatbot giving prompt-based access to unpaid customer data, instant insights and contextual recommendations to accelerate collections.',
+      'Awarded the Tekion Recognition Award (May 2025) for rapid execution of the B2B payment portal.'
     ],
     awards: ['Tekion Recognition Award (May 2025)'],
     techStack: ['FinTech Payments', 'Accounts Receivable (AR)', 'Automated Dunning', 'Ledger Integration', 'Enterprise PRDs']
