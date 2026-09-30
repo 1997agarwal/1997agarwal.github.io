@@ -3,7 +3,7 @@
 
 export const PERSONAL_INFO = {
   name: 'Harshit Agarwal',
-  role: 'Senior Product Manager · Payments, EdTech & AI',
+  role: 'Senior Product Manager · AI · Builder',
   tagline: '7+ years building business software: payments for car dealerships at Tekion, a learning platform at Tally. I also build AI tools and Trippy, a travel app for solo travelers.',
   location: 'Bengaluru, Karnataka, India • Global Remote',
   email: 'agarwal.harshit97@gmail.com',
@@ -22,7 +22,7 @@ export const PERSONAL_INFO = {
 
 // Content for the 7-second recruiter Quick View in the resume modal
 export const QUICK_VIEW = {
-  headline: 'Product Manager · Payments, EdTech & AI · 7+ years',
+  headline: 'Senior Product Manager · AI · Builder · 7+ years',
   summary: '7+ years building software for businesses: payments and collections for car dealerships at Tekion, a learning platform for 500K+ students at Tally, and my own startup, Trippy. I also build AI tools.',
   stats: [
     { value: '500K+', label: 'students on the learning platform I launched at Tally' },
