@@ -1,21 +1,16 @@
 import React from 'react';
 import { accolades, education, certifications } from '../data/portfolioData';
+import SectionHeader from './SectionHeader';
 
 export default function AccoladesSection() {
   return (
     <section id="accolades" className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      {/* Header */}
-      <div className="text-center max-w-3xl mx-auto mb-16">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-xs font-mono text-amber-400 mb-3">
-          <span>Recognition & Foundation</span>
-        </div>
-        <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-          Honours, Academic Pedigree & Credentials
-        </h2>
-        <p className="mt-4 text-sm sm:text-base text-slate-400">
-          Recognized by NITI Aayog (Govt of India), executive leadership at Tekion & Tally Solutions, alongside technical foundation from Jaypee Institute of Information Technology.
-        </p>
-      </div>
+      <SectionHeader
+        accent="amber"
+        eyebrow="Recognition & Foundation"
+        title="Honours, Academic Pedigree & Credentials"
+        subtitle="Recognized by NITI Aayog (Govt of India), leadership at Tekion & Tally Solutions, with a technical foundation from Jaypee Institute of Information Technology."
+      />
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         
@@ -34,7 +29,7 @@ export default function AccoladesSection() {
                 <div>
                   <div className="flex items-center gap-2">
                     <span className="text-sm font-bold text-white">{acc.title}</span>
-                    <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-amber-500/10 text-amber-400 border border-amber-500/20">
+                    <span className="text-xs font-mono px-2 py-0.5 rounded bg-amber-500/10 text-amber-400 border border-amber-500/20">
                       {acc.year}
                     </span>
                   </div>
@@ -82,7 +77,7 @@ export default function AccoladesSection() {
                 <div key={idx} className="p-2.5 rounded-lg bg-surface-dark/70 border border-surface-border flex items-center justify-between">
                   <div>
                     <div className="text-xs font-bold text-white">{cert.name}</div>
-                    <div className="text-[11px] text-slate-400">{cert.issuer}</div>
+                    <div className="text-xs text-slate-400">{cert.issuer}</div>
                   </div>
                 </div>
               ))}

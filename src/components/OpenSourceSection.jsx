@@ -1,22 +1,17 @@
 import React from 'react';
 import { openSourceTools } from '../data/portfolioData';
 import Expandable from './Expandable';
+import SectionHeader from './SectionHeader';
 
 export default function OpenSourceSection() {
   return (
     <section id="opensource" className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      {/* Header */}
-      <div className="text-center max-w-3xl mx-auto mb-16">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-xs font-mono text-emerald-400 mb-3">
-          <span>03 · Open Source</span>
-        </div>
-        <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-          Developer Tooling & Agentic AI Infrastructure
-        </h2>
-        <p className="mt-4 text-sm sm:text-base text-slate-400">
-          Open-source developer primitives engineered for agentic workflows, deterministic prompt evaluation, and context-window optimization.
-        </p>
-      </div>
+      <SectionHeader
+        accent="emerald"
+        eyebrow="03 · Open Source"
+        title="Developer Tooling & Agentic AI Infrastructure"
+        subtitle="Open-source developer primitives engineered for agentic workflows, deterministic prompt evaluation, and context-window optimization."
+      />
 
       {/* Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
@@ -55,13 +50,13 @@ export default function OpenSourceSection() {
               </p>
 
               <Expandable label="details & stack" className="mb-6">
-              <p className="text-xs text-slate-400 leading-relaxed mb-6">
+              <p className="text-sm text-slate-400 leading-relaxed mb-6">
                 {tool.description}
               </p>
 
               {/* Highlights */}
               <div className="mb-6 space-y-2">
-                <span className="text-[11px] font-mono text-slate-400 uppercase tracking-wider block mb-1">
+                <span className="text-xs font-mono text-slate-400 uppercase tracking-wider block mb-1">
                   Core Engineering Primitives
                 </span>
                 {(tool.highlights || []).map((h, idx) => (
@@ -94,7 +89,7 @@ export default function OpenSourceSection() {
                     href={tool.demoUrl}
                     target="_blank"
                     rel="noreferrer"
-                    className="px-3.5 py-2 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-xs transition-all flex items-center gap-1.5 shadow-md shadow-indigo-600/20"
+                    className="px-3.5 py-2 rounded-lg bg-brand-cyan/10 hover:bg-brand-cyan/20 text-brand-cyan border border-brand-cyan/30 font-semibold text-xs transition-all flex items-center gap-1.5"
                     title="Play Live Hosted Demo"
                   >
                     <span>Play Live Demo ↗</span>

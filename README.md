@@ -41,6 +41,10 @@ By default the form opens the visitor's email app. To receive messages directly:
    named `CONTACT_FORM_ENDPOINT` with that URL.
 3. Re-run the deploy workflow. No code change needed.
 
-## 🖨️ Resume PDF
-Open the resume from the site and use **Download PDF / Print** → *Save as PDF*. Only the resume is printed.
-
+## 📄 Resume: Quick View + PDFs
+The resume modal has two tabs: **Quick View** (a 7-second, one-screen summary for recruiters) and **Full Resume** (ATS-friendly).
+- Shareable links: `https://1997agarwal.github.io/#resume` and `/#resume-full`.
+- On every deploy, `npm run build:pdf` (see `scripts/build-resume-pdf.mjs`) renders both views to
+  `Harshit-Agarwal-Resume-1-Page.pdf` and `Harshit-Agarwal-Resume-Full.pdf`, so the PDFs always match `src/data/portfolioData.js`.
+- To build them locally: `npm run build && CHROME_PATH=/path/to/chrome npm run build:pdf`.
+- Quick View content lives in `QUICK_VIEW` and each role's `quickLine` in `portfolioData.js`.

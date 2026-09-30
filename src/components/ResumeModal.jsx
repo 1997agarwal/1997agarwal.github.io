@@ -1,4 +1,5 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
+import ResumeQuickView from './ResumeQuickView';
 import {
   personalInfo,
   experiences,
@@ -13,7 +14,18 @@ import {
 const stripProtocol = (url) => url.replace(/^https?:\/\//, '').replace(/\/$/, '');
 const featuredAwards = accolades.filter((a) => a.featured);
 
-export default function ResumeModal({ isOpen, onClose }) {
+const PDF_BY_TAB = {
+  quick: { href: './Harshit-Agarwal-Resume-1-Page.pdf', label: 'Download 1-Page PDF' },
+  full: { href: './Harshit-Agarwal-Resume-Full.pdf', label: 'Download Full PDF' },
+};
+
+export default function ResumeModal({ isOpen, onClose, initialTab = 'quick' }) {
+  const [tab, setTab] = useState(initialTab);
+
+  useEffect(() => {
+    if (isOpen) setTab(initialTab);
+  }, [isOpen, initialTab]);
+
   useEffect(() => {
     const handleKeyDown = (e) => {
       if (e.key === 'Escape') onClose();
@@ -51,27 +63,47 @@ export default function ResumeModal({ isOpen, onClose }) {
             <svg className="w-4 h-4 text-brand-cyan group-hover:-translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
             </svg>
-            <span>Back to Portfolio</span>
+            <span className="hidden sm:inline">Back</span>
           </button>
 
-          {/* Center: Recruiter Title */}
-          <div className="hidden md:flex items-center gap-2 text-xs text-slate-300 font-mono">
-            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-            <span>ATS-Friendly Executive Resume • Single-Page Layout</span>
+          {/* Center: view switcher */}
+          <div role="tablist" aria-label="Resume view" className="flex items-center p-1 rounded-lg bg-slate-800 border border-slate-700">
+            {[['quick', 'Quick View'], ['full', 'Full Resume']].map(([key, label]) => (
+              <button
+                key={key}
+                role="tab"
+                aria-selected={tab === key}
+                onClick={() => setTab(key)}
+                className={`px-3 py-1.5 rounded-md text-xs font-semibold transition-colors ${
+                  tab === key ? 'bg-brand-cyan text-slate-950' : 'text-slate-300 hover:text-white'
+                }`}
+              >
+                {label}
+              </button>
+            ))}
           </div>
 
           {/* Right: Download PDF Action */}
           <div className="flex items-center gap-2">
             <button
               onClick={handlePrint}
+              className="hidden sm:flex px-3 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 border border-slate-600/60 text-slate-200 font-semibold text-xs items-center gap-2 transition-all cursor-pointer"
+              title="Print this view"
+            >
+              <span>Print</span>
+            </button>
+
+            <a
+              href={PDF_BY_TAB[tab].href}
+              download
               className="px-4 py-2 rounded-lg bg-brand-cyan hover:bg-cyan-400 text-slate-950 font-bold text-xs flex items-center gap-2 transition-all shadow-lg shadow-cyan-500/20 active:scale-95 cursor-pointer"
-              title="Save as PDF or Print"
+              title="Download this view as a PDF"
             >
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
               </svg>
-              <span>Download PDF / Print</span>
-            </button>
+              <span>{PDF_BY_TAB[tab].label}</span>
+            </a>
             
             <button
               onClick={onClose}
@@ -89,10 +121,13 @@ export default function ResumeModal({ isOpen, onClose }) {
         {/* Main Resume Sheet */}
         <div className="bg-white text-slate-900 w-full rounded-2xl shadow-2xl border border-slate-200 overflow-hidden mb-12 print:m-0 print:mb-0 print:p-0 print:border-none print:shadow-none print:rounded-none">
           
+          {tab === 'quick' ? (
+            <ResumeQuickView onShowFull={() => setTab('full')} />
+          ) : (
           <div className="p-8 sm:p-12 print:p-8 text-[13px] leading-relaxed font-sans text-slate-800">
             
             {/* Header Block with Name, Role, and Tagline */}
-            <header className="border-b-2 border-slate-900 pb-5 mb-5">
+            <header className="border-b-2 border-slate-900 pb-5 mb-5 print:pb-3 print:mb-3">
               <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4">
                 <div>
                   <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-950 uppercase">
@@ -124,7 +159,7 @@ export default function ResumeModal({ isOpen, onClose }) {
             </header>
 
             {/* Executive Summary */}
-            <section className="mb-5">
+            <section className="mb-5 print:mb-3">
               <h2 className="text-xs font-bold uppercase tracking-wider text-slate-900 border-b border-slate-300 pb-1 mb-2">
                 Executive Profile
               </h2>
@@ -134,7 +169,7 @@ export default function ResumeModal({ isOpen, onClose }) {
             </section>
 
             {/* Categorized Skills Extracted from User Resume */}
-            <section className="mb-5">
+            <section className="mb-5 print:mb-3">
               <h2 className="text-xs font-bold uppercase tracking-wider text-slate-900 border-b border-slate-300 pb-1 mb-2.5">
                 Core Competencies & Skills
               </h2>
@@ -146,13 +181,13 @@ export default function ResumeModal({ isOpen, onClose }) {
                   <span className="font-bold text-slate-950 uppercase tracking-wide text-[11px] block mb-1.5">
                     Product Management & Strategy
                   </span>
-                  <div className="flex flex-wrap gap-1.5">
+                  <div className="flex flex-wrap gap-1.5 print:gap-x-1 print:gap-y-0">
                     {[
                       'Product Management', 'Product Strategy', 'Product Roadmap', 'Product Adoption',
                       'Product-Led Growth (PLG)', 'PDLC', 'Problem Solving', 'Go-To-Market (GTM)',
                       'Pricing Strategy', 'Digital Marketing', 'Customer Discovery', 'PRDs'
                     ].map((s, i) => (
-                      <span key={i} className="px-2 py-0.5 rounded bg-indigo-50 border border-indigo-200 text-indigo-900 font-medium text-[11px]">
+                      <span key={i} className="print:p-0 print:border-0 print:bg-transparent print:after:content-[','] print:last:after:content-[''] px-2 py-0.5 rounded bg-indigo-50 border border-indigo-200 text-indigo-900 font-medium text-[11px]">
                         {s}
                       </span>
                     ))}
@@ -164,12 +199,12 @@ export default function ResumeModal({ isOpen, onClose }) {
                   <span className="font-bold text-slate-950 uppercase tracking-wide text-[11px] block mb-1.5">
                     AI & Emerging Tech
                   </span>
-                  <div className="flex flex-wrap gap-1.5">
+                  <div className="flex flex-wrap gap-1.5 print:gap-x-1 print:gap-y-0">
                     {[
                       'Generative AI', 'Agentic AI', 'LLM Prompt Scoping', 'AI Evals & Benchmarking',
                       'AI Intents & Workflows', 'AI Assistant Chatbots', 'AI Collections Scoring', 'AGI Exploration'
                     ].map((s, i) => (
-                      <span key={i} className="px-2 py-0.5 rounded bg-cyan-50 border border-cyan-200 text-cyan-900 font-medium text-[11px]">
+                      <span key={i} className="print:p-0 print:border-0 print:bg-transparent print:after:content-[','] print:last:after:content-[''] px-2 py-0.5 rounded bg-cyan-50 border border-cyan-200 text-cyan-900 font-medium text-[11px]">
                         {s}
                       </span>
                     ))}
@@ -181,12 +216,12 @@ export default function ResumeModal({ isOpen, onClose }) {
                   <span className="font-bold text-slate-950 uppercase tracking-wide text-[11px] block mb-1.5">
                     Design, Analytics & Tooling
                   </span>
-                  <div className="flex flex-wrap gap-1.5">
+                  <div className="flex flex-wrap gap-1.5 print:gap-x-1 print:gap-y-0">
                     {[
                       'Wireframing', 'Figma', 'UI/UX Design', 'Product Analytics', 'Data Analysis',
                       'SQL Queries', 'API Scoping', 'Postman', 'Agile / Scrum', 'n8n Automation', 'Lovable'
                     ].map((s, i) => (
-                      <span key={i} className="px-2 py-0.5 rounded bg-slate-100 border border-slate-300 text-slate-800 font-medium text-[11px]">
+                      <span key={i} className="print:p-0 print:border-0 print:bg-transparent print:after:content-[','] print:last:after:content-[''] px-2 py-0.5 rounded bg-slate-100 border border-slate-300 text-slate-800 font-medium text-[11px]">
                         {s}
                       </span>
                     ))}
@@ -197,14 +232,14 @@ export default function ResumeModal({ isOpen, onClose }) {
             </section>
 
             {/* Professional Corporate Experience */}
-            <section className="mb-5">
+            <section className="mb-5 print:mb-3">
               <h2 className="text-xs font-bold uppercase tracking-wider text-slate-900 border-b border-slate-300 pb-1 mb-3">
                 Professional Experience
               </h2>
 
               <div className="space-y-4">
                 {experiences.map((exp, idx) => (
-                  <div key={idx}>
+                  <div key={idx} className="print:break-inside-avoid">
                     <div className="flex flex-col sm:flex-row sm:items-center justify-between">
                       <div>
                         <span className="font-bold text-slate-950">{exp.role}</span>
@@ -229,7 +264,7 @@ export default function ResumeModal({ isOpen, onClose }) {
             </section>
 
             {/* 0-to-1 Ventures & Developer Tooling */}
-            <section className="mb-5">
+            <section className="mb-5 print:mb-3">
               <h2 className="text-xs font-bold uppercase tracking-wider text-slate-900 border-b border-slate-300 pb-1 mb-2.5">
                 0→1 Ventures & Public Developer Infrastructure
               </h2>
@@ -240,7 +275,7 @@ export default function ResumeModal({ isOpen, onClose }) {
                   <span className="text-slate-500 font-mono text-[11px]"> (github.com/1997agarwal)</span>:
                   <div className="mt-1 space-y-1">
                     {openSourceTools.map((tool) => (
-                      <div key={tool.id}>• <strong>{tool.name}:</strong> {tool.resumeSummary}</div>
+                      <div key={tool.id}>• <strong>{tool.name}:</strong> <span className="print:hidden">{tool.resumeSummary}</span><span className="hidden print:inline">{tool.resumeSummary.split(';')[0].replace(/\.$/, '')}.</span></div>
                     ))}
                   </div>
                 </div>
@@ -291,6 +326,7 @@ export default function ResumeModal({ isOpen, onClose }) {
             </section>
 
           </div>
+          )}
 
         </div>
 

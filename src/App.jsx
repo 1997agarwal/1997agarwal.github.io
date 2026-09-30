@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import Reveal from './components/Reveal';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import MetricsRibbon from './components/MetricsRibbon';
@@ -18,6 +19,16 @@ export default function App() {
   const [isContactOpen, setIsContactOpen] = useState(false);
   const [isResumeOpen, setIsResumeOpen] = useState(false);
   const [walkthroughSubject, setWalkthroughSubject] = useState('');
+  const [resumeTab, setResumeTab] = useState('quick');
+
+  // Shareable deep links: /#resume (quick view) and /#resume-full
+  useEffect(() => {
+    const hash = window.location.hash;
+    if (hash === '#resume' || hash === '#resume-full') {
+      setResumeTab(hash === '#resume-full' ? 'full' : 'quick');
+      setIsResumeOpen(true);
+    }
+  }, []);
 
   const handleOpenContact = () => {
     setWalkthroughSubject('');
@@ -25,7 +36,14 @@ export default function App() {
   };
 
   const handleOpenResume = () => {
+    setResumeTab('quick');
     setIsResumeOpen(true);
+    window.history.replaceState(null, '', '#resume');
+  };
+
+  const handleCloseResume = () => {
+    setIsResumeOpen(false);
+    window.history.replaceState(null, '', window.location.pathname + window.location.search);
   };
 
   const handleRequestWalkthrough = (ventureName) => {
@@ -48,13 +66,13 @@ export default function App() {
           onOpenResume={handleOpenResume}
         />
         <MetricsRibbon />
-        <ExperienceSection />
-        <ProductsOverview />
-        <TrippyFounderSpotlight onRequestWalkthrough={handleRequestWalkthrough} />
-        <VenturesSection onRequestWalkthrough={handleRequestWalkthrough} />
-        <OpenSourceSection />
-        <CaseStudiesArchive />
-        <AccoladesSection />
+        <Reveal><ExperienceSection /></Reveal>
+        <Reveal><ProductsOverview /></Reveal>
+        <Reveal><TrippyFounderSpotlight onRequestWalkthrough={handleRequestWalkthrough} /></Reveal>
+        <Reveal><VenturesSection onRequestWalkthrough={handleRequestWalkthrough} /></Reveal>
+        <Reveal><OpenSourceSection /></Reveal>
+        <Reveal><CaseStudiesArchive /></Reveal>
+        <Reveal><AccoladesSection /></Reveal>
       </main>
 
       {/* Footer */}
@@ -71,7 +89,8 @@ export default function App() {
 
       <ResumeModal
         isOpen={isResumeOpen}
-        onClose={() => setIsResumeOpen(false)}
+        onClose={handleCloseResume}
+        initialTab={resumeTab}
       />
     </div>
   );

@@ -13,7 +13,7 @@ export default function Footer({ onOpenContact }) {
               Harshit Agarwal
             </div>
             <p className="text-slate-400 max-w-sm">
-              Product Manager by Profession • Founder & 0-to-1 Systems Builder. Centralized Personal Branding System.
+              Product Manager by profession. Founder and 0→1 systems builder.
             </p>
           </div>
 
@@ -29,7 +29,7 @@ export default function Footer({ onOpenContact }) {
           </div>
 
           {/* Socials & Copyright */}
-          <div className="text-center md:text-right font-mono text-[11px] text-slate-400">
+          <div className="text-center md:text-right font-mono text-xs text-slate-400">
             <div className="flex justify-center md:justify-end gap-4 mb-2">
               <a href={personalInfo.links.github} target="_blank" rel="noreferrer" className="hover:text-white">
                 GitHub: 1997agarwal

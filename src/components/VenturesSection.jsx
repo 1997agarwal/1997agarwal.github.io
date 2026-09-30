@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { ventures } from '../data/portfolioData';
 import Expandable from './Expandable';
+import SectionHeader from './SectionHeader';
 
 const STAGE_STYLES = {
   BETA: 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20',
@@ -22,18 +23,11 @@ export default function VenturesSection({ onRequestWalkthrough }) {
     <section id="ventures" className="py-20 bg-surface-dark/50 border-t border-surface-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-10">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-cyan/10 border border-brand-cyan/30 text-xs font-mono text-brand-cyan mb-3">
-            <span>02 · Commercial Platforms</span>
-          </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-            Commercial Software Platforms Built from Scratch
-          </h2>
-          <p className="mt-4 text-sm sm:text-base text-slate-400">
-            End-to-end architectures engineered with React, Node.js, AI orchestration, and production fintech integrations. Private IP available for deep-dive technical walkthroughs.
-          </p>
-        </div>
+        <SectionHeader
+          eyebrow="02 · Commercial Platforms"
+          title="Commercial Software Platforms Built from Scratch"
+          subtitle="End-to-end architectures engineered with React, Node.js, AI orchestration, and production fintech integrations. Private IP available for deep-dive technical walkthroughs."
+        />
 
         {/* Stage Filter Buttons */}
         <div className="flex flex-wrap justify-center gap-2 mb-10" role="group" aria-label="Filter platforms by stage">
@@ -66,7 +60,7 @@ export default function VenturesSection({ onRequestWalkthrough }) {
                   <span className="text-xs font-mono font-bold px-2.5 py-1 rounded bg-surface-dark text-brand-cyan border border-surface-border">
                     {item.category}
                   </span>
-                  <span className={`text-[11px] font-mono px-2 py-0.5 rounded border ${STAGE_STYLES[item.stage] || STAGE_STYLES.PROTOTYPE}`}>
+                  <span className={`text-xs font-mono px-2 py-0.5 rounded border ${STAGE_STYLES[item.stage] || STAGE_STYLES.PROTOTYPE}`}>
                     {item.stage}
                   </span>
                 </div>
@@ -79,23 +73,23 @@ export default function VenturesSection({ onRequestWalkthrough }) {
                 </p>
 
                 <Expandable label="problem & solution" className="mb-6">
-                  <div className="space-y-3 text-xs mb-5">
+                  <div className="space-y-3 text-sm mb-5">
                     <div className="p-3 rounded-lg bg-surface-dark/80 border border-surface-border">
-                      <span className="font-mono text-rose-400 uppercase tracking-wider block text-[11px] mb-1 font-bold">
+                      <span className="font-mono text-rose-400 uppercase tracking-wider block text-xs mb-1 font-bold">
                         Problem Addressed
                       </span>
                       <p className="text-slate-300 leading-relaxed">{item.problem}</p>
                     </div>
 
                     <div className="p-3 rounded-lg bg-surface-dark/80 border border-surface-border">
-                      <span className="font-mono text-brand-cyan uppercase tracking-wider block text-[11px] mb-1 font-bold">
+                      <span className="font-mono text-brand-cyan uppercase tracking-wider block text-xs mb-1 font-bold">
                         0→1 Architectural Solution
                       </span>
                       <p className="text-slate-300 leading-relaxed">{item.solution}</p>
                     </div>
                   </div>
 
-                  <span className="text-[11px] font-mono text-slate-400 block mb-2 uppercase">
+                  <span className="text-xs font-mono text-slate-400 block mb-2 uppercase">
                     Shipped Surfaces & Features
                   </span>
                   <div className="flex flex-wrap gap-1.5">

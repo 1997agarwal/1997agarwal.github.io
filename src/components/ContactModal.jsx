@@ -209,7 +209,7 @@ export default function ContactModal({ isOpen, onClose, defaultSubject = '' }) {
         )}
 
         {/* Quick Contacts Footer */}
-        <div className="mt-6 pt-4 border-t border-surface-border flex items-center justify-between text-[11px] text-slate-400 font-mono">
+        <div className="mt-6 pt-4 border-t border-surface-border flex items-center justify-between text-xs text-slate-400 font-mono">
           <span>Direct: {personalInfo.email}</span>
           <a
             href={personalInfo.links.linkedin}
