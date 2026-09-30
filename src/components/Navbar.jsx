@@ -13,10 +13,29 @@ export default function Navbar({ onOpenContact, onOpenResume }) {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const [activeId, setActiveId] = useState('');
+
+  useEffect(() => {
+    const ids = ['experience', 'trippy', 'ventures', 'opensource', 'casestudies', 'accolades'];
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) setActiveId(entry.target.id);
+        });
+      },
+      { rootMargin: '-35% 0px -60% 0px' }
+    );
+    ids.forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+    return () => observer.disconnect();
+  }, []);
+
   const navLinks = [
-    { name: 'Trippy (Founder)', href: '#trippy' },
     { name: 'Experience', href: '#experience' },
-    { name: 'Ventures', href: '#ventures' },
+    { name: 'Trippy', href: '#trippy' },
+    { name: 'Platforms', href: '#ventures' },
     { name: 'Open Source', href: '#opensource' },
     { name: 'Case Studies', href: '#casestudies' },
     { name: 'Accolades', href: '#accolades' },
@@ -53,7 +72,10 @@ export default function Navbar({ onOpenContact, onOpenResume }) {
             <a
               key={link.name}
               href={link.href}
-              className="text-xs lg:text-sm font-medium text-slate-300 hover:text-white px-3 py-1 rounded-full hover:bg-white/10 transition-all"
+              aria-current={activeId === link.href.slice(1) ? 'true' : undefined}
+              className={`text-xs lg:text-sm font-medium px-3 py-1 rounded-full hover:bg-white/10 transition-all ${
+                activeId === link.href.slice(1) ? 'text-white bg-white/10' : 'text-slate-300 hover:text-white'
+              }`}
             >
               {link.name}
             </a>
@@ -105,6 +127,8 @@ export default function Navbar({ onOpenContact, onOpenResume }) {
         {/* Mobile menu trigger */}
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
+          aria-expanded={mobileMenuOpen}
           className="md:hidden p-2 text-slate-400 hover:text-white rounded-lg"
         >
           {mobileMenuOpen ? (
@@ -127,7 +151,9 @@ export default function Navbar({ onOpenContact, onOpenResume }) {
               key={link.name}
               href={link.href}
               onClick={() => setMobileMenuOpen(false)}
-              className="block text-sm font-medium text-slate-200 hover:text-brand-cyan py-2 border-b border-white/5"
+              className={`block text-sm font-medium hover:text-brand-cyan py-3 border-b border-white/5 ${
+                activeId === link.href.slice(1) ? 'text-brand-cyan' : 'text-slate-200'
+              }`}
             >
               {link.name}
             </a>

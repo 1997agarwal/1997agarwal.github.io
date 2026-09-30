@@ -3,10 +3,13 @@ import { caseStudies } from '../data/portfolioData';
 
 export default function CaseStudiesArchive() {
   const [filter, setFilter] = useState('ALL');
+  const [showAll, setShowAll] = useState(false);
 
-  const filtered = filter === 'ALL'
+  const INITIAL_COUNT = 6;
+  const matching = filter === 'ALL'
     ? caseStudies
     : caseStudies.filter(c => c.category === filter);
+  const filtered = showAll ? matching : matching.slice(0, INITIAL_COUNT);
 
   const categories = ['ALL', ...new Set(caseStudies.map(c => c.category))];
 
@@ -32,8 +35,9 @@ export default function CaseStudiesArchive() {
           {categories.map((cat) => (
             <button
               key={cat}
-              onClick={() => setFilter(cat)}
-              className={`px-3.5 py-1.5 rounded-lg text-xs font-mono transition-all ${
+              onClick={() => { setFilter(cat); setShowAll(false); }}
+              aria-pressed={filter === cat}
+              className={`px-3.5 py-2 rounded-lg text-xs font-mono transition-all ${
                 filter === cat
                   ? 'bg-brand-purple text-white font-bold shadow-md shadow-purple-500/20'
                   : 'bg-surface-card text-slate-400 border border-surface-border hover:text-white'
@@ -90,6 +94,17 @@ export default function CaseStudiesArchive() {
             </div>
           ))}
         </div>
+
+        {matching.length > INITIAL_COUNT && (
+          <div className="mt-10 text-center">
+            <button
+              onClick={() => setShowAll((v) => !v)}
+              className="px-6 py-2.5 rounded-lg bg-surface-card hover:bg-slate-800 border border-surface-border hover:border-brand-purple/50 text-xs font-mono text-slate-200 transition-all"
+            >
+              {showAll ? 'Show fewer' : `Show all ${matching.length} case studies`}
+            </button>
+          </div>
+        )}
 
       </div>
     </section>

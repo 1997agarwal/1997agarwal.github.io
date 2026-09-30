@@ -1,11 +1,12 @@
 import React from 'react';
 import { TRIPPY_FOUNDER_SPOTLIGHT } from '../data/portfolioData';
+import Expandable from './Expandable';
 
 export default function TrippyFounderSpotlight({ onRequestWalkthrough }) {
   const t = TRIPPY_FOUNDER_SPOTLIGHT;
 
   return (
-    <section id="trippy" className="relative py-24 bg-gradient-to-b from-surface-dark via-[#0d1424] to-surface-dark border-t border-b border-surface-border/80 overflow-hidden">
+    <section id="trippy" className="relative py-16 sm:py-24 bg-gradient-to-b from-surface-dark via-[#0d1424] to-surface-dark border-t border-b border-surface-border/80 overflow-hidden">
       {/* Ambient background glows */}
       <div className="absolute top-0 right-1/4 w-96 h-96 bg-teal-500/10 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl pointer-events-none" />
@@ -16,7 +17,7 @@ export default function TrippyFounderSpotlight({ onRequestWalkthrough }) {
         <div className="flex flex-wrap items-center justify-between gap-4 mb-8">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-gradient-to-r from-amber-500/20 via-teal-500/20 to-brand-cyan/20 border border-amber-500/40 text-xs font-mono font-bold text-amber-300 shadow-md shadow-amber-500/10">
             <span className="text-sm">👑</span>
-            <span>Founder & Venture Spotlight</span>
+            <span>01 · Flagship Startup</span>
             <span className="text-slate-500">•</span>
             <span className="text-teal-300">Active Beta</span>
           </div>
@@ -30,7 +31,7 @@ export default function TrippyFounderSpotlight({ onRequestWalkthrough }) {
         </div>
 
         {/* Main Founder Card */}
-        <div className="bg-surface-card/90 backdrop-blur-xl border-2 border-teal-500/30 rounded-3xl p-8 sm:p-10 lg:p-12 shadow-2xl shadow-cyan-950/40 relative overflow-hidden">
+        <div className="bg-surface-card/90 backdrop-blur-xl border-2 border-teal-500/30 rounded-3xl p-5 sm:p-10 lg:p-12 shadow-2xl shadow-cyan-950/40 relative overflow-hidden">
           
           {/* Subtle watermark / decorative brand tag */}
           <div className="absolute -right-8 -bottom-10 text-9xl font-black text-white/[0.02] font-mono select-none pointer-events-none">
@@ -57,6 +58,24 @@ export default function TrippyFounderSpotlight({ onRequestWalkthrough }) {
                 <p className="text-xs font-mono text-amber-300/90 mt-1">
                   Founder Role: <span className="text-white font-bold">{t.founderRole}</span>
                 </p>
+              </div>
+
+              {/* Primary CTAs, visible without scrolling the whole card */}
+              <div className="flex flex-col sm:flex-row gap-2.5">
+                <a
+                  href={t.liveUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-center py-3 px-5 rounded-xl bg-teal-500 hover:bg-teal-400 text-slate-950 font-bold text-xs font-mono transition-all shadow-md shadow-teal-500/20"
+                >
+                  ▶ Explore Trippy Beta App ↗
+                </a>
+                <button
+                  onClick={() => onRequestWalkthrough('Trippy: Investment & Co-founder Discussion')}
+                  className="py-3 px-5 rounded-xl bg-surface-dark hover:bg-slate-800 text-amber-300 hover:text-white border border-amber-500/50 font-bold text-xs font-mono transition-all"
+                >
+                  Talk to the Founder →
+                </button>
               </div>
 
               {/* The Mission Quote */}
@@ -86,7 +105,7 @@ export default function TrippyFounderSpotlight({ onRequestWalkthrough }) {
               </div>
 
               {/* Shipped Operational Surfaces */}
-              <div>
+              <Expandable label="product surfaces">
                 <span className="text-xs font-mono text-slate-400 block mb-2 uppercase font-semibold">
                   Delivered Surfaces & Sub-Systems
                 </span>
@@ -101,7 +120,7 @@ export default function TrippyFounderSpotlight({ onRequestWalkthrough }) {
                     </div>
                   ))}
                 </div>
-              </div>
+              </Expandable>
 
             </div>
 
@@ -123,18 +142,20 @@ export default function TrippyFounderSpotlight({ onRequestWalkthrough }) {
               </div>
 
               {/* Tech Stack Chips */}
-              <div className="p-4 rounded-2xl bg-surface-dark/70 border border-surface-border">
-                <span className="text-[11px] font-mono text-slate-400 block mb-2 uppercase font-semibold">
-                  Production Engineering Stack
-                </span>
-                <div className="flex flex-wrap gap-1.5">
-                  {t.techStack.map((tech, idx) => (
-                    <span key={idx} className="text-xs px-2.5 py-1 rounded-md bg-slate-800/90 text-teal-300 border border-slate-700/80 font-mono">
-                      {tech}
-                    </span>
-                  ))}
+              <Expandable label="engineering stack">
+                <div className="p-4 rounded-2xl bg-surface-dark/70 border border-surface-border">
+                  <span className="text-[11px] font-mono text-slate-400 block mb-2 uppercase font-semibold">
+                    Production Engineering Stack
+                  </span>
+                  <div className="flex flex-wrap gap-1.5">
+                    {t.techStack.map((tech, idx) => (
+                      <span key={idx} className="text-xs px-2.5 py-1 rounded-md bg-slate-800/90 text-teal-300 border border-slate-700/80 font-mono">
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
                 </div>
-              </div>
+              </Expandable>
 
               {/* Special Box: For Investors & Co-Founders */}
               <div className="p-5 rounded-2xl bg-gradient-to-br from-amber-500/10 via-surface-dark to-teal-500/10 border-2 border-amber-500/40 space-y-3 shadow-lg shadow-amber-500/5">
@@ -155,24 +176,13 @@ export default function TrippyFounderSpotlight({ onRequestWalkthrough }) {
                   <li><strong className="text-teal-300">Prospective Co-founders & Early Team:</strong> Looking for a technical co-founder / founding engineers (Full-Stack & React Native) and travel community leads.</li>
                 </ul>
 
-                <div className="pt-2 flex flex-col sm:flex-row gap-2.5">
-                  <a
-                    href={t.liveUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex-1 text-center py-2.5 px-4 rounded-xl bg-teal-500 hover:bg-teal-400 text-slate-950 font-bold text-xs font-mono transition-all shadow-md shadow-teal-500/20 flex items-center justify-center gap-1.5"
-                  >
-                    <span>▶ Explore Trippy Beta App ↗</span>
-                  </a>
-
-                  <button
-                    onClick={() => onRequestWalkthrough('Trippy: Investment & Co-founder Discussion')}
-                    className="flex-1 py-2.5 px-4 rounded-xl bg-surface-card hover:bg-slate-800 text-amber-300 hover:text-white border border-amber-500/50 font-bold text-xs font-mono transition-all flex items-center justify-center gap-1.5"
-                  >
-                    <span>Connect with Founder</span>
-                    <span>→</span>
-                  </button>
-                </div>
+                <button
+                  onClick={() => onRequestWalkthrough('Trippy: Investment & Co-founder Discussion')}
+                  className="w-full py-2.5 px-4 rounded-xl bg-surface-card hover:bg-slate-800 text-amber-300 hover:text-white border border-amber-500/50 font-bold text-xs font-mono transition-all flex items-center justify-center gap-1.5"
+                >
+                  <span>Connect with Founder</span>
+                  <span>→</span>
+                </button>
               </div>
 
             </div>

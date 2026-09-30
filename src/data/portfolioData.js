@@ -3,8 +3,8 @@
 
 export const PERSONAL_INFO = {
   name: 'Harshit Agarwal',
-  role: 'Founder @ Trippy | Senior Product Manager & AI Systems Builder',
-  tagline: 'Founder of Trippy (travel social OS in active beta). Bridging 0-to-1 product discovery, master PRDs, and unit economics with full-stack AI engineering, multi-agent pipelines, and production architectures.',
+  role: 'Senior Product Manager & AI Systems Builder',
+  tagline: 'Bridging 0-to-1 product discovery, master PRDs, and unit economics with full-stack AI engineering, multi-agent pipelines, and production architectures. Currently building Trippy, a travel social OS in active beta.',
   location: 'Bengaluru, Karnataka, India • Global Remote',
   email: 'agarwal.harshit97@gmail.com',
   linkedin: 'https://www.linkedin.com/in/1997agarwal/',
@@ -21,7 +21,6 @@ export const PERSONAL_INFO = {
 };
 
 export const METRICS = [
-  { label: 'Lead Startup Venture', value: 'Trippy', suffix: 'Active Beta', desc: 'AI solo-travel social & host CRM OS (Nomad-Tribe)' },
   { label: 'Years Shipping Product', value: '7+', suffix: 'Years', desc: 'From 0→1 startups to enterprise SaaS leaders' },
   { label: 'Learners Scaled at Tally', value: '500K+', suffix: 'Users', desc: 'In-house LMS adopted across 2,000+ partner institutes' },
   { label: 'Awards & Honors', value: '7', suffix: 'Accolades', desc: 'Tekion, 4 at Tally, NITI Aayog & Techfest IIT Bombay' },

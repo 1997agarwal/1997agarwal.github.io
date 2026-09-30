@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import MetricsRibbon from './components/MetricsRibbon';
+import ProductsOverview from './components/ProductsOverview';
+import BackToTop from './components/BackToTop';
 import TrippyFounderSpotlight from './components/TrippyFounderSpotlight';
 import ExperienceSection from './components/ExperienceSection';
 import VenturesSection from './components/VenturesSection';
@@ -46,8 +48,9 @@ export default function App() {
           onOpenResume={handleOpenResume}
         />
         <MetricsRibbon />
-        <TrippyFounderSpotlight onRequestWalkthrough={handleRequestWalkthrough} />
         <ExperienceSection />
+        <ProductsOverview />
+        <TrippyFounderSpotlight onRequestWalkthrough={handleRequestWalkthrough} />
         <VenturesSection onRequestWalkthrough={handleRequestWalkthrough} />
         <OpenSourceSection />
         <CaseStudiesArchive />
@@ -56,6 +59,8 @@ export default function App() {
 
       {/* Footer */}
       <Footer onOpenContact={handleOpenContact} />
+
+      <BackToTop />
 
       {/* Modals */}
       <ContactModal
