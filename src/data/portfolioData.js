@@ -3,8 +3,8 @@
 
 export const PERSONAL_INFO = {
   name: 'Harshit Agarwal',
-  role: 'Senior Product Manager & AI Systems Builder',
-  tagline: 'Bridging 0-to-1 product discovery, master PRDs, and unit economics with full-stack AI engineering, multi-agent pipelines, and production architectures. Currently building Trippy, a travel social OS in active beta.',
+  role: 'Senior Product Manager · Payments, EdTech & AI',
+  tagline: '7+ years building business software: payments for car dealerships at Tekion, a learning platform at Tally. I also build AI tools and Trippy, a travel app for solo travelers.',
   location: 'Bengaluru, Karnataka, India • Global Remote',
   email: 'agarwal.harshit97@gmail.com',
   linkedin: 'https://www.linkedin.com/in/1997agarwal/',
@@ -23,12 +23,12 @@ export const PERSONAL_INFO = {
 // Content for the 7-second recruiter Quick View in the resume modal
 export const QUICK_VIEW = {
   headline: 'Product Manager · Payments, EdTech & AI · 7+ years',
-  summary: 'I take products from 0→1 to scale: enterprise B2B payments at Tekion, an LMS used by 500K+ learners at Tally, and my own startup, Trippy. I also build and open-source AI tooling.',
+  summary: '7+ years building software for businesses: payments and collections for car dealerships at Tekion, a learning platform for 500K+ students at Tally, and my own startup, Trippy. I also build AI tools.',
   stats: [
-    { value: '7+', label: 'Years in product' },
-    { value: '500K+', label: 'Learners on Tally LMS' },
-    { value: '19→60%', label: 'Platform adoption at Tally' },
-    { value: '150K+', label: 'Candidates on Placement Portal' }
+    { value: '500K+', label: 'students on the learning platform I launched at Tally' },
+    { value: '$1.5–2M', label: 'projected yearly revenue from Tekion\'s new payments product' },
+    { value: '40K+', label: 'online sellers supported at Shiprocket' },
+    { value: '50→30%', label: 'checkout drop-off after my redesign at Frendy' }
   ],
   building: 'Founder of Trippy (AI solo-travel network, active beta) · 4 commercial platforms · 4 open-source AI tools',
   topAwards: [

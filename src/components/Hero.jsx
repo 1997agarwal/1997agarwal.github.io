@@ -21,7 +21,7 @@ export default function Hero({ onOpenContact, onOpenResume }) {
 
             {/* Headline */}
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white mb-6 leading-[1.15]">
-              Shipping <span className="text-gradient">0→1</span> products that scale to 500K+ users.
+              I turn ideas into products used by <span className="text-gradient">500K+ people</span>.
             </h1>
 
             {/* Sub-headline */}
@@ -33,17 +33,6 @@ export default function Hero({ onOpenContact, onOpenResume }) {
             <p className="text-base text-slate-400 max-w-2xl mb-8 leading-relaxed">
               {personalInfo.summary}
             </p>
-
-            {/* 7-second proof points */}
-            <dl className="grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-2xl mx-auto md:mx-0 mb-8">
-              {QUICK_VIEW.stats.map((s) => (
-                <div key={s.label} className="px-3 py-3 rounded-xl bg-white/[0.04] border border-white/10 text-left">
-                  <dt className="sr-only">{s.label}</dt>
-                  <dd className="text-xl sm:text-2xl font-extrabold text-brand-cyan font-mono leading-none">{s.value}</dd>
-                  <dd className="text-[11px] text-slate-400 mt-1.5 leading-tight">{s.label}</dd>
-                </div>
-              ))}
-            </dl>
 
             {/* Action CTAs */}
             <div className="flex flex-wrap items-center justify-center md:justify-start gap-3">
@@ -68,20 +57,10 @@ export default function Hero({ onOpenContact, onOpenResume }) {
               </button>
 
               <a
-                href="#trippy"
-                className="px-5 py-3 rounded-lg bg-gradient-to-r from-amber-500/10 to-teal-500/10 hover:from-amber-500/20 hover:to-teal-500/20 text-amber-300 border border-amber-500/40 font-medium text-sm transition-all flex items-center gap-2 shadow-sm"
-              >
-                <span>👑 Meet Trippy</span>
-                <svg className="w-4 h-4 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                </svg>
-              </a>
-
-              <a
                 href={personalInfo.links.github}
                 target="_blank"
                 rel="noreferrer"
-                className="p-3 rounded-lg bg-surface-card hover:bg-surface-border/50 text-slate-300 border border-surface-border font-medium text-sm transition-all flex items-center justify-center"
+                className="p-3 rounded-lg bg-surface-card hover:bg-surface-border/50 text-slate-300 border border-surface-border font-medium text-sm transition-all hidden sm:flex items-center justify-center"
                 title="View GitHub Profile"
               >
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -90,6 +69,16 @@ export default function Hero({ onOpenContact, onOpenResume }) {
               </a>
             </div>
 
+            {/* 7-second proof points */}
+            <dl className="grid grid-cols-2 lg:grid-cols-4 gap-3 max-w-3xl mx-auto md:mx-0 mt-8">
+              {QUICK_VIEW.stats.map((s) => (
+                <div key={s.label} className="px-3 py-3 rounded-xl bg-white/[0.04] border border-white/10 text-left">
+                  <dt className="sr-only">{s.label}</dt>
+                  <dd className="text-xl sm:text-2xl font-extrabold text-brand-cyan font-mono leading-none">{s.value}</dd>
+                  <dd className="text-xs text-slate-400 mt-1.5 leading-snug">{s.label}</dd>
+                </div>
+              ))}
+            </dl>
           </div>
 
           {/* Right Column: Interactive Profile Card */}
