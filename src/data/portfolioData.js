@@ -30,7 +30,7 @@ export const QUICK_VIEW = {
     { value: '40K+', label: 'online sellers supported at Shiprocket' },
     { value: '50→30%', label: 'checkout drop-off after my redesign at Frendy' }
   ],
-  building: 'Founder of Trippy (AI solo-travel network, active beta) · 4 commercial platforms · 4 open-source AI tools',
+  building: 'Founder of Trippy (AI solo-travel network, active beta) · 4 commercial platforms · 4 open-source AI tools, including SpecForge (agents that turn customer calls into PRDs and tickets) and ContextPrism (an LLM token-cost gateway)',
   topAwards: [
     'Tekion Recognition Award (2025)',
     'Tally All Star Award (H2, Mar 2024)',
@@ -42,7 +42,7 @@ export const METRICS = [
   { label: 'Awards & Honors', value: '7', suffix: 'Accolades', desc: 'Tekion, 4 at Tally, NITI Aayog & Techfest IIT Bombay' },
   { label: 'Commercial Blueprints', value: '4', suffix: 'Platforms', desc: 'StartupOS, DupeScout, BusinessPay, CollabKaro' },
   { label: 'Open Source AI DevTools', value: '4', suffix: 'Public Tools', desc: 'SpecForge, ContextPrism, TicTacCourt, BrainGym' },
-  { label: 'Builder Community', value: '15K+', suffix: 'Followers', desc: 'Creator of @prod.tech101 on Product & AI' },
+  { label: 'LinkedIn Community', value: '15K+', suffix: 'Followers', desc: 'Followers on LinkedIn' },
 ];
 
 export const TRIPPY_FOUNDER_SPOTLIGHT = {

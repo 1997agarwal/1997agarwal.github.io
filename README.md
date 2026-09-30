@@ -1,6 +1,6 @@
 # Harshit Agarwal — Executive Portfolio
 
-> Senior Product Manager @ Tekion Corp • Founder & 0-to-1 Systems Builder
+> Senior Product Manager · AI · Builder
 
 Live Production Deployment: **[https://1997agarwal.github.io](https://1997agarwal.github.io)**  
 
