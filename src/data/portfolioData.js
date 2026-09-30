@@ -83,12 +83,17 @@ export const CORPORATE_EXPERIENCE = [
     duration: 'Current',
     location: 'Bengaluru, India',
     businessUnit: 'FinTech & Dealer Financial Operations',
-    quickLine: 'B2B payments, dealer AR portals and collections workqueues; Tekion Recognition Award (2025).',
+    quickLine: 'B2B payments, dealer AR portals and collections workqueues; going live with 200+ dealers, projected $1.5–2M annual revenue.',
+    impact: [
+      { value: '$1.5–2M', label: 'projected annual direct revenue' },
+      { value: '200+', label: 'dealers at go-live' }
+    ],
     bullets: [
       'Spearheading enterprise B2B Payments, Dealer AR Portals, and automated collection workqueues across automotive dealer networks.',
       'Shipped electronic invoice clearance and self-serve Promise-to-Pay (PTP) workflows, directly compressing Days Sales Outstanding (DSO).',
       'Engineered intelligent aging workqueues classifying overdue ledger accounts with automated dunning triggers and risk scoring models.',
       'Authored comprehensive PRDs, API schemas, and data contracts bridging front-office dealer workflows to enterprise accounting ledgers.',
+      'Projected to generate $1.5–2M in direct annual revenue, going live with 200+ dealers in the initial phase.',
       'Awarded the Tekion Recognition Award (May 2025) for high-velocity payment portal delivery and seamless production rollout.'
     ],
     awards: ['Tekion Recognition Award (May 2025)'],
