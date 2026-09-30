@@ -56,28 +56,14 @@ export default function CaseStudiesArchive() {
                   <span className="px-2 py-0.5 rounded bg-surface-dark border border-surface-border text-brand-purple">
                     {study.category}
                   </span>
-                  <span>{study.date}</span>
                 </div>
 
                 <h4 className="text-xl font-bold text-white group-hover:text-brand-purple transition-colors mb-2">
                   {study.title}
                 </h4>
-                <p className="text-xs text-slate-300 mb-4 font-medium">
-                  {study.subtitle}
-                </p>
-                <p className="text-xs text-slate-400 leading-relaxed mb-4">
+                <p className="text-sm text-slate-300 leading-relaxed mb-6">
                   {study.description}
                 </p>
-
-                {/* Highlights */}
-                <div className="space-y-1.5 mb-6">
-                  {study.highlights.map((h, i) => (
-                    <div key={i} className="text-[11px] text-slate-300 flex items-start gap-1.5 font-mono">
-                      <span className="text-brand-purple font-bold">›</span>
-                      <span>{h}</span>
-                    </div>
-                  ))}
-                </div>
               </div>
 
               {/* Action Button */}

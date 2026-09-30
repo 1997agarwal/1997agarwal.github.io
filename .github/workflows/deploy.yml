@@ -27,10 +27,12 @@ jobs:
           node-version: 22
 
       - name: Install Dependencies
-        run: npm install
+        run: npm ci
 
       - name: Build Production Assets
         run: npm run build
+        env:
+          VITE_CONTACT_FORM_ENDPOINT: ${{ vars.CONTACT_FORM_ENDPOINT }}
 
       - name: Setup Pages
         uses: actions/configure-pages@v4

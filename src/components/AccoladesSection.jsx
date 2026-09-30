@@ -22,7 +22,7 @@ export default function AccoladesSection() {
         {/* Accolades List */}
         <div className="lg:col-span-2 bg-surface-card border border-surface-border rounded-2xl p-6 sm:p-8">
           <h3 className="text-lg font-bold text-white flex items-center gap-2 mb-6">
-            <span className="text-amber-400">★</span> Major Industry & Corporate Awards
+            <span className="text-amber-400">★</span> Awards & Honours
           </h3>
 
           <div className="space-y-4">
@@ -64,7 +64,6 @@ export default function AccoladesSection() {
                 <div className="text-xs text-brand-cyan font-mono mt-0.5">{edu.institution}</div>
                 <div className="flex items-center justify-between text-xs text-slate-400 mt-2 font-mono">
                   <span>{edu.period}</span>
-                  <span className="text-emerald-400 font-bold">{edu.grade}</span>
                 </div>
               </div>
             ))}
@@ -85,7 +84,6 @@ export default function AccoladesSection() {
                     <div className="text-xs font-bold text-white">{cert.name}</div>
                     <div className="text-[11px] text-slate-400">{cert.issuer}</div>
                   </div>
-                  <span className="text-[10px] font-mono text-slate-400">{cert.date}</span>
                 </div>
               ))}
             </div>

@@ -18,22 +18,11 @@
   -webkit-text-fill-color: transparent;
 }
 
-/* Custom Glassmorphism styles */
-.glass-card {
-  background: rgba(17, 24, 39, 0.7);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+.scrollbar-none {
+  scrollbar-width: none;
 }
-
-.glass-card-hover {
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.glass-card-hover:hover {
-  transform: translateY(-2px);
-  border-color: rgba(6, 182, 212, 0.3);
-  box-shadow: 0 12px 30px -10px rgba(6, 182, 212, 0.15);
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
 }
 
 @media print {
@@ -42,6 +31,14 @@
     color: black !important;
   }
   nav, footer, .print-hide {
+    display: none !important;
+  }
+  /* While the resume is open, print only the resume sheet */
+  html.resume-open main,
+  html.resume-open #root > div {
+    background: white !important;
+  }
+  html.resume-open main {
     display: none !important;
   }
 }

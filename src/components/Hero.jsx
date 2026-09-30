@@ -82,11 +82,11 @@ export default function Hero({ onOpenContact, onOpenResume }) {
             {/* Mini Trust Credibility Badges */}
             <div className="mt-10 pt-8 border-t border-surface-border/50 flex flex-wrap items-center justify-center md:justify-start gap-6 text-xs text-slate-400 font-mono">
               <span className="flex items-center gap-1.5">
-                <span className="text-brand-cyan font-bold">14+</span> Software Platforms
+                <span className="text-brand-cyan font-bold">7+</span> Years in Product
               </span>
               <span>•</span>
               <span className="flex items-center gap-1.5">
-                <span className="text-brand-cyan font-bold">5M+</span> End Users Served
+                <span className="text-brand-cyan font-bold">500K+</span> Learners Scaled
               </span>
               <span>•</span>
               <span className="flex items-center gap-1.5">

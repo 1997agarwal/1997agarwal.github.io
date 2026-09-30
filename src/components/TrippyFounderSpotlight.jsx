@@ -108,15 +108,15 @@ export default function TrippyFounderSpotlight({ onRequestWalkthrough }) {
             {/* Right Col: Traction Metrics, Tech Stack, & Investor / Co-founder Pitch Box */}
             <div className="lg:col-span-5 space-y-6">
               
-              {/* Traction Metrics Grid */}
+              {/* Product Pillars */}
               <div className="grid grid-cols-2 gap-3">
-                {t.metrics.map((m, idx) => (
-                  <div key={idx} className="p-4 rounded-2xl bg-surface-dark/80 border border-surface-border text-center">
-                    <div className="text-2xl sm:text-3xl font-black text-white tracking-tight">
-                      {m.value}
+                {t.pillars.map((p, idx) => (
+                  <div key={idx} className="p-4 rounded-2xl bg-surface-dark/80 border border-surface-border">
+                    <div className="text-sm font-bold text-white leading-tight">
+                      {p.label}
                     </div>
-                    <div className="text-[11px] font-mono text-slate-400 mt-1 uppercase leading-tight">
-                      {m.label}
+                    <div className="text-[11px] text-slate-400 mt-1.5 leading-snug">
+                      {p.desc}
                     </div>
                   </div>
                 ))}
