@@ -302,7 +302,7 @@ export const CASE_STUDIES_ARCHIVE = [
       { title: 'PharmEasy Competitor Analysis', desc: 'Comprehensive competitor benchmarking in online pharmacy logistics.', url: 'https://drive.google.com/file/d/1agL9g6hCdYGc2Jk9EwlptuZ8ljIYvgJ0/view?usp=sharing' },
       { title: 'Furniture Rental User Research', desc: 'Quantitative user research survey on subscription furniture adoption.', url: 'https://drive.google.com/file/d/1lyaYrLhEsGdLtxBMoThgn7yUt_pEVPaE/view?usp=sharing' },
       { title: 'Lyft Business Model Canvas', desc: 'Strategic BMC dissecting ridesharing unit economics and driver incentives.', url: 'https://drive.google.com/file/d/1MIDMJyevwmeY1pen9T__5Zk007bDQdlm/view?usp=sharing' },
-      { title: 'Flat-Mate Finding Service Artifacts', desc: '0-to-1 PRD and wireframes for peer roommate discovery.', url: 'https://drive.google.com/file/d/1FlDde27xYtGRhcqTD_WbYzREXVoaNOVf/view?usp=sharing' }
+      { title: 'Bookbazaar P2P Marketplace Study', desc: 'Market analysis and user journey for peer-to-peer textbook buying and selling.', url: 'https://drive.google.com/file/d/1FvThEgW4ZMwi-oM7IPNuSo7APp4o-YPW/view?usp=sharing' }
     ]
   },
   {
@@ -311,16 +311,20 @@ export const CASE_STUDIES_ARCHIVE = [
       { title: 'Redbus Analytics & Engagement', desc: 'Bus booking funnels, user retention levers, and drop-off analysis.', url: 'https://drive.google.com/file/d/1euNb9BQYqiguq0bp6C4AmJjg6BADqOaB/view?usp=sharing' },
       { title: 'Zoom Key Metrics Identification', desc: 'North Star metric decomposition for B2B video communication.', url: 'https://drive.google.com/file/d/1fgDAgme_a5jfSkwS_aoRljeCCSAgRHkS/view?usp=sharing' },
       { title: 'Slack Activation & Retention Workflow', desc: 'Cohort retention sheets and team activation workflow modeling.', url: 'https://docs.google.com/spreadsheets/d/17IHOPnn_eVKcOM6xj1-Yj-nExuNaSKnb/edit?usp=sharing' },
-      { title: 'Snapdeal Growth Hack Teardown', desc: 'Viral referral mechanics and gamified buyer incentives.', url: 'https://drive.google.com/file/d/1YMyEjvAmyCinx_e0LxFMh06gyeqwVjz_/view?usp=sharing' }
+      { title: 'Snapdeal Growth Hack Teardown', desc: 'Viral referral mechanics and gamified buyer incentives.', url: 'https://drive.google.com/file/d/1YMyEjvAmyCinx_e0LxFMh06gyeqwVjz_/view?usp=sharing' },
+      { title: 'EdTech Trial Class Booking Flow', desc: 'Conversion funnel optimization and UX redesign for trial class scheduling.', url: 'https://drive.google.com/file/d/17SaORT6OW1vNfL3Ldb0Mrabo-jyGlmWv/view?usp=sharing' }
     ]
   },
   {
     category: 'PRDs, Specs & Feature Teardowns',
     items: [
+      { title: 'Leap Finance MVP & GTM Strategy', desc: '0-to-1 full-funnel study-abroad platform MVP, LMS backend, and revenue roadmap.', url: 'https://drive.google.com/file/d/1WWz5mKH2jUYO3qKE1ZYq2xu8qD264lpD/view?usp=sharing' },
       { title: 'Food Delivery App (Swiggy/Zomato Competitor PRD)', desc: 'Complete 10-part Master PRD with roadmaps, edge cases, and metrics.', url: 'https://drive.google.com/drive/folders/1QXaP_ZdX6-LL2pl97MFCO_swzGEbP7mf?usp=sharing' },
+      { title: 'Vegan Food App & Delivery Marketplace MVP', desc: 'Aggregator discovery, consumer ordering MVP, and multi-store delivery business case.', url: 'https://drive.google.com/file/d/1yVUWkqBlsNTxFoDblEgZjl6xL6EoXG90/view?usp=sharing' },
       { title: 'In-Flight Food-Ordering App MVP', desc: 'Offline-first airline passenger ordering system and traction plan.', url: 'https://drive.google.com/file/d/1FILNWyruvOzB3AFhhVa8epkAzt1eXM8v/view?usp=sharing' },
       { title: 'Google Pay Value Enhancement Spec', desc: 'Feature specification adding high-value consumer billing workflows.', url: 'https://drive.google.com/file/d/1t8EcVLss9Sr76tfW2tePyisOVgRRo_5u/view?usp=sharing' },
-      { title: 'Microsoft Teams Collaboration Enhancement', desc: 'Workflow design improving remote meeting tools and attendee engagement.', url: 'https://drive.google.com/file/d/1RZ8sVIEU5hNG2YjsmIsNylSAA2POF8FX/view?usp=share_link' }
+      { title: 'Microsoft Teams Collaboration Enhancement', desc: 'Workflow design improving remote meeting tools and attendee engagement.', url: 'https://drive.google.com/file/d/1RZ8sVIEU5hNG2YjsmIsNylSAA2POF8FX/view?usp=share_link' },
+      { title: 'AssistED Franchise Dispatch Spec', desc: 'Hyperlocal partner operations and assisted-commerce order fulfillment workflows.', url: 'https://drive.google.com/file/d/1x4PP2rSw4DtpdMoYR7gDHnTe644gWP6G/view?usp=sharing' }
     ]
   }
 ];
