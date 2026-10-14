@@ -15,7 +15,7 @@ export const PERSONAL_INFO = {
   yearsExperience: '7+',
   usersScaled: '500K+',
   awardsCount: '7',
-  venturesCount: '4',
+  venturesCount: '5',
   openSourceCount: '4',
   communityFollowers: '15K+'
 };
@@ -30,7 +30,7 @@ export const QUICK_VIEW = {
     { value: '40K+', label: 'online sellers supported at Shiprocket' },
     { value: '50→30%', label: 'checkout drop-off after my redesign at Frendy' }
   ],
-  building: 'Founder of Trippy (AI solo-travel network, active beta) · 4 commercial platforms · 4 open-source AI tools, including SpecForge (agents that turn customer calls into PRDs and tickets) and ContextPrism (an LLM token-cost gateway)',
+  building: 'Founder of Trippy (AI solo-travel network, active beta) · 5 commercial platforms · 4 open-source AI tools, including SpecForge (agents that turn customer calls into PRDs and tickets) and ContextPrism (an LLM token-cost gateway)',
   topAwards: [
     'Tekion Recognition Award (2025)',
     'Tally All Star Award (H2, Mar 2024)',
@@ -40,7 +40,7 @@ export const QUICK_VIEW = {
 
 export const METRICS = [
   { label: 'Awards & Honors', value: '7', suffix: 'Accolades', desc: 'Tekion, 4 at Tally, NITI Aayog & Techfest IIT Bombay' },
-  { label: 'Commercial Blueprints', value: '4', suffix: 'Platforms', desc: 'StartupOS, DupeScout, BusinessPay, CollabKaro' },
+  { label: 'Commercial Blueprints', value: '5', suffix: 'Platforms', desc: 'StartupOS, DupeScout, BusinessPay, CollabKaro, Housy' },
   { label: 'Open Source AI DevTools', value: '4', suffix: 'Public Tools', desc: 'SpecForge, ContextPrism, TicTacCourt, BrainGym' },
   { label: 'LinkedIn Community', value: '15K+', suffix: 'Followers', desc: 'Followers on LinkedIn' },
 ];
@@ -233,6 +233,20 @@ export const COMMERCIAL_VENTURES = [
     demoUrl: 'https://collab-tribe.github.io/CollabKaro-Website',
     resumeBlurb: 'creator escrow milestone marketplace',
     surfaces: ['Brand & Agency Portal', 'Creator Media Kit Hub', 'Escrow Admin Console', 'Mobile App']
+  },
+  {
+    id: 'housy',
+    name: 'Housy',
+    tagline: 'Managed Home Construction, Renovation & Interior Architecture OS',
+    category: 'PropTech & Managed Marketplace',
+    stage: 'BETA',
+    problem: 'Homeowners—especially remote/NRI property owners—face chaotic contractor coordination, opaque pricing markups, zero timeline accountability, and runaway budgets with no physical oversight.',
+    solution: 'End-to-end home project operating system featuring instant phase-wise estimators across 20 cities, paid on-site expert measurement visits, structural feasibility guards, and milestone escrow payments released strictly upon verified photo proof.',
+    stack: ['Next.js 15 (App Router)', 'Tailwind CSS v4', 'TypeScript', 'Vitest (265 Tests)', 'State Machine Engine'],
+    access: 'Private Commercial IP',
+    demoUrl: 'https://habitat-tribe.github.io/Housy-Website/',
+    resumeBlurb: 'managed home construction & renovation OS with photo-verified milestone escrow',
+    surfaces: ['Homeowner Project Portal', 'Contractor CRM & Bid Panel', 'Structural Feasibility Advisor', 'Trust & Ops Admin']
   }
 ];
 
