@@ -15,8 +15,8 @@ export const PERSONAL_INFO = {
   yearsExperience: '7+',
   usersScaled: '500K+',
   awardsCount: '7',
-  venturesCount: '5',
-  openSourceCount: '4',
+  venturesCount: '6',
+  openSourceCount: '5',
   communityFollowers: '15K+'
 };
 
@@ -30,7 +30,7 @@ export const QUICK_VIEW = {
     { value: '40K+', label: 'online sellers supported at Shiprocket' },
     { value: '50→30%', label: 'checkout drop-off after my redesign at Frendy' }
   ],
-  building: 'Founder of Trippy (AI solo-travel network, active beta) · 5 commercial platforms · 4 open-source AI tools, including SpecForge (agents that turn customer calls into PRDs and tickets) and ContextPrism (an LLM token-cost gateway)',
+  building: 'Founder of Trippy (AI solo-travel network, active beta) · 6 commercial platforms · 5 open-source AI tools, including SpecForge (agents that turn customer calls into PRDs and tickets) and ContextPrism (an LLM token-cost gateway)',
   topAwards: [
     'Tekion Recognition Award (2025)',
     'Tally All Star Award (H2, Mar 2024)',
@@ -40,8 +40,8 @@ export const QUICK_VIEW = {
 
 export const METRICS = [
   { label: 'Awards & Honors', value: '7', suffix: 'Accolades', desc: 'Tekion, 4 at Tally, NITI Aayog & Techfest IIT Bombay' },
-  { label: 'Commercial Blueprints', value: '5', suffix: 'Platforms', desc: 'StartupOS, DupeScout, BusinessPay, CollabKaro, Housy' },
-  { label: 'Open Source AI DevTools', value: '4', suffix: 'Public Tools', desc: 'SpecForge, ContextPrism, TicTacCourt, BrainGym' },
+  { label: 'Commercial Blueprints', value: '6', suffix: 'Platforms', desc: 'StartupOS, DupeScout, BusinessPay, CollabKaro, Housy, Hinged' },
+  { label: 'Open Source AI DevTools', value: '5', suffix: 'Public Tools', desc: 'SpecForge, ContextPrism, TicTacCourt, BrainGym, RoastHub' },
   { label: 'LinkedIn Community', value: '15K+', suffix: 'Followers', desc: 'Followers on LinkedIn' },
 ];
 
@@ -247,6 +247,20 @@ export const COMMERCIAL_VENTURES = [
     demoUrl: 'https://habitat-tribe.github.io/Housy-Website/',
     resumeBlurb: 'managed home construction & renovation OS with photo-verified milestone escrow',
     surfaces: ['Homeowner Project Portal', 'Contractor CRM & Bid Panel', 'Structural Feasibility Advisor', 'Trust & Ops Admin']
+  },
+  {
+    id: 'hinged',
+    name: 'Hinged',
+    tagline: 'WhatsApp-Native Multi-Event Wedding Coordination Operating System',
+    category: 'WeddingTech & Social Coordination',
+    stage: 'BETA',
+    problem: 'Multi-event Indian weddings (3–5 days, 4–7 functions) suffer from spreadsheet collapse, <15% email open rates on Western sites, uninvited guest overruns, and family politics when relatives snoop uninvited functions.',
+    solution: 'WhatsApp-native scoped digital invitation links resolving strictly to invited ceremonies with strict household attendee limits, 3 cultural luxury themes, and coordinator dashboards with real CSV import and plate headcount analytics.',
+    stack: ['Next.js 14 (App Router)', 'TypeScript', 'Tailwind CSS', 'Zod', 'Supabase / PostgreSQL', 'PapaParse'],
+    access: 'Private Commercial IP',
+    demoUrl: 'https://wedding-tribe.github.io/Hinged-Website/',
+    resumeBlurb: 'WhatsApp-first multi-event wedding coordination OS with scoped RSVPs',
+    surfaces: ['Scoped Guest Mobile Portal', 'Host Command Center', 'CSV Import Engine', 'WhatsApp Share Hub']
   }
 ];
 
@@ -306,6 +320,20 @@ export const OPEN_SOURCE_TOOLS = [
     highlights: ['Live Browser Play on GitHub Pages', 'Fermi Drills & Hallucination Hunter', 'Standalone CLI Engine (npm run cli)'],
     license: 'MIT',
     resumeSummary: 'Daily mental resistance training arena counteracting AI-induced cognitive atrophy; features Fermi speed drills, lateral puzzles, architecture showdowns, and 15-level progression; live on GitHub Pages.'
+  },
+  {
+    id: 'roast-hub',
+    name: 'RoastHub',
+    tagline: 'The Savage Multi-Roast Machine for Tech & Startups with Thermal Receipts',
+    category: 'AI Entertainment & DevTools',
+    description: 'Unapologetic, 100% client-side web application roasting startup pitches, GitHub repositories, and cloud stacks in under 3 seconds. Features a dual-engine comedy matrix (300+ procedural heuristics + optional AI Turbo Mode BYOK), high-res thermal receipt exporter with jagged edges, red rubber approval/rejection ink stamps, and 1-click viral sharing to X, LinkedIn, and Reddit.',
+    starsUrl: 'https://img.shields.io/github/stars/1997agarwal/RoastHub?style=social',
+    repoUrl: 'https://github.com/1997agarwal/RoastHub',
+    demoUrl: 'https://1997agarwal.github.io/RoastHub/',
+    stack: ['React 18', 'TypeScript 5.8', 'Vite', 'Tailwind CSS', 'html2canvas-pro', 'Canvas Confetti'],
+    highlights: ['300+ Procedural Roast Heuristics ($0 Offline)', 'Thermal Receipt & VC Rejection Exporter', '1-Click X / LinkedIn / Reddit Sharing'],
+    license: 'MIT',
+    resumeSummary: 'Engineered viral client-side tech roaster with dual-engine comedy matrix (300+ offline heuristics + BYOK AI Turbo), commit forensics, and high-res thermal receipt PNG generation.'
   }
 ];
 
