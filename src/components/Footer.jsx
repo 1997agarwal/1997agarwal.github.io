@@ -41,6 +41,9 @@ export default function Footer({ onOpenContact }) {
             </div>
             <div>
               © {new Date().getFullYear()} Harshit Agarwal. Engineered with React + Tailwind.
+              <a href="#admin" title="CPU Lead Vault" className="ml-2 text-slate-700 hover:text-cyan-400 text-[10px]">
+                ⚡
+              </a>
             </div>
           </div>
 

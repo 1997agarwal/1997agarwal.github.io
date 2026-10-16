@@ -13,21 +13,31 @@ import CaseStudiesArchive from './components/CaseStudiesArchive';
 import AccoladesSection from './components/AccoladesSection';
 import ContactModal from './components/ContactModal';
 import ResumeModal from './components/ResumeModal';
+import AdminDashboard from './components/AdminDashboard';
 import Footer from './components/Footer';
 
 export default function App() {
   const [isContactOpen, setIsContactOpen] = useState(false);
   const [isResumeOpen, setIsResumeOpen] = useState(false);
+  const [isAdminOpen, setIsAdminOpen] = useState(false);
   const [walkthroughSubject, setWalkthroughSubject] = useState('');
   const [resumeTab, setResumeTab] = useState('quick');
 
-  // Shareable deep links: /#resume (quick view) and /#resume-full
+  // Shareable deep links: /#resume, /#resume-full, and /#admin
   useEffect(() => {
-    const hash = window.location.hash;
-    if (hash === '#resume' || hash === '#resume-full') {
-      setResumeTab(hash === '#resume-full' ? 'full' : 'quick');
-      setIsResumeOpen(true);
-    }
+    const handleHash = () => {
+      const hash = window.location.hash;
+      if (hash === '#resume' || hash === '#resume-full') {
+        setResumeTab(hash === '#resume-full' ? 'full' : 'quick');
+        setIsResumeOpen(true);
+      } else if (hash === '#admin') {
+        setIsAdminOpen(true);
+      }
+    };
+
+    handleHash();
+    window.addEventListener('hashchange', handleHash);
+    return () => window.removeEventListener('hashchange', handleHash);
   }, []);
 
   const handleOpenContact = () => {
@@ -92,6 +102,15 @@ export default function App() {
         onClose={handleCloseResume}
         initialTab={resumeTab}
       />
+
+      {isAdminOpen && (
+        <AdminDashboard
+          onClose={() => {
+            setIsAdminOpen(false);
+            window.history.replaceState(null, '', window.location.pathname + window.location.search);
+          }}
+        />
+      )}
     </div>
   );
 }
