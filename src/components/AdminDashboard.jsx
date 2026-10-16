@@ -226,8 +226,20 @@ export default function AdminDashboard({ onClose }) {
             {/* Leads Table */}
             <div className="flex-1 overflow-y-auto border border-slate-800 rounded-xl bg-slate-950/40">
               {filteredLeads.length === 0 ? (
-                <div className="py-16 text-center text-slate-500 text-xs font-mono">
-                  No inquiries matching the selected filters.
+                <div className="py-20 text-center space-y-3">
+                  <div className="w-12 h-12 mx-auto rounded-full bg-slate-800/60 border border-slate-700 flex items-center justify-center text-xl">
+                    📬
+                  </div>
+                  <div className="text-sm font-bold text-white font-mono">
+                    No Live Inquiries Yet
+                  </div>
+                  <p className="text-xs text-slate-400 max-w-sm mx-auto">
+                    The vault is active and listening in real time across your Portfolio, Trippy, Housy, and BusinessPay touchpoints.
+                  </p>
+                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-[11px] font-mono">
+                    <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+                    Live Dispatch Relay Active
+                  </div>
                 </div>
               ) : (
                 <table className="w-full text-left border-collapse text-xs">
