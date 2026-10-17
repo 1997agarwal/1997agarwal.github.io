@@ -46,17 +46,6 @@ export default function ContactModal({ isOpen, onClose, defaultSubject = '' }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!FORM_ENDPOINT) {
-      const mailtoUri = `mailto:${personalInfo.email}?subject=${encodeURIComponent(
-        finalSubject
-      )}&body=${encodeURIComponent(
-        `Name: ${senderName}\nEmail: ${senderEmail}\n\nMessage:\n${message}`
-      )}`;
-      window.location.href = mailtoUri;
-      onClose();
-      return;
-    }
-
     setStatus('sending');
     try {
       const result = await submitLead({
@@ -70,7 +59,7 @@ export default function ContactModal({ isOpen, onClose, defaultSubject = '' }) {
       setStatus('sent');
       setMessage('');
     } catch {
-      // Even if network fails, submitLead caches locally so Harshit never loses it!
+      // Even if network drops, submitLead has preserved it in the vault!
       setStatus('sent');
     }
   };
@@ -201,7 +190,7 @@ export default function ContactModal({ isOpen, onClose, defaultSubject = '' }) {
                 disabled={status === 'sending'}
                 className="px-6 py-2.5 rounded-lg bg-brand-cyan hover:bg-cyan-400 disabled:opacity-60 text-slate-950 font-bold text-xs transition-all shadow-md shadow-cyan-500/20"
               >
-                {status === 'sending' ? 'Sending…' : FORM_ENDPOINT ? 'Send Message' : 'Send via Email Client'}
+                {status === 'sending' ? 'Sending…' : 'Send Message'}
               </button>
             </div>
           </form>
