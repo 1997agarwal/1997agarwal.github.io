@@ -3,16 +3,23 @@
  * Captures inquiries and persists them locally and to the remote endpoint.
  */
 
-const STORAGE_KEY = 'cpu_portfolio_leads_v1';
+const STORAGE_KEY = 'cpu_portfolio_leads_v2';
+const LEGACY_STORAGE_KEY = 'cpu_portfolio_leads_v1';
 const ADMIN_HASH_KEY = 'cpu_admin_pass_v1';
 
 export function getLocalLeads() {
   try {
+    // Purge any legacy key if it had seed data
+    if (localStorage.getItem(LEGACY_STORAGE_KEY)) {
+      localStorage.removeItem(LEGACY_STORAGE_KEY);
+    }
     const raw = localStorage.getItem(STORAGE_KEY);
     if (!raw) {
       return [];
     }
-    return JSON.parse(raw);
+    const parsed = JSON.parse(raw);
+    // Extra safety: filter out any leftover mock lead-seed items
+    return parsed.filter(item => !item.id?.startsWith('lead-seed-'));
   } catch {
     return [];
   }

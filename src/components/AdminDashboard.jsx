@@ -105,12 +105,25 @@ export default function AdminDashboard({ onClose }) {
 
           <div className="flex items-center gap-3">
             {isAuthenticated && (
-              <button
-                onClick={handleLogout}
-                className="text-xs font-mono text-slate-400 hover:text-rose-400 px-3 py-1.5 rounded-lg border border-slate-700 hover:border-rose-500/30 transition-all"
-              >
-                Lock Vault
-              </button>
+              <>
+                <button
+                  onClick={() => {
+                    localStorage.removeItem('cpu_portfolio_leads_v1');
+                    localStorage.removeItem('cpu_portfolio_leads_v2');
+                    setLeads([]);
+                  }}
+                  title="Purge cached demo data from browser"
+                  className="text-xs font-mono text-slate-400 hover:text-amber-400 px-3 py-1.5 rounded-lg border border-slate-700 hover:border-amber-500/30 transition-all"
+                >
+                  Clear Cached
+                </button>
+                <button
+                  onClick={handleLogout}
+                  className="text-xs font-mono text-slate-400 hover:text-rose-400 px-3 py-1.5 rounded-lg border border-slate-700 hover:border-rose-500/30 transition-all"
+                >
+                  Lock Vault
+                </button>
+              </>
             )}
             <button
               onClick={onClose}
