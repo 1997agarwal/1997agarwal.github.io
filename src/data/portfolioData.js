@@ -382,7 +382,7 @@ export const AWARDS_AND_EDUCATION = {
     { title: 'Excellence & Collaboration Champion', org: 'Tally Education', date: '2023 – 2024', desc: '4x Spot Awards from Product Leads and Department Heads for sprint excellence.' }
   ],
   education: [
-    { school: 'Duke Corporate Education / Duke University', program: 'Post-Graduate Program in Product Management', period: '2020', desc: 'Business metrics, data-driven prioritization, market research, and financial modeling.' },
+    { school: 'Duke Corporate Education / Duke University', program: 'Postgraduate Certification in Product Management', period: '2020', desc: 'Business metrics, data-driven prioritization, market research, and financial modeling.' },
     { school: 'Jaypee Institute of Information Technology (JIIT, Noida)', program: 'Bachelor of Technology (B.Tech) — Electronics & Communication', period: '2015 – 2019', desc: 'Coordinator of Robotics Hub, embedded systems, microcontrollers, and digital signal processing.' }
   ],
   certifications: [
@@ -401,7 +401,7 @@ export const personalInfo = {
   bio: "The best product managers don't just manage the backlog — they understand the system, prototype the future, and ship value.",
   status: "Product Manager @ Tekion Corp • Founder @ Trippy",
   location: PERSONAL_INFO.location,
-  education: "Duke Univ (PGPM) • B.Tech (ECE)",
+  education: "Duke University (Postgraduate Certification in Product Management) • B.Tech (ECE)",
   email: PERSONAL_INFO.email,
   avatar: PERSONAL_INFO.avatarUrl,
   links: {
