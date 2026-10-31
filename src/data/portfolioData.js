@@ -52,7 +52,7 @@ export const TRIPPY_FOUNDER_SPOTLIGHT = {
   category: 'TravelTech AI & Social Network',
   stage: 'ACTIVE BETA',
   statusBadge: 'Active Beta · Pre-Incorporation',
-  tagline: 'AI Solo-Travel Compatibility Matching & Host Operating System',
+  tagline: 'A Travel Product for Solo Travelers & Host Operating System',
   mission: 'Going solo does not mean going alone.',
   problem: 'Solo travelers face high emotional friction (loneliness, safety anxiety, and poor group chemistry), while community tour hosts, bike clubs, and hostels suffer from fragmented discovery, manual WhatsApp coordination, and high platform commissions.',
   solution: 'India-first social travel network pairing travelers on overlapping dates with multi-attribute compatibility scoring. Built as a family of specialized surfaces: Consumer Matchmaker, Motorcycle & Road Trip Live Telemetry Hub, Hostel Guest Connect, and Partner Host CRM.',
