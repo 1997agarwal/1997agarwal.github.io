@@ -16,7 +16,7 @@ export default function Footer({ onOpenContact }) {
               Senior Product Manager · AI · Builder. Founder of Trippy.
             </p>
             {/* DRAFT copy for owner review */}
-            <p className="text-slate-300 max-w-sm mt-2">
+            <p className="text-slate-300 max-w-sm sm:max-w-none sm:whitespace-nowrap mt-2">
               <span className="font-semibold text-emerald-400">Open to roles:</span> Senior PM, VP Product, or co-founder.
             </p>
           </div>
