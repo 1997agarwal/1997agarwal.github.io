@@ -12,7 +12,7 @@ export default function ProductsOverview() {
       step: '01',
       label: 'Flagship Startup',
       title: TRIPPY_FOUNDER_SPOTLIGHT.name,
-      desc: 'A travel product for solo travelers to explore the unexplored. Active beta, founder-led.',
+      desc: 'An AI travel product for solo travelers to explore the unexplored. Active beta, founder-led.',
       accent: 'border-amber-500/40 hover:border-amber-400/70 text-amber-300',
       cta: 'Meet Trippy',
     },

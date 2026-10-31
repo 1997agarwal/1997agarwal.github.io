@@ -99,7 +99,7 @@ export default function ExperienceSection() {
         <p className="text-sm sm:text-base text-slate-200 leading-relaxed">
           I don't stop at the backlog. I map how a workflow really runs, prototype the future state, and ship the
           change. That approach runs through my roles: B2B payments at Tekion, a learning platform for 500K+ students
-          at Tally, and Trippy, a travel product built for solo travelers to explore the unexplored.
+          at Tally, and Trippy, an AI travel product built for solo travelers to explore the unexplored.
         </p>
       </div>
 

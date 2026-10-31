@@ -4,7 +4,7 @@
 export const PERSONAL_INFO = {
   name: 'Harshit Agarwal',
   role: 'Senior Product Manager · AI · Builder',
-  tagline: '7+ years building business software: payments for car dealerships at Tekion, a learning platform at Tally. I also build AI tools and Trippy, a travel product built for solo travelers to explore the unexplored.',
+  tagline: '7+ years building business software: payments for car dealerships at Tekion, a learning platform at Tally. I also build AI tools and Trippy, an AI travel product built for solo travelers to explore the unexplored.',
   location: 'Bengaluru, Karnataka, India • Global Remote',
   email: 'agarwal.harshit97@gmail.com',
   linkedin: 'https://www.linkedin.com/in/1997agarwal/',
@@ -23,7 +23,7 @@ export const PERSONAL_INFO = {
 // Content for the 7-second recruiter Quick View in the resume modal
 export const QUICK_VIEW = {
   headline: 'Senior Product Manager · AI · Builder · 7+ years',
-  summary: '7+ years building software for businesses: payments and collections for car dealerships at Tekion, a learning platform for 500K+ students at Tally, and Trippy, a travel product built for solo travelers to explore the unexplored. I also build AI tools.',
+  summary: '7+ years building software for businesses: payments and collections for car dealerships at Tekion, a learning platform for 500K+ students at Tally, and Trippy, an AI travel product built for solo travelers to explore the unexplored. I also build AI tools.',
   stats: [
     { value: '500K+', label: 'students on the learning platform I launched at Tally' },
     { value: '$1.5–2M', label: 'projected yearly revenue from Tekion\'s new payments product' },
@@ -52,7 +52,7 @@ export const TRIPPY_FOUNDER_SPOTLIGHT = {
   category: 'TravelTech AI & Social Network',
   stage: 'ACTIVE BETA',
   statusBadge: 'Active Beta · Pre-Incorporation',
-  tagline: 'A Travel Product for Solo Travelers & Host Operating System',
+  tagline: 'An AI Travel Product for Solo Travelers & Host Operating System',
   mission: 'Going solo does not mean going alone.',
   problem: 'Solo travelers face high emotional friction (loneliness, safety anxiety, and poor group chemistry), while community tour hosts, bike clubs, and hostels suffer from fragmented discovery, manual WhatsApp coordination, and high platform commissions.',
   solution: 'India-first social travel network pairing travelers on overlapping dates with multi-attribute compatibility scoring. Built as a family of specialized surfaces: Consumer Matchmaker, Motorcycle & Road Trip Live Telemetry Hub, Hostel Guest Connect, and Partner Host CRM.',
@@ -62,7 +62,7 @@ export const TRIPPY_FOUNDER_SPOTLIGHT = {
     { label: 'Zero-Commission Hosts', desc: 'Direct bookings, no platform fees' },
     { label: 'India-First Network', desc: 'Built for Indian routes, hostels and communities' }
   ],
-  resumeSummary: 'Conceptualized and architected Trippy, a travel product built for solo travelers to explore the unexplored, with a tour host CRM. Formulated multi-attribute compatibility scoring, motorcycle live GPS telemetry, and hostel pre-arrival connect across decoupled production surfaces. Currently in active beta ahead of corporate entity incorporation and pre-seed fundraising.',
+  resumeSummary: 'Conceptualized and architected Trippy, an AI travel product built for solo travelers to explore the unexplored, with a tour host CRM. Formulated multi-attribute compatibility scoring, motorcycle live GPS telemetry, and hostel pre-arrival connect across decoupled production surfaces. Currently in active beta ahead of corporate entity incorporation and pre-seed fundraising.',
   surfaces: [
     { name: 'Consumer Matchmaker', desc: 'Compatibility & vibe overlap scoring for solo travelers' },
     { name: 'Bike & Road Trip Hub', desc: 'Live GPS telemetry, waypoint logs & emergency SOS alerts' },
