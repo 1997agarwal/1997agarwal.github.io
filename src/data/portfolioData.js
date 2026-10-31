@@ -4,7 +4,7 @@
 export const PERSONAL_INFO = {
   name: 'Harshit Agarwal',
   role: 'Senior Product Manager · AI · Builder',
-  tagline: '7+ years building business software: payments for car dealerships at Tekion, a learning platform at Tally. I also build AI tools and Trippy, a travel app for solo travelers.',
+  tagline: '7+ years building business software: payments for car dealerships at Tekion, a learning platform at Tally. I also build AI tools and Trippy, a travel product built for solo travelers to explore the unexplored.',
   location: 'Bengaluru, Karnataka, India • Global Remote',
   email: 'agarwal.harshit97@gmail.com',
   linkedin: 'https://www.linkedin.com/in/1997agarwal/',
@@ -23,14 +23,14 @@ export const PERSONAL_INFO = {
 // Content for the 7-second recruiter Quick View in the resume modal
 export const QUICK_VIEW = {
   headline: 'Senior Product Manager · AI · Builder · 7+ years',
-  summary: '7+ years building software for businesses: payments and collections for car dealerships at Tekion, a learning platform for 500K+ students at Tally, and my own startup, Trippy. I also build AI tools.',
+  summary: '7+ years building software for businesses: payments and collections for car dealerships at Tekion, a learning platform for 500K+ students at Tally, and Trippy, a travel product built for solo travelers to explore the unexplored. I also build AI tools.',
   stats: [
     { value: '500K+', label: 'students on the learning platform I launched at Tally' },
     { value: '$1.5–2M', label: 'projected yearly revenue from Tekion\'s new payments product' },
     { value: '40K+', label: 'online sellers supported at Shiprocket' },
     { value: '50→30%', label: 'checkout drop-off after my redesign at Frendy' }
   ],
-  building: 'Founder of Trippy (AI solo-travel network, active beta) · 6 commercial platforms · 5 open-source AI tools, including SpecForge (agents that turn customer calls into PRDs and tickets) and ContextPrism (an LLM token-cost gateway)',
+  building: 'Founder of Trippy (solo-travel product, active beta) · 6 commercial platforms · 5 open-source AI tools, including SpecForge (agents that turn customer calls into PRDs and tickets) and ContextPrism (an LLM token-cost gateway)',
   topAwards: [
     'Tekion Recognition Award (2025)',
     'Tally All Star Award (H2, Mar 2024)',
@@ -62,7 +62,7 @@ export const TRIPPY_FOUNDER_SPOTLIGHT = {
     { label: 'Zero-Commission Hosts', desc: 'Direct bookings, no platform fees' },
     { label: 'India-First Network', desc: 'Built for Indian routes, hostels and communities' }
   ],
-  resumeSummary: 'Conceptualized and architected Trippy, an AI-powered solo travel matching & tour host CRM platform. Formulated multi-attribute compatibility scoring, motorcycle live GPS telemetry, and hostel pre-arrival connect across decoupled production surfaces. Currently in active beta ahead of corporate entity incorporation and pre-seed fundraising.',
+  resumeSummary: 'Conceptualized and architected Trippy, a travel product built for solo travelers to explore the unexplored, with a tour host CRM. Formulated multi-attribute compatibility scoring, motorcycle live GPS telemetry, and hostel pre-arrival connect across decoupled production surfaces. Currently in active beta ahead of corporate entity incorporation and pre-seed fundraising.',
   surfaces: [
     { name: 'Consumer Matchmaker', desc: 'Compatibility & vibe overlap scoring for solo travelers' },
     { name: 'Bike & Road Trip Hub', desc: 'Live GPS telemetry, waypoint logs & emergency SOS alerts' },
