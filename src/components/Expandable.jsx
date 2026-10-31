@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 
-// Collapsed behind a toggle on phones/tablets, always expanded on desktop (lg+).
+// Always expanded on desktop (lg+). On phones/tablets the content starts open so it is
+// readable without a tap; the toggle lets the reader collapse it to skim.
 // Pure CSS breakpoint, so there is no layout jump or JS media query.
-export default function Expandable({ label, children, className = '' }) {
-  const [open, setOpen] = useState(false);
+export default function Expandable({ label, children, className = '', defaultOpen = true }) {
+  const [open, setOpen] = useState(defaultOpen);
 
   return (
     <div className={className}>
