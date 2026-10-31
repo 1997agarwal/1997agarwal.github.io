@@ -2,6 +2,13 @@ import React, { useState } from 'react';
 import { caseStudies } from '../data/portfolioData';
 import SectionHeader from './SectionHeader';
 
+// Label names what the link opens, based on its URL (the file type behind a Drive link is not in the URL).
+const openLabel = (url) => {
+  if (url.includes('docs.google.com/spreadsheets')) return 'Open spreadsheet in Google Sheets';
+  if (url.includes('/drive/folders/')) return 'Open folder in Google Drive';
+  return 'Open file in Google Drive';
+};
+
 export default function CaseStudiesArchive() {
   const [filter, setFilter] = useState('ALL');
   const [showAll, setShowAll] = useState(false);
@@ -72,9 +79,10 @@ export default function CaseStudiesArchive() {
                     href={study.link}
                     target="_blank"
                     rel="noreferrer"
+                    aria-label={`${openLabel(study.link)}: ${study.title}`}
                     className="w-full py-2 px-3 rounded-lg bg-surface-dark hover:bg-brand-cyan/20 border border-surface-border hover:border-brand-cyan/40 text-xs font-semibold text-slate-200 hover:text-white transition-all flex items-center justify-center gap-2"
                   >
-                    <span>View Artifact / Document</span>
+                    <span>{openLabel(study.link)}</span>
                     <svg className="w-3.5 h-3.5 text-brand-cyan" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                     </svg>
