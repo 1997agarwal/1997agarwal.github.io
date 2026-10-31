@@ -1,74 +1,23 @@
 /**
- * Central Lead Service for Harshit's Portfolio & Product Ecosystem.
- * Captures inquiries and persists them locally and to the remote endpoint.
+ * Contact form submission for the portfolio.
+ * Every inquiry goes to one place: the Formspree form. Formspree stores each submission in its
+ * dashboard and emails it to the owner. Nothing is kept in the visitor's browser.
  */
 
-const STORAGE_KEY = 'cpu_portfolio_leads_v2';
-const LEGACY_STORAGE_KEY = 'cpu_portfolio_leads_v1';
-const ADMIN_HASH_KEY = 'cpu_admin_pass_v1';
+const FORM_ENDPOINT = import.meta.env?.VITE_CONTACT_FORM_ENDPOINT || 'https://formspree.io/f/mqkenwgb';
+const REQUEST_TIMEOUT_MS = 15000;
 
-export function getLocalLeads() {
-  try {
-    // Purge any legacy key if it had seed data
-    if (localStorage.getItem(LEGACY_STORAGE_KEY)) {
-      localStorage.removeItem(LEGACY_STORAGE_KEY);
-    }
-    const raw = localStorage.getItem(STORAGE_KEY);
-    if (!raw) {
-      return [];
-    }
-    const parsed = JSON.parse(raw);
-    // Extra safety: filter out any leftover mock lead-seed items
-    return parsed.filter(item => !item.id?.startsWith('lead-seed-'));
-  } catch {
-    return [];
-  }
-}
-
-export function saveLeadLocally(leadData) {
-  try {
-    const current = getLocalLeads();
-    const newEntry = {
-      id: `lead-${Date.now()}-${Math.random().toString(36).substr(2, 6)}`,
-      timestamp: new Date().toISOString(),
-      status: 'new',
-      ...leadData
-    };
-    const updated = [newEntry, ...current];
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(updated));
-    return newEntry;
-  } catch (err) {
-    console.error('Failed to save lead locally:', err);
-    return null;
-  }
-}
-
-export function updateLeadStatus(id, newStatus) {
-  try {
-    const current = getLocalLeads();
-    const updated = current.map(item => item.id === id ? { ...item, status: newStatus } : item);
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(updated));
-    return updated;
-  } catch {
-    return [];
-  }
-}
-
-export function deleteLeadLocally(id) {
-  try {
-    const current = getLocalLeads();
-    const updated = current.filter(item => item.id !== id);
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(updated));
-    return updated;
-  } catch {
-    return [];
-  }
+// Keys written by the retired local lead vault. Remove them from visitors' browsers.
+const RETIRED_STORAGE_KEYS = ['cpu_portfolio_leads_v1', 'cpu_portfolio_leads_v2', 'cpu_admin_pass_v1'];
+try {
+  RETIRED_STORAGE_KEYS.forEach((key) => localStorage.removeItem(key));
+} catch {
+  // Storage can be unavailable (private mode, blocked site data). Nothing to clean up then.
 }
 
 /**
- * Universal Form Submitter:
- * 1. Dispatches to Formspree / Web3Forms if configured or fallback public relay.
- * 2. Saves to local store so Harshit can inspect in /#/admin.
+ * Sends a contact inquiry to Formspree.
+ * Resolves to { ok: true } when Formspree accepted it, otherwise { ok: false }.
  */
 export async function submitLead({
   project = 'Portfolio',
@@ -78,21 +27,11 @@ export async function submitLead({
   message = '',
   metadata = {}
 }) {
-  // Always save locally so the admin screen has immediate visibility
-  const savedEntry = saveLeadLocally({
-    project,
-    name,
-    email,
-    subject,
-    message,
-    metadata
-  });
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), REQUEST_TIMEOUT_MS);
 
-  // Attempt external dispatch
-  const endpoint = import.meta.env?.VITE_CONTACT_FORM_ENDPOINT || 'https://formspree.io/f/mqkenwgb';
-  
   try {
-    const res = await fetch(endpoint, {
+    const res = await fetch(FORM_ENDPOINT, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -106,12 +45,14 @@ export async function submitLead({
         message: typeof message === 'string' ? message : JSON.stringify(message),
         _replyto: email,
         ...metadata
-      })
+      }),
+      signal: controller.signal
     });
-    return { ok: res.ok, entry: savedEntry };
+    return { ok: res.ok };
   } catch (err) {
-    console.warn('Remote form submission deferred to local cache:', err);
-    // Even if network fails, entry is preserved in local storage
-    return { ok: true, entry: savedEntry, offline: true };
+    console.warn('Contact form submission failed:', err);
+    return { ok: false };
+  } finally {
+    clearTimeout(timer);
   }
 }
