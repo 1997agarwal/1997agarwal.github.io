@@ -99,7 +99,7 @@ export default function Hero({ onOpenContact, onOpenResume }) {
                   <div>
                     <h3 className="text-white font-bold text-lg">{personalInfo.name}</h3>
                     <p className="text-xs text-brand-cyan font-mono">{personalInfo.location}</p>
-                    <p className="text-xs text-slate-400">Duke Univ (Postgraduate Certification in PM) • B.Tech (ECE)</p>
+                    <p className="text-xs text-slate-400">Duke University (Postgraduate Certification in Product Management, Dec 2020) • B.Tech (ECE)</p>
                   </div>
                 </div>
 
