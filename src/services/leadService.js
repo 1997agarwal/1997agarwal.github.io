@@ -1,10 +1,12 @@
 /**
  * Contact form submission for the portfolio.
- * Every inquiry goes to one place: the Formspree form. Formspree stores each submission in its
- * dashboard and emails it to the owner. Nothing is kept in the visitor's browser.
+ * Every inquiry goes to one place: the lead sheet, a Google Apps Script web app that writes a row
+ * to the owner's spreadsheet. Nothing is kept in the visitor's browser.
  */
 
-const FORM_ENDPOINT = import.meta.env?.VITE_CONTACT_FORM_ENDPOINT || 'https://formspree.io/f/mqkenwgb';
+const FORM_ENDPOINT =
+  import.meta.env?.VITE_CONTACT_FORM_ENDPOINT ||
+  'https://script.google.com/macros/s/AKfycbwDY2QvbEWVODbWnttFc5rljC0AJbPNtMzEa5yQH46WjoUEXB7KO7iLJuBGMi_hFrRZ6A/exec';
 const REQUEST_TIMEOUT_MS = 15000;
 
 // Keys written by the retired local lead vault. Remove them from visitors' browsers.
@@ -17,7 +19,7 @@ try {
 
 /**
  * Sends a contact inquiry to Formspree.
- * Resolves to { ok: true } when Formspree accepted it, otherwise { ok: false }.
+ * Resolves to { ok: true } once the request has been sent, otherwise { ok: false }.
  */
 export async function submitLead({
   project = 'Portfolio',
@@ -31,24 +33,25 @@ export async function submitLead({
   const timer = setTimeout(() => controller.abort(), REQUEST_TIMEOUT_MS);
 
   try {
-    const res = await fetch(FORM_ENDPOINT, {
+    // Apps Script cannot answer a cross-origin request, so the response is opaque and its status
+    // cannot be read. "no-cors" with text/plain keeps the request simple. A rejected promise still
+    // means the request never left the browser.
+    await fetch(FORM_ENDPOINT, {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json'
-      },
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'text/plain;charset=utf-8' },
       body: JSON.stringify({
         project,
         name,
         email,
         subject: subject || `New Inquiry from ${project}`,
         message: typeof message === 'string' ? message : JSON.stringify(message),
-        _replyto: email,
+        source: typeof window !== 'undefined' ? window.location.href : '',
         ...metadata
       }),
       signal: controller.signal
     });
-    return { ok: res.ok };
+    return { ok: true };
   } catch (err) {
     console.warn('Contact form submission failed:', err);
     return { ok: false };
