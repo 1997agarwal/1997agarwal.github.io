@@ -15,6 +15,10 @@ export default function Footer({ onOpenContact }) {
             <p className="text-slate-400 max-w-sm">
               Senior Product Manager · AI · Builder. Founder of Trippy.
             </p>
+            {/* DRAFT copy for owner review */}
+            <p className="text-slate-300 max-w-sm mt-2">
+              <span className="font-semibold text-emerald-400">Open to roles:</span> Senior PM, VP Product, or co-founder.
+            </p>
           </div>
 
           {/* Nav Links */}
