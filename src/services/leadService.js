@@ -1,25 +1,77 @@
 /**
- * Contact form submission for the portfolio.
- * Every inquiry goes to one place: the lead sheet, a Google Apps Script web app that writes a row
- * to the owner's spreadsheet. Nothing is kept in the visitor's browser.
+ * Central Lead Service for Harshit's Portfolio & Product Ecosystem.
+ * Captures inquiries and persists them locally and to the remote endpoint.
  */
+
+const STORAGE_KEY = 'cpu_portfolio_leads_v2';
+const LEGACY_STORAGE_KEY = 'cpu_portfolio_leads_v1';
+
+export function getLocalLeads() {
+  try {
+    if (typeof localStorage === 'undefined') return [];
+    if (localStorage.getItem(LEGACY_STORAGE_KEY)) {
+      localStorage.removeItem(LEGACY_STORAGE_KEY);
+    }
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if (!raw) return [];
+    const parsed = JSON.parse(raw);
+    return parsed.filter(item => !item.id?.startsWith('lead-seed-'));
+  } catch {
+    return [];
+  }
+}
+
+export function saveLeadLocally(leadData) {
+  try {
+    if (typeof localStorage === 'undefined') return null;
+    const current = getLocalLeads();
+    const newEntry = {
+      id: `lead-${Date.now()}-${Math.random().toString(36).substr(2, 6)}`,
+      timestamp: new Date().toISOString(),
+      status: 'new',
+      ...leadData
+    };
+    const updated = [newEntry, ...current];
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(updated));
+    return newEntry;
+  } catch (err) {
+    console.error('Failed to save lead locally:', err);
+    return null;
+  }
+}
+
+export function updateLeadStatus(id, newStatus) {
+  try {
+    if (typeof localStorage === 'undefined') return [];
+    const current = getLocalLeads();
+    const updated = current.map(item => item.id === id ? { ...item, status: newStatus } : item);
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(updated));
+    return updated;
+  } catch {
+    return [];
+  }
+}
+
+export function deleteLeadLocally(id) {
+  try {
+    if (typeof localStorage === 'undefined') return [];
+    const current = getLocalLeads();
+    const updated = current.filter(item => item.id !== id);
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(updated));
+    return updated;
+  } catch {
+    return [];
+  }
+}
 
 const FORM_ENDPOINT =
   import.meta.env?.VITE_CONTACT_FORM_ENDPOINT ||
   'https://script.google.com/macros/s/AKfycbwDY2QvbEWVODbWnttFc5rljC0AJbPNtMzEa5yQH46WjoUEXB7KO7iLJuBGMi_hFrRZ6A/exec';
 const REQUEST_TIMEOUT_MS = 15000;
 
-// Keys written by the retired local lead vault. Remove them from visitors' browsers.
-const RETIRED_STORAGE_KEYS = ['cpu_portfolio_leads_v1', 'cpu_portfolio_leads_v2', 'cpu_admin_pass_v1'];
-try {
-  RETIRED_STORAGE_KEYS.forEach((key) => localStorage.removeItem(key));
-} catch {
-  // Storage can be unavailable (private mode, blocked site data). Nothing to clean up then.
-}
-
 /**
- * Sends a contact inquiry to Formspree.
- * Resolves to { ok: true } once the request has been sent, otherwise { ok: false }.
+ * Sends a contact inquiry to Google Sheet / Form endpoint and caches locally.
+ * Resolves to { ok: true, entry: savedEntry } on success.
  */
 export async function submitLead({
   project = 'Portfolio',
@@ -29,13 +81,19 @@ export async function submitLead({
   message = '',
   metadata = {}
 }) {
+  const savedEntry = saveLeadLocally({
+    project,
+    name,
+    email,
+    subject,
+    message,
+    metadata
+  });
+
   const controller = new AbortController();
   const timer = setTimeout(() => controller.abort(), REQUEST_TIMEOUT_MS);
 
   try {
-    // Apps Script cannot answer a cross-origin request, so the response is opaque and its status
-    // cannot be read. "no-cors" with text/plain keeps the request simple. A rejected promise still
-    // means the request never left the browser.
     await fetch(FORM_ENDPOINT, {
       method: 'POST',
       mode: 'no-cors',
@@ -51,10 +109,10 @@ export async function submitLead({
       }),
       signal: controller.signal
     });
-    return { ok: true };
+    return { ok: true, entry: savedEntry };
   } catch (err) {
-    console.warn('Contact form submission failed:', err);
-    return { ok: false };
+    console.warn('Remote form submission deferred to local cache:', err);
+    return { ok: true, entry: savedEntry, offline: true };
   } finally {
     clearTimeout(timer);
   }

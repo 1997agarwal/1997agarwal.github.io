@@ -93,16 +93,6 @@ export default function ExperienceSection() {
         subtitle="From high-frequency B2B payment rails at Tekion to 500K+ learners at Tally and logistics automation at Shiprocket."
       />
 
-      {/* DRAFT copy for owner review. Built only from facts already on the site. */}
-      <div className="mb-12 p-5 sm:p-6 rounded-2xl bg-surface-card/60 border border-brand-cyan/20">
-        <div className="text-xs font-mono uppercase tracking-wider text-brand-cyan mb-2">Product thesis</div>
-        <p className="text-sm sm:text-base text-slate-200 leading-relaxed">
-          I don't stop at the backlog. I map how a workflow really runs, prototype the future state, and ship the
-          change. That approach runs through my roles: B2B payments at Tekion, a learning platform for 500K+ students
-          at Tally, and Trippy, an AI travel product built for solo travelers to explore the unexplored.
-        </p>
-      </div>
-
       <ol>
         {experiences.map((exp) => (
           <RoleCard key={exp.company} exp={exp} defaultOpen={false} />
