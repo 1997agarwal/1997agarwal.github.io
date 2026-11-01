@@ -24,18 +24,18 @@ export default function AccoladesSection() {
             {accolades.map((acc, idx) => (
               <div
                 key={idx}
-                className="p-4 rounded-xl bg-surface-dark/70 border border-surface-border/80 flex flex-col sm:flex-row sm:items-center justify-between gap-3 hover:border-amber-500/30 transition-all"
+                className="p-4 rounded-xl bg-surface-dark/70 border border-surface-border/80 flex items-start sm:items-center justify-between gap-4 hover:border-amber-500/30 transition-all group"
               >
-                <div>
-                  <div className="flex items-center gap-2">
-                    <span className="text-sm font-bold text-white">{acc.title}</span>
-                    <span className="text-xs font-mono px-2 py-0.5 rounded bg-amber-500/10 text-amber-400 border border-amber-500/20">
-                      {acc.year}
-                    </span>
+                <div className="min-w-0 flex-1">
+                  <div className="text-sm font-bold text-white group-hover:text-amber-300 transition-colors">
+                    {acc.title}
                   </div>
                   <div className="text-xs text-brand-cyan mt-0.5 font-medium">{acc.issuer}</div>
-                  <div className="text-xs text-slate-400 mt-1">{acc.detail}</div>
+                  <div className="text-xs text-slate-400 mt-1 leading-relaxed">{acc.detail}</div>
                 </div>
+                <span className="shrink-0 text-xs font-mono px-2.5 py-1 rounded bg-amber-500/10 text-amber-400 border border-amber-500/20 whitespace-nowrap">
+                  {acc.year}
+                </span>
               </div>
             ))}
           </div>
