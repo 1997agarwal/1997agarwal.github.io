@@ -418,23 +418,23 @@ export const AWARDS_AND_EDUCATION = {
   awards: [
     { title: 'Tekion Recognition Award', org: 'Tekion Corp', date: 'May 2025', resumeNote: 'B2B Payment Portal execution', featured: true, desc: 'For rapid execution of the B2B Payment Portal and seamless transition into production engineering.' },
     { title: 'The All Star Award (H2)', org: 'Tally RnR, Tally Education', date: 'Mar 2024', resumeNote: 'Candidate Placement Portal', featured: true, desc: 'Highest individual honor for architecting and rolling out the Candidate Placement Portal.' },
+    { title: 'Excellence & Collaboration Champion', org: 'Tally Education', date: 'Jan 2024', desc: '4x Spot Awards from Product Leads and Department Heads for sprint excellence across 2023–2024.' },
     { title: 'Annual Team of the Year Award', org: 'Tally Mahasabha RnR', date: 'May 2023', resumeNote: 'Learning Management System', featured: true, desc: 'For scaling the in-house Learning Management System to 500,000+ active learners.' },
     { title: 'Annual Team of the Year Award', org: 'Tally Digisabha RnR', date: 'May 2022', resumeNote: 'DigiLearn', featured: true, desc: 'For conceptualizing and launching the B2C vertical Tally DigiLearn.' },
     { title: 'Top 5 Startup Ideas in India', org: 'Niti Aayog (Govt. of India)', date: 'Apr 2017', resumeNote: 'IoT Road Safety Device', featured: true, desc: 'National recognition for IoT safety hardware device mitigating road accident after-effects.' },
-    { title: 'Robotics Zonal Winner', org: 'Techfest, IIT Bombay', date: 'Oct 2016', desc: 'Winner in autonomous robotics navigation at Asia’s largest science and technology festival.' },
-    { title: 'Excellence & Collaboration Champion', org: 'Tally Education', date: '2023 – 2024', desc: '4x Spot Awards from Product Leads and Department Heads for sprint excellence.' }
+    { title: 'Robotics Zonal Winner', org: 'Techfest, IIT Bombay', date: 'Oct 2016', desc: 'Winner in autonomous robotics navigation at Asia’s largest science and technology festival.' }
   ],
   education: [
-    { school: 'Duke Corporate Education / Duke University', program: 'Postgraduate Certification in Product Management', period: '2020', desc: 'Business metrics, data-driven prioritization, market research, and financial modeling.' },
     { school: 'Udacity', program: 'Nanodegree Program, Growth Product Management', period: '2021 – 2022', desc: 'Growth & acquisition strategy, activation & retention, monetization, and product-led growth (PLG).' },
+    { school: 'Duke Corporate Education / Duke University', program: 'Postgraduate Certification in Product Management', period: 'Dec 2020', desc: 'Business metrics, data-driven prioritization, market research, and financial modeling.' },
     { school: 'Jaypee Institute of Information Technology (JIIT, Noida)', program: 'Bachelor of Technology (B.Tech) — Electronics & Communication', period: '2015 – 2019', desc: 'Coordinator of Robotics Hub, embedded systems, microcontrollers, and digital signal processing.' }
   ],
   certifications: [
-    { title: 'Product Management Certification Program', issuer: 'Duke Corporate Education', credentialId: '26581022', year: 'Dec 2020' },
     { title: 'Growth Product Manager Nanodegree', issuer: 'Udacity', year: '2022' },
     { title: 'Startup School Program', issuer: 'Y Combinator', year: '2021' },
     { title: 'Product Management Micro-Certification', issuer: 'Product School', year: '2021' },
-    { title: 'Foundations of User Experience (UX) Design', issuer: 'Google', year: '2021' }
+    { title: 'Foundations of User Experience (UX) Design', issuer: 'Google', year: '2021' },
+    { title: 'Product Management Certification Program', issuer: 'Duke Corporate Education', credentialId: '26581022', year: 'Dec 2020' }
   ]
 };
 
@@ -502,26 +502,50 @@ export const caseStudies = CASE_STUDIES_ARCHIVE.flatMap(cat =>
   }))
 );
 
-export const accolades = AWARDS_AND_EDUCATION.awards.map(a => ({
-  title: a.title,
-  issuer: a.org,
-  year: a.date,
-  detail: a.desc,
-  featured: a.featured || false,
-  resumeNote: a.resumeNote || ''
-}));
+export function parseDateScore(d) {
+  if (!d) return 0;
+  const str = String(d).trim();
+  const rangePart = str.includes('–')
+    ? str.split('–')[1].trim()
+    : str.includes('-') && !str.includes(' ')
+      ? str
+      : str.split('-')[1]
+        ? str.split('-')[1].trim()
+        : str;
+  const months = { jan: 1, feb: 2, mar: 3, apr: 4, may: 5, jun: 6, jul: 7, aug: 8, sep: 9, oct: 10, nov: 11, dec: 12 };
+  const mMatch = rangePart.match(/(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)/i);
+  const yMatch = rangePart.match(/\b(19\d\d|20\d\d)\b/);
+  const y = yMatch ? parseInt(yMatch[1], 10) : 0;
+  const m = mMatch ? months[mMatch[1].toLowerCase()] : 12;
+  return y * 100 + m;
+}
 
-export const education = AWARDS_AND_EDUCATION.education.map(e => ({
-  degree: e.program,
-  institution: e.school,
-  period: e.period,
-  program: e.program,
-  desc: e.desc || ''
-}));
+export const accolades = [...AWARDS_AND_EDUCATION.awards]
+  .sort((a, b) => parseDateScore(b.date) - parseDateScore(a.date))
+  .map(a => ({
+    title: a.title,
+    issuer: a.org,
+    year: a.date,
+    detail: a.desc,
+    featured: a.featured || false,
+    resumeNote: a.resumeNote || ''
+  }));
 
-export const certifications = AWARDS_AND_EDUCATION.certifications.map(c => ({
-  name: c.title,
-  issuer: c.issuer,
-  credentialId: c.credentialId || null,
-  year: c.year || null
-}));
+export const education = [...AWARDS_AND_EDUCATION.education]
+  .sort((a, b) => parseDateScore(b.period) - parseDateScore(a.period))
+  .map(e => ({
+    degree: e.program,
+    institution: e.school,
+    period: e.period,
+    program: e.program,
+    desc: e.desc || ''
+  }));
+
+export const certifications = [...AWARDS_AND_EDUCATION.certifications]
+  .sort((a, b) => parseDateScore(b.year) - parseDateScore(a.year))
+  .map(c => ({
+    name: c.title,
+    issuer: c.issuer,
+    credentialId: c.credentialId || null,
+    year: c.year || null
+  }));
