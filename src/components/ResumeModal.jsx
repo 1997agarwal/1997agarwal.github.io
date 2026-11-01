@@ -9,6 +9,7 @@ import {
   education,
   certifications,
   TRIPPY_FOUNDER_SPOTLIGHT,
+  FIXIT_FOUNDER_SPOTLIGHT,
 } from '../data/portfolioData';
 
 const stripProtocol = (url) => (url ? url.replace(/^https?:\/\//, '').replace(/\/$/, '') : '');
@@ -285,7 +286,7 @@ export default function ResumeModal({ isOpen, onClose, initialTab = 'quick' }) {
                     <span className="font-bold text-slate-950">Founder & Systems Architect — Trippy (Consumer AI) & FixIT (B2B SaaS)</span>:
                     <div className="text-slate-700 leading-snug space-y-1 mt-1">
                       <div>• <strong>Trippy</strong> ({stripProtocol(TRIPPY_FOUNDER_SPOTLIGHT.liveUrl)}): {TRIPPY_FOUNDER_SPOTLIGHT.resumeSummary}</div>
-                      <div>• <strong>FixIT</strong>: Architected three-sided B2B SaaS feedback-to-fix platform connecting enterprise product teams, reporters, and external solvers. Engineered structured reporting with token-cosine auto-deduplication, company triage command center with priority scoring and Linear/GitHub export, and escrow-backed bounty settlement engine with 75/10/15 revenue split (76 automated tests passing).</div>
+                      <div>• <strong>FixIT</strong> ({stripProtocol(FIXIT_FOUNDER_SPOTLIGHT.liveUrl)}): {FIXIT_FOUNDER_SPOTLIGHT.resumeSummary}</div>
                     </div>
                   </div>
 
