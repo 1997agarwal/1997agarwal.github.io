@@ -16,7 +16,7 @@ export const PERSONAL_INFO = {
   usersScaled: '500K+',
   awardsCount: '7',
   venturesCount: '6',
-  openSourceCount: '5',
+  openSourceCount: '6',
   communityFollowers: '15K+'
 };
 
@@ -30,7 +30,7 @@ export const QUICK_VIEW = {
     { value: '40K+', label: 'online sellers supported at Shiprocket' },
     { value: '50→30%', label: 'checkout drop-off after my redesign at Frendy' }
   ],
-  building: 'Founder of Trippy (Consumer AI solo-travel network, active beta) & FixIT (B2B SaaS feedback-to-fix platform, active beta) · 6 commercial platforms · 5 open-source AI tools, including SpecForge (agents that turn customer calls into PRDs and tickets) and ContextPrism (an LLM token-cost gateway)',
+  building: 'Founder of Trippy (Consumer AI solo-travel network, active beta) & FixIT (B2B SaaS feedback-to-fix platform, active beta) · 6 commercial platforms · 6 open-source AI tools, including SpecForge (PRDs), ContextPrism (FinOps), and ReverseUI (UI Decompiler)',
   topAwards: [
     'Tekion Recognition Award (2025)',
     'Tally All Star Award (H2, Mar 2024)',
@@ -41,7 +41,7 @@ export const QUICK_VIEW = {
 export const METRICS = [
   { label: 'Awards & Honors', value: '7', suffix: 'Accolades', desc: 'Tekion, 4 at Tally, NITI Aayog & Techfest IIT Bombay' },
   { label: 'Commercial Blueprints', value: '6', suffix: 'Platforms', desc: 'StartupOS, DupeScout, BusinessPay, CollabKaro, Housy, Hinged' },
-  { label: 'Open Source AI DevTools', value: '5', suffix: 'Public Tools', desc: 'SpecForge, ContextPrism, TicTacCourt, BrainGym, RoastHub' },
+  { label: 'Open Source AI DevTools', value: '6', suffix: 'Public Tools', desc: 'SpecForge, ContextPrism, TicTacCourt, BrainGym, RoastHub, ReverseUI' },
   { label: 'LinkedIn Community', value: '15K+', suffix: 'Followers', desc: 'Followers on LinkedIn' },
 ];
 
@@ -100,7 +100,7 @@ export const FIXIT_FOUNDER_SPOTLIGHT = {
     { name: 'Fixit Ops & Ledger Console', desc: 'KYC identity reviews, double-entry ledger & dispute resolution' }
   ],
   techStack: ['React 19 SPA', 'Tailwind CSS v4', 'Express 5 API', 'node:sqlite (76 Tests)', 'TypeScript Strict'],
-  liveUrl: null
+  liveUrl: 'https://technocrat-tribe.github.io/FixIT-Website/'
 };
 
 export const CORPORATE_EXPERIENCE = [
@@ -363,6 +363,20 @@ export const OPEN_SOURCE_TOOLS = [
     highlights: ['300+ Procedural Roast Heuristics ($0 Offline)', 'Thermal Receipt & VC Rejection Exporter', '1-Click X / LinkedIn / Reddit Sharing'],
     license: 'MIT',
     resumeSummary: 'Engineered viral client-side tech roaster with dual-engine comedy matrix (300+ offline heuristics + BYOK AI Turbo), commit forensics, and high-res thermal receipt PNG generation.'
+  },
+  {
+    id: 'reverse-ui',
+    name: 'ReverseUI',
+    tagline: 'Zero-Server Web UI & Motion Decompiler (HTML/CSS to React + Tailwind)',
+    category: 'Frontend Decompiler & DevTools',
+    description: '100% client-side web application inspired by morluto/rea that deconstructs any web UI snippet, minified DOM structure, or CSS animation into clean, idiomatic React 18 + Tailwind CSS + Framer Motion components in under 5ms with zero server cost ($0/mo).',
+    starsUrl: 'https://img.shields.io/github/stars/1997agarwal/ReverseUI?style=social',
+    repoUrl: 'https://github.com/1997agarwal/ReverseUI',
+    demoUrl: 'https://1997agarwal.github.io/ReverseUI/',
+    stack: ['React 18', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'Vitest (24/24 Tests)', 'DOMParser'],
+    highlights: ['Zero Server Cost ($0/mo Forever)', '4-Stage REA Decompiler Pipeline', '1-Click Click-to-Pick Bookmarklet'],
+    license: 'MIT',
+    resumeSummary: 'Architected 100% browser-native web decompiler converting HTML/CSS snippets, minified DOMs, and cubic-bezier curves into clean React 18 + Tailwind + Framer Motion in <5ms; features 4-stage REA pipeline and browser bookmarklet.'
   }
 ];
 
