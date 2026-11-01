@@ -4,7 +4,7 @@
 export const PERSONAL_INFO = {
   name: 'Harshit Agarwal',
   role: 'Senior Product Manager · AI · Builder',
-  tagline: '7+ years building enterprise fintech, SaaS & AI products. Product Manager @ Tekion Corp, former product lead @ Tally Education & Shiprocket, and founder of Trippy.',
+  tagline: '7+ years building enterprise fintech, SaaS & AI products. Product Manager @ Tekion Corp, former product lead @ Tally Education & Shiprocket, and founder of Trippy & FixIT.',
   location: 'Bengaluru, Karnataka, India • Global Remote',
   email: 'agarwal.harshit97@gmail.com',
   linkedin: 'https://www.linkedin.com/in/1997agarwal/',
@@ -15,7 +15,7 @@ export const PERSONAL_INFO = {
   yearsExperience: '7+',
   usersScaled: '500K+',
   awardsCount: '7',
-  venturesCount: '6',
+  venturesCount: '7',
   openSourceCount: '5',
   communityFollowers: '15K+'
 };
@@ -23,14 +23,14 @@ export const PERSONAL_INFO = {
 // Content for the 7-second recruiter Quick View in the resume modal
 export const QUICK_VIEW = {
   headline: 'Senior Product Manager · AI · Builder · 7+ years',
-  summary: '7+ years building software for businesses: payments and collections for car dealerships at Tekion, a learning platform for 500K+ students at Tally, and my own startup, Trippy. I also build AI tools.',
+  summary: '7+ years building software for businesses: payments and collections for car dealerships at Tekion, a learning platform for 500K+ students at Tally, and my startups Trippy (Consumer AI) & FixIT (B2B SaaS). I also build AI tools.',
   stats: [
     { value: '500K+', label: 'students on the learning platform I launched at Tally' },
     { value: '$1.5–2M', label: 'projected yearly revenue from Tekion\'s new payments product' },
     { value: '40K+', label: 'online sellers supported at Shiprocket' },
     { value: '50→30%', label: 'checkout drop-off after my redesign at Frendy' }
   ],
-  building: 'Founder of Trippy (AI solo-travel network, active beta) · 6 commercial platforms · 5 open-source AI tools, including SpecForge (agents that turn customer calls into PRDs and tickets) and ContextPrism (an LLM token-cost gateway)',
+  building: 'Founder of Trippy (AI solo-travel network, active beta) & FixIT (B2B SaaS feedback-to-fix platform, active beta) · 7 commercial platforms · 5 open-source AI tools, including SpecForge (agents that turn customer calls into PRDs and tickets) and ContextPrism (an LLM token-cost gateway)',
   topAwards: [
     'Tekion Recognition Award (2025)',
     'Tally All Star Award (H2, Mar 2024)',
@@ -40,7 +40,7 @@ export const QUICK_VIEW = {
 
 export const METRICS = [
   { label: 'Awards & Honors', value: '7', suffix: 'Accolades', desc: 'Tekion, 4 at Tally, NITI Aayog & Techfest IIT Bombay' },
-  { label: 'Commercial Blueprints', value: '6', suffix: 'Platforms', desc: 'StartupOS, DupeScout, BusinessPay, CollabKaro, Housy, Hinged' },
+  { label: 'Commercial Blueprints', value: '7', suffix: 'Platforms', desc: 'FixIT, StartupOS, DupeScout, BusinessPay, CollabKaro, Housy, Hinged' },
   { label: 'Open Source AI DevTools', value: '5', suffix: 'Public Tools', desc: 'SpecForge, ContextPrism, TicTacCourt, BrainGym, RoastHub' },
   { label: 'LinkedIn Community', value: '15K+', suffix: 'Followers', desc: 'Followers on LinkedIn' },
 ];
@@ -178,6 +178,20 @@ export const CORPORATE_EXPERIENCE = [
 ];
 
 export const COMMERCIAL_VENTURES = [
+  {
+    id: 'fixit',
+    name: 'FixIT',
+    tagline: 'Feedback-to-Fix B2B SaaS Platform & Bounty Escrow Engine',
+    category: 'B2B SaaS & Developer Platforms',
+    stage: 'BETA',
+    problem: 'Users hit bugs and UX friction daily, venting in public app reviews and social media. Product teams receive noisy, non-reproducible complaints without telemetry, causing silent churn and app rating drops.',
+    solution: 'Three-sided B2B feedback-to-fix SaaS platform connecting companies, reporters, and external solvers. Combines structured user reporting with auto-deduplication, enterprise triage with priority scoring & Linear/GitHub export, and an escrow-backed bounty solution marketplace (75% solver / 10% reporter / 15% platform).',
+    stack: ['React 19', 'Tailwind CSS v4', 'TypeScript', 'Node.js Express 5', 'node:sqlite (76 Tests)', 'Escrow Ledger Engine'],
+    access: 'Private Commercial IP',
+    demoUrl: null,
+    resumeBlurb: 'three-sided B2B feedback-to-fix SaaS platform with bounty escrow engine',
+    surfaces: ['Triage Command Center', 'Reporter Feedback Portal', 'Solver Bounty Marketplace', 'Fixit Ops & Ledger Console', 'Embeddable Widget']
+  },
   {
     id: 'startup-os',
     name: 'StartupOS',

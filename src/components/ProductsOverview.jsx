@@ -10,11 +10,11 @@ export default function ProductsOverview() {
     {
       href: '#trippy',
       step: '01',
-      label: 'Flagship Startup',
-      title: TRIPPY_FOUNDER_SPOTLIGHT.name,
-      desc: 'An AI travel product for solo travelers to explore the unexplored. Active beta, founder-led.',
+      label: 'Founder Startups',
+      title: 'Trippy & FixIT',
+      desc: 'Dual 0→1 startup ventures: Trippy (Consumer AI solo-travel network) & FixIT (B2B SaaS feedback-to-fix platform). Both in active beta, founder-led.',
       accent: 'border-amber-500/40 hover:border-amber-400/70 text-amber-300',
-      cta: 'Meet Trippy',
+      cta: 'Explore startups',
     },
     {
       href: '#ventures',

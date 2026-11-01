@@ -11,7 +11,7 @@ import {
   TRIPPY_FOUNDER_SPOTLIGHT,
 } from '../data/portfolioData';
 
-const stripProtocol = (url) => url.replace(/^https?:\/\//, '').replace(/\/$/, '');
+const stripProtocol = (url) => (url ? url.replace(/^https?:\/\//, '').replace(/\/$/, '') : '');
 const featuredAwards = accolades.filter((a) => a.featured);
 
 const PDF_BY_TAB = {
@@ -282,10 +282,10 @@ export default function ResumeModal({ isOpen, onClose, initialTab = 'quick' }) {
 
                 <div className="pt-1 space-y-1.5">
                   <div>
-                    <span className="font-bold text-slate-950">Founder & Systems Architect — Trippy</span>
-                    <span className="text-slate-500 font-mono text-[11px]"> ({stripProtocol(TRIPPY_FOUNDER_SPOTLIGHT.liveUrl)})</span>:
-                    <div className="text-slate-700 leading-snug">
-                      {TRIPPY_FOUNDER_SPOTLIGHT.resumeSummary}
+                    <span className="font-bold text-slate-950">Founder & Systems Architect — Trippy (Consumer AI) & FixIT (B2B SaaS)</span>:
+                    <div className="text-slate-700 leading-snug space-y-1 mt-1">
+                      <div>• <strong>Trippy</strong> ({stripProtocol(TRIPPY_FOUNDER_SPOTLIGHT.liveUrl)}): {TRIPPY_FOUNDER_SPOTLIGHT.resumeSummary}</div>
+                      <div>• <strong>FixIT</strong>: Architected three-sided B2B SaaS feedback-to-fix platform connecting enterprise product teams, reporters, and external solvers. Engineered structured reporting with token-cosine auto-deduplication, company triage command center with priority scoring and Linear/GitHub export, and escrow-backed bounty settlement engine with 75/10/15 revenue split (76 automated tests passing).</div>
                     </div>
                   </div>
 
@@ -294,7 +294,7 @@ export default function ResumeModal({ isOpen, onClose, initialTab = 'quick' }) {
                     {' '}Architected {ventures.length} enterprise and consumer platforms:{' '}
                     {ventures.map((v, i) => (
                       <React.Fragment key={v.name}>
-                        <strong>{v.name}</strong> ({v.resumeBlurb} at {stripProtocol(v.demoUrl)})
+                        <strong>{v.name}</strong> ({v.resumeBlurb}{v.demoUrl ? ` at ${stripProtocol(v.demoUrl)}` : ''})
                         {i < ventures.length - 1 ? ', ' : '.'}
                       </React.Fragment>
                     ))}
