@@ -13,7 +13,7 @@ export const PERSONAL_INFO = {
   medium: 'https://medium.com/@1997agarwal',
   avatarUrl: './avatar.png',
   yearsExperience: '7+',
-  usersScaled: '500K+',
+  usersScaled: 'Over 1M+',
   awardsCount: '7',
   venturesCount: '6',
   openSourceCount: '6',
@@ -426,13 +426,15 @@ export const AWARDS_AND_EDUCATION = {
   ],
   education: [
     { school: 'Duke Corporate Education / Duke University', program: 'Postgraduate Certification in Product Management', period: '2020', desc: 'Business metrics, data-driven prioritization, market research, and financial modeling.' },
+    { school: 'Udacity', program: 'Nanodegree Program, Growth Product Management', period: '2021 – 2022', desc: 'Growth & acquisition strategy, activation & retention, monetization, and product-led growth (PLG).' },
     { school: 'Jaypee Institute of Information Technology (JIIT, Noida)', program: 'Bachelor of Technology (B.Tech) — Electronics & Communication', period: '2015 – 2019', desc: 'Coordinator of Robotics Hub, embedded systems, microcontrollers, and digital signal processing.' }
   ],
   certifications: [
-    { title: 'Growth Product Manager Nanodegree', issuer: 'Udacity' },
-    { title: 'Startup School Program', issuer: 'Y Combinator' },
-    { title: 'Product Management Micro-Certification', issuer: 'Product School' },
-    { title: 'Foundations of User Experience (UX) Design', issuer: 'Google' }
+    { title: 'Product Management Certification Program', issuer: 'Duke Corporate Education', credentialId: '26581022', year: 'Dec 2020' },
+    { title: 'Growth Product Manager Nanodegree', issuer: 'Udacity', year: '2022' },
+    { title: 'Startup School Program', issuer: 'Y Combinator', year: '2021' },
+    { title: 'Product Management Micro-Certification', issuer: 'Product School', year: '2021' },
+    { title: 'Foundations of User Experience (UX) Design', issuer: 'Google', year: '2021' }
   ]
 };
 
@@ -513,10 +515,13 @@ export const education = AWARDS_AND_EDUCATION.education.map(e => ({
   degree: e.program,
   institution: e.school,
   period: e.period,
-  program: e.program
+  program: e.program,
+  desc: e.desc || ''
 }));
 
 export const certifications = AWARDS_AND_EDUCATION.certifications.map(c => ({
   name: c.title,
-  issuer: c.issuer
+  issuer: c.issuer,
+  credentialId: c.credentialId || null,
+  year: c.year || null
 }));

@@ -312,7 +312,7 @@ export default function ResumeModal({ isOpen, onClose, initialTab = 'quick' }) {
                 <div>
                   <strong className="text-slate-900 block font-semibold">Education & Certifications:</strong>
                   {education.map((edu) => (
-                    <div key={edu.institution}>• <strong>{edu.institution}:</strong> {edu.degree} ({edu.period})</div>
+                    <div key={`${edu.institution}-${edu.degree}`}>• <strong>{edu.institution}:</strong> {edu.degree} ({edu.period})</div>
                   ))}
                   <div>• <strong>Certifications:</strong> {certifications.map((c) => `${c.name} (${c.issuer})`).join(', ')}</div>
                 </div>

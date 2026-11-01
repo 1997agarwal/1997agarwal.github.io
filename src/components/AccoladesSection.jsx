@@ -53,15 +53,18 @@ export default function AccoladesSection() {
               </svg>
               <span>Education</span>
             </h3>
-            {education.map((edu, idx) => (
-              <div key={idx} className="p-3 rounded-lg bg-surface-dark/70 border border-surface-border">
-                <h4 className="text-sm font-bold text-white">{edu.degree}</h4>
-                <div className="text-xs text-brand-cyan font-mono mt-0.5">{edu.institution}</div>
-                <div className="flex items-center justify-between text-xs text-slate-400 mt-2 font-mono">
-                  <span>{edu.period}</span>
+            <div className="space-y-3">
+              {education.map((edu, idx) => (
+                <div key={idx} className="p-3.5 rounded-lg bg-surface-dark/70 border border-surface-border hover:border-brand-cyan/30 transition-all">
+                  <div className="flex items-start justify-between gap-2">
+                    <h4 className="text-sm font-bold text-white leading-snug">{edu.degree}</h4>
+                    <span className="text-[11px] font-mono text-slate-400 shrink-0">{edu.period}</span>
+                  </div>
+                  <div className="text-xs text-brand-cyan font-mono mt-0.5">{edu.institution}</div>
+                  {edu.desc && <p className="text-xs text-slate-400 mt-1.5 leading-relaxed">{edu.desc}</p>}
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
 
           {/* Certifications */}
@@ -74,11 +77,19 @@ export default function AccoladesSection() {
             </h3>
             <div className="space-y-2.5">
               {certifications.map((cert, idx) => (
-                <div key={idx} className="p-2.5 rounded-lg bg-surface-dark/70 border border-surface-border flex items-center justify-between">
-                  <div>
-                    <div className="text-xs font-bold text-white">{cert.name}</div>
-                    <div className="text-xs text-slate-400">{cert.issuer}</div>
+                <div key={idx} className="p-3 rounded-lg bg-surface-dark/70 border border-surface-border flex items-center justify-between gap-2 hover:border-emerald-500/30 transition-all">
+                  <div className="min-w-0">
+                    <div className="text-xs font-bold text-white leading-snug">{cert.name}</div>
+                    <div className="text-xs text-slate-400 mt-0.5">
+                      {cert.issuer}
+                      {cert.credentialId && <span className="text-slate-500 font-mono text-[11px]"> · ID: {cert.credentialId}</span>}
+                    </div>
                   </div>
+                  {cert.year && (
+                    <span className="text-[11px] font-mono text-emerald-400/90 shrink-0 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20">
+                      {cert.year}
+                    </span>
+                  )}
                 </div>
               ))}
             </div>

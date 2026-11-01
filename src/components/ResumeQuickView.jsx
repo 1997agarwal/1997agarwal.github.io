@@ -80,7 +80,7 @@ export default function ResumeQuickView({ onShowFull }) {
         </h2>
         <ul className="text-sm text-slate-700 space-y-0.5">
           {education.map((edu) => (
-            <li key={edu.institution}>
+            <li key={`${edu.institution}-${edu.degree}`}>
               <strong>{edu.institution.split('/')[0].trim()}</strong>: {edu.degree} ({edu.period})
             </li>
           ))}

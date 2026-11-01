@@ -21,7 +21,7 @@ export default function Hero({ onOpenContact, onOpenResume }) {
 
             {/* Headline */}
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white mb-6 leading-[1.15]">
-              I turn ideas into products used by <span className="text-gradient">500K+ people</span>.
+              I turn ideas into products used by <span className="text-gradient">over a million people</span>.
             </h1>
 
             {/* Sub-headline */}
