@@ -426,7 +426,7 @@ export const AWARDS_AND_EDUCATION = {
   ],
   education: [
     { school: 'Udacity', program: 'Nanodegree Program, Growth Product Management', period: '2021 – 2022', desc: 'Growth & acquisition strategy, activation & retention, monetization, and product-led growth (PLG).' },
-    { school: 'Duke Corporate Education / Duke University', program: 'Postgraduate Certification in Product Management', period: 'Dec 2020', desc: 'Business metrics, data-driven prioritization, market research, and financial modeling.' },
+    { school: 'Duke Corporate Education / Duke University', program: 'Postgraduate Certification in Product Management', period: '2020', desc: 'Business metrics, data-driven prioritization, market research, and financial modeling.' },
     { school: 'Jaypee Institute of Information Technology (JIIT, Noida)', program: 'Bachelor of Technology (B.Tech) — Electronics & Communication', period: '2015 – 2019', desc: 'Coordinator of Robotics Hub, embedded systems, microcontrollers, and digital signal processing.' }
   ],
   certifications: [
@@ -434,7 +434,7 @@ export const AWARDS_AND_EDUCATION = {
     { title: 'Startup School Program', issuer: 'Y Combinator', year: '2021' },
     { title: 'Product Management Micro-Certification', issuer: 'Product School', year: '2021' },
     { title: 'Foundations of User Experience (UX) Design', issuer: 'Google', year: '2021' },
-    { title: 'Product Management Certification Program', issuer: 'Duke Corporate Education', credentialId: '26581022', year: 'Dec 2020' }
+    { title: 'Product Management Certification Program', issuer: 'Duke Corporate Education', credentialId: '26581022', year: '2020' }
   ]
 };
 
