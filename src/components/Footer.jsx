@@ -13,7 +13,7 @@ export default function Footer({ onOpenContact }) {
               Harshit Agarwal
             </div>
             <p className="text-slate-400 max-w-sm">
-              Senior Product Manager · AI · Builder. Founder of Trippy.
+              Senior Product Manager · AI · Builder. Founder of Trippy & FixIT.
             </p>
             <p className="text-slate-300 max-w-sm sm:max-w-none sm:whitespace-nowrap mt-2">
               <span className="font-semibold text-emerald-400">Open to roles:</span> Senior PM, VP Product, or co-founder.
@@ -23,7 +23,7 @@ export default function Footer({ onOpenContact }) {
           {/* Nav Links */}
           <div className="flex flex-wrap justify-center gap-6 font-mono text-xs">
             <a href="#experience" className="hover:text-brand-cyan transition-colors">Experience</a>
-            <a href="#trippy" className="hover:text-brand-cyan transition-colors">Trippy</a>
+            <a href="#startups" className="hover:text-brand-cyan transition-colors">Startups</a>
             <a href="#ventures" className="hover:text-brand-cyan transition-colors">Platforms</a>
             <a href="#opensource" className="hover:text-brand-cyan transition-colors">Open Source</a>
             <a href="#casestudies" className="hover:text-brand-cyan transition-colors">Case Studies</a>

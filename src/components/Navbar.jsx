@@ -17,7 +17,7 @@ export default function Navbar({ onOpenContact, onOpenResume }) {
   const [activeId, setActiveId] = useState('');
 
   useEffect(() => {
-    const ids = ['experience', 'trippy', 'ventures', 'opensource', 'casestudies', 'accolades'];
+    const ids = ['experience', 'startups', 'trippy', 'fixit', 'ventures', 'opensource', 'casestudies', 'accolades'];
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -35,7 +35,7 @@ export default function Navbar({ onOpenContact, onOpenResume }) {
 
   const navLinks = [
     { name: 'Experience', href: '#experience' },
-    { name: 'Trippy', href: '#trippy' },
+    { name: 'Startups', href: '#startups' },
     { name: 'Platforms', href: '#ventures' },
     { name: 'Open Source', href: '#opensource' },
     { name: 'Case Studies', href: '#casestudies' },
@@ -69,18 +69,23 @@ export default function Navbar({ onOpenContact, onOpenResume }) {
 
         {/* Desktop Navigation Links */}
         <div className="hidden md:flex items-center space-x-1 lg:space-x-2 bg-white/5 border border-white/10 px-4 py-1.5 rounded-full backdrop-blur-md">
-          {navLinks.map((link) => (
-            <a
-              key={link.name}
-              href={link.href}
-              aria-current={activeId === link.href.slice(1) ? 'true' : undefined}
-              className={`text-xs lg:text-sm font-medium px-3 py-1 rounded-full hover:bg-white/10 transition-all ${
-                activeId === link.href.slice(1) ? 'text-white bg-white/10' : 'text-slate-300 hover:text-white'
-              }`}
-            >
-              {link.name}
-            </a>
-          ))}
+          {navLinks.map((link) => {
+            const isActive = link.href === '#startups'
+              ? (activeId === 'startups' || activeId === 'trippy' || activeId === 'fixit')
+              : activeId === link.href.slice(1);
+            return (
+              <a
+                key={link.name}
+                href={link.href}
+                aria-current={isActive ? 'true' : undefined}
+                className={`text-xs lg:text-sm font-medium px-3 py-1 rounded-full hover:bg-white/10 transition-all ${
+                  isActive ? 'text-white bg-white/10' : 'text-slate-300 hover:text-white'
+                }`}
+              >
+                {link.name}
+              </a>
+            );
+          })}
           <button
             onClick={onOpenResume}
             className="text-xs lg:text-sm font-semibold text-brand-cyan hover:text-cyan-300 px-3 py-1 rounded-full hover:bg-white/10 transition-all flex items-center gap-1"
@@ -147,18 +152,23 @@ export default function Navbar({ onOpenContact, onOpenResume }) {
       {/* Mobile dropdown menu */}
       {mobileMenuOpen && (
         <div className="md:hidden bg-[#0B0F17]/95 border-b border-white/10 px-4 pt-3 pb-6 space-y-3 backdrop-blur-xl">
-          {navLinks.map((link) => (
-            <a
-              key={link.name}
-              href={link.href}
-              onClick={() => setMobileMenuOpen(false)}
-              className={`block text-sm font-medium hover:text-brand-cyan py-3 border-b border-white/5 ${
-                activeId === link.href.slice(1) ? 'text-brand-cyan' : 'text-slate-200'
-              }`}
-            >
-              {link.name}
-            </a>
-          ))}
+          {navLinks.map((link) => {
+            const isActive = link.href === '#startups'
+              ? (activeId === 'startups' || activeId === 'trippy' || activeId === 'fixit')
+              : activeId === link.href.slice(1);
+            return (
+              <a
+                key={link.name}
+                href={link.href}
+                onClick={() => setMobileMenuOpen(false)}
+                className={`block text-sm font-medium hover:text-brand-cyan py-3 border-b border-white/5 ${
+                  isActive ? 'text-brand-cyan' : 'text-slate-200'
+                }`}
+              >
+                {link.name}
+              </a>
+            );
+          })}
           <button
             onClick={() => { setMobileMenuOpen(false); onOpenResume(); }}
             className="block w-full text-left text-sm font-medium text-brand-cyan py-2 border-b border-white/5"

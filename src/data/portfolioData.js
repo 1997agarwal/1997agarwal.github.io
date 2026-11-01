@@ -15,7 +15,7 @@ export const PERSONAL_INFO = {
   yearsExperience: '7+',
   usersScaled: '500K+',
   awardsCount: '7',
-  venturesCount: '7',
+  venturesCount: '6',
   openSourceCount: '5',
   communityFollowers: '15K+'
 };
@@ -30,7 +30,7 @@ export const QUICK_VIEW = {
     { value: '40K+', label: 'online sellers supported at Shiprocket' },
     { value: '50→30%', label: 'checkout drop-off after my redesign at Frendy' }
   ],
-  building: 'Founder of Trippy (AI solo-travel network, active beta) & FixIT (B2B SaaS feedback-to-fix platform, active beta) · 7 commercial platforms · 5 open-source AI tools, including SpecForge (agents that turn customer calls into PRDs and tickets) and ContextPrism (an LLM token-cost gateway)',
+  building: 'Founder of Trippy (Consumer AI solo-travel network, active beta) & FixIT (B2B SaaS feedback-to-fix platform, active beta) · 6 commercial platforms · 5 open-source AI tools, including SpecForge (agents that turn customer calls into PRDs and tickets) and ContextPrism (an LLM token-cost gateway)',
   topAwards: [
     'Tekion Recognition Award (2025)',
     'Tally All Star Award (H2, Mar 2024)',
@@ -40,7 +40,7 @@ export const QUICK_VIEW = {
 
 export const METRICS = [
   { label: 'Awards & Honors', value: '7', suffix: 'Accolades', desc: 'Tekion, 4 at Tally, NITI Aayog & Techfest IIT Bombay' },
-  { label: 'Commercial Blueprints', value: '7', suffix: 'Platforms', desc: 'FixIT, StartupOS, DupeScout, BusinessPay, CollabKaro, Housy, Hinged' },
+  { label: 'Commercial Blueprints', value: '6', suffix: 'Platforms', desc: 'StartupOS, DupeScout, BusinessPay, CollabKaro, Housy, Hinged' },
   { label: 'Open Source AI DevTools', value: '5', suffix: 'Public Tools', desc: 'SpecForge, ContextPrism, TicTacCourt, BrainGym, RoastHub' },
   { label: 'LinkedIn Community', value: '15K+', suffix: 'Followers', desc: 'Followers on LinkedIn' },
 ];
@@ -72,6 +72,35 @@ export const TRIPPY_FOUNDER_SPOTLIGHT = {
   ],
   techStack: ['React 18 SPA', 'Node 22 Express', 'better-sqlite3 / PostgreSQL', 'Docker / Cloud Run', 'Vite Satellite'],
   liveUrl: 'https://nomad-tribe.github.io/trippy-website/'
+};
+
+export const FIXIT_FOUNDER_SPOTLIGHT = {
+  name: 'FixIT',
+  brandOrg: 'Technocrat-Tribe',
+  founderRole: 'Founder & Systems Architect',
+  category: 'B2B SaaS & Developer Reliability',
+  stage: 'ACTIVE BETA',
+  statusBadge: 'Active Beta · Pre-Seed / Incubating',
+  tagline: 'Feedback-to-Fix B2B SaaS Platform & Bounty Escrow Engine',
+  mission: 'Report it once. See it fixed. Get paid for the fix.',
+  problem: 'Users hit bugs and UX friction daily, venting in public app store reviews, X/Twitter, and Reddit instead of reporting them. Product teams receive noisy, non-reproducible complaints without telemetry, causing customer churn and star rating collapse. Meanwhile, external engineers and solvers have no mechanism to submit fixes and get compensated.',
+  solution: 'Three-sided B2B platform connecting product teams, users, and external solvers. Combines structured user reporting (with token-cosine auto-deduplication & proof-of-work spam protection), an enterprise triage command center (priority scoring & Linear/GitHub export), and an escrow-backed bounty solution marketplace with transparent 75/10/15 revenue split.',
+  pillars: [
+    { label: 'Structured Ingestion', desc: 'Auto-dedup, telemetry capture & embeddable widget' },
+    { label: 'Triage Command Center', desc: 'Transparent priority scores & Linear/GitHub export' },
+    { label: 'Bounty Escrow Marketplace', desc: '75% solver / 10% reporter / 15% platform split' },
+    { label: 'Double-Entry Balanced Ledger', desc: 'Prepaid company balance with strict escrow holds' }
+  ],
+  resumeSummary: 'Conceptualized and architected FixIT, a three-sided feedback-to-fix B2B SaaS platform connecting companies, reporters, and external solvers. Formulated token-cosine auto-deduplication, triage command center with priority scoring and Linear/GitHub export, and double-entry balanced escrow ledger engine with 75/10/15 revenue split. Built with React 19, Tailwind CSS v4, Express 5, and node:sqlite (76 automated tests passing). Currently in active beta ahead of pre-seed fundraising.',
+  surfaces: [
+    { name: 'Triage Command Center', desc: 'Ranked issue queue, status notes & Linear/GitHub sync' },
+    { name: 'Reporter Feedback Portal', desc: 'Structured bug filing, auto-dedup & embeddable widget.js' },
+    { name: 'Solver Bounty Marketplace', desc: 'Claim bounties, submit patches & earn 75% escrow payouts' },
+    { name: 'Customer Support Desk', desc: 'Private customer conversations, overdue flags & reply templates' },
+    { name: 'Fixit Ops & Ledger Console', desc: 'KYC identity reviews, double-entry ledger & dispute resolution' }
+  ],
+  techStack: ['React 19 SPA', 'Tailwind CSS v4', 'Express 5 API', 'node:sqlite (76 Tests)', 'TypeScript Strict'],
+  liveUrl: null
 };
 
 export const CORPORATE_EXPERIENCE = [
@@ -178,20 +207,6 @@ export const CORPORATE_EXPERIENCE = [
 ];
 
 export const COMMERCIAL_VENTURES = [
-  {
-    id: 'fixit',
-    name: 'FixIT',
-    tagline: 'Feedback-to-Fix B2B SaaS Platform & Bounty Escrow Engine',
-    category: 'B2B SaaS & Developer Platforms',
-    stage: 'BETA',
-    problem: 'Users hit bugs and UX friction daily, venting in public app reviews and social media. Product teams receive noisy, non-reproducible complaints without telemetry, causing silent churn and app rating drops.',
-    solution: 'Three-sided B2B feedback-to-fix SaaS platform connecting companies, reporters, and external solvers. Combines structured user reporting with auto-deduplication, enterprise triage with priority scoring & Linear/GitHub export, and an escrow-backed bounty solution marketplace (75% solver / 10% reporter / 15% platform).',
-    stack: ['React 19', 'Tailwind CSS v4', 'TypeScript', 'Node.js Express 5', 'node:sqlite (76 Tests)', 'Escrow Ledger Engine'],
-    access: 'Private Commercial IP',
-    demoUrl: null,
-    resumeBlurb: 'three-sided B2B feedback-to-fix SaaS platform with bounty escrow engine',
-    surfaces: ['Triage Command Center', 'Reporter Feedback Portal', 'Solver Bounty Marketplace', 'Fixit Ops & Ledger Console', 'Embeddable Widget']
-  },
   {
     id: 'startup-os',
     name: 'StartupOS',

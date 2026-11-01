@@ -8,9 +8,9 @@ import {
 export default function ProductsOverview() {
   const tiers = [
     {
-      href: '#trippy',
+      href: '#startups',
       step: '01',
-      label: 'Founder Startups',
+      label: 'Flagship Startups',
       title: 'Trippy & FixIT',
       desc: 'Dual 0→1 startup ventures: Trippy (Consumer AI solo-travel network) & FixIT (B2B SaaS feedback-to-fix platform). Both in active beta, founder-led.',
       accent: 'border-amber-500/40 hover:border-amber-400/70 text-amber-300',
