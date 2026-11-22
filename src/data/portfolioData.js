@@ -444,7 +444,7 @@ export const personalInfo = {
   title: PERSONAL_INFO.role,
   summary: PERSONAL_INFO.tagline,
   bio: "The best product managers don't just manage the backlog — they understand the system, prototype the future, and ship value.",
-  status: "Product Manager @ Tekion Corp • Founder @ Trippy",
+  status: "Product Manager @ Tekion Corp • Founder @ Trippy & FixIT",
   location: PERSONAL_INFO.location,
   education: "Duke University (Postgraduate Certification in Product Management) • B.Tech (ECE)",
   email: PERSONAL_INFO.email,

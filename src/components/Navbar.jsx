@@ -42,6 +42,14 @@ export default function Navbar({ onOpenContact, onOpenResume }) {
     { name: 'Accolades', href: '#accolades' },
   ];
 
+  const handleNavClick = (e, href) => {
+    if (window.__lenis && href.startsWith('#')) {
+      e.preventDefault();
+      window.__lenis.scrollTo(href, { offset: -70 });
+      window.history.pushState(null, '', href);
+    }
+  };
+
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
       scrolled 
@@ -77,6 +85,7 @@ export default function Navbar({ onOpenContact, onOpenResume }) {
               <a
                 key={link.name}
                 href={link.href}
+                onClick={(e) => handleNavClick(e, link.href)}
                 aria-current={isActive ? 'true' : undefined}
                 className={`text-xs lg:text-sm font-medium px-3 py-1 rounded-full hover:bg-white/10 transition-all ${
                   isActive ? 'text-white bg-white/10' : 'text-slate-300 hover:text-white'
@@ -160,7 +169,10 @@ export default function Navbar({ onOpenContact, onOpenResume }) {
               <a
                 key={link.name}
                 href={link.href}
-                onClick={() => setMobileMenuOpen(false)}
+                onClick={(e) => {
+                  setMobileMenuOpen(false);
+                  handleNavClick(e, link.href);
+                }}
                 className={`block text-sm font-medium hover:text-brand-cyan py-3 border-b border-white/5 ${
                   isActive ? 'text-brand-cyan' : 'text-slate-200'
                 }`}

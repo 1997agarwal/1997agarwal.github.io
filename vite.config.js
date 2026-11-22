@@ -7,5 +7,8 @@ export default defineConfig({
   base: './', // Ensures relative assets work on GitHub Pages, Vercel, or custom domains
   server: {
     port: 3000
+  },
+  build: {
+    chunkSizeWarningLimit: 800
   }
 });

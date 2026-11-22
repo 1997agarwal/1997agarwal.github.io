@@ -1,4 +1,7 @@
 import React, { useState, useEffect } from 'react';
+import Lenis from 'lenis';
+import 'lenis/dist/lenis.css';
+
 import Reveal from './components/Reveal';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
@@ -14,12 +17,57 @@ import AccoladesSection from './components/AccoladesSection';
 import ContactModal from './components/ContactModal';
 import ResumeModal from './components/ResumeModal';
 import Footer from './components/Footer';
+import ExecutiveTelemetryHUD from './components/ExecutiveTelemetryHUD';
+
+const SpatialMonolithCanvas = React.lazy(() => import('./components/SpatialMonolithCanvas'));
 
 export default function App() {
   const [isContactOpen, setIsContactOpen] = useState(false);
   const [isResumeOpen, setIsResumeOpen] = useState(false);
   const [walkthroughSubject, setWalkthroughSubject] = useState('');
   const [resumeTab, setResumeTab] = useState('quick');
+
+  // Initialize Lenis inertial smooth scroll
+  useEffect(() => {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      return;
+    }
+
+    const lenis = new Lenis({
+      duration: 1.1,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      smoothWheel: true,
+      wheelMultiplier: 1,
+      touchMultiplier: 1.5,
+      infinite: false,
+    });
+
+    window.__lenis = lenis;
+
+    let rafId;
+    function raf(time) {
+      lenis.raf(time);
+      rafId = requestAnimationFrame(raf);
+    }
+    rafId = requestAnimationFrame(raf);
+
+    return () => {
+      cancelAnimationFrame(rafId);
+      lenis.destroy();
+      delete window.__lenis;
+    };
+  }, []);
+
+  // Pause Lenis when modal is open to avoid background scroll
+  useEffect(() => {
+    if (window.__lenis) {
+      if (isContactOpen || isResumeOpen) {
+        window.__lenis.stop();
+      } else {
+        window.__lenis.start();
+      }
+    }
+  }, [isContactOpen, isResumeOpen]);
 
   // Shareable deep links: /#resume and /#resume-full
   useEffect(() => {
@@ -58,7 +106,12 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-surface-dark text-slate-100 flex flex-col selection:bg-brand-cyan selection:text-slate-950">
+    <div className="min-h-screen bg-surface-dark text-slate-100 flex flex-col selection:bg-brand-cyan selection:text-slate-950 relative overflow-x-hidden">
+      {/* 3D Spatial Systems Monolith (Ambient, Inertial, High-Taste, Lazy-Loaded) */}
+      <React.Suspense fallback={null}>
+        <SpatialMonolithCanvas />
+      </React.Suspense>
+
       {/* Top Navigation */}
       <Navbar
         onOpenContact={handleOpenContact}
@@ -66,7 +119,7 @@ export default function App() {
       />
 
       {/* Main Content */}
-      <main className="flex-grow">
+      <main className="flex-grow relative z-10">
         <Hero
           onOpenContact={handleOpenContact}
           onOpenResume={handleOpenResume}
@@ -83,6 +136,13 @@ export default function App() {
 
       {/* Footer */}
       <Footer onOpenContact={handleOpenContact} />
+
+      {/* Executive Telemetry HUD */}
+      <ExecutiveTelemetryHUD
+        onOpenContact={handleOpenContact}
+        onOpenResume={handleOpenResume}
+        onRequestWalkthrough={handleRequestWalkthrough}
+      />
 
       <BackToTop />
 
