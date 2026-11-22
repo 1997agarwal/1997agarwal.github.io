@@ -17,7 +17,6 @@ import AccoladesSection from './components/AccoladesSection';
 import ContactModal from './components/ContactModal';
 import ResumeModal from './components/ResumeModal';
 import Footer from './components/Footer';
-import ExecutiveTelemetryHUD from './components/ExecutiveTelemetryHUD';
 
 const SpatialMonolithCanvas = React.lazy(() => import('./components/SpatialMonolithCanvas'));
 
@@ -136,13 +135,6 @@ export default function App() {
 
       {/* Footer */}
       <Footer onOpenContact={handleOpenContact} />
-
-      {/* Executive Telemetry HUD */}
-      <ExecutiveTelemetryHUD
-        onOpenContact={handleOpenContact}
-        onOpenResume={handleOpenResume}
-        onRequestWalkthrough={handleRequestWalkthrough}
-      />
 
       <BackToTop />
 
