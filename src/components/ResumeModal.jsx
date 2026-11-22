@@ -151,7 +151,7 @@ export default function ResumeModal({ isOpen, onClose, initialTab = 'quick' }) {
                     </a>
                   </div>
                   <div className="font-mono text-[11px] text-indigo-600 space-x-1.5">
-                    <a href="https://1997agarwal.github.io" target="_blank" rel="noreferrer" className="hover:underline">1997agarwal.github.io</a> •
+                    <a href="https://harshit.buzz" target="_blank" rel="noreferrer" className="hover:underline">harshit.buzz</a> •
                     <a href={personalInfo.links.linkedin} target="_blank" rel="noreferrer" className="hover:underline">linkedin</a> •
                     <a href={personalInfo.links.github} target="_blank" rel="noreferrer" className="hover:underline">github</a>
                   </div>

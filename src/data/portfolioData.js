@@ -6,7 +6,7 @@ export const PERSONAL_INFO = {
   role: 'Senior Product Manager · AI · Builder',
   tagline: '7+ years building enterprise fintech, SaaS & AI products. Product Manager @ Tekion Corp, former product lead @ Tally Education & Shiprocket, and founder of Trippy & FixIT.',
   location: 'Bengaluru, Karnataka, India • Global Remote',
-  email: 'agarwal.harshit97@gmail.com',
+  email: 'hello@harshit.buzz',
   linkedin: 'https://www.linkedin.com/in/1997agarwal/',
   github: 'https://github.com/1997agarwal',
   twitter: 'https://x.com/1997agarwal',
