@@ -15,6 +15,8 @@ export default function ResumeQuickView({ onShowFull }) {
           <div>{personalInfo.location.split('•')[0].trim()}</div>
           <a href={`mailto:${personalInfo.email}`} className="text-cyan-700 font-semibold hover:underline block">{personalInfo.email}</a>
           <div className="font-mono text-[11px]">
+            <a href="https://harshit.buzz" target="_blank" rel="noreferrer" className="text-cyan-700 hover:underline">harshit.buzz</a>
+            {' · '}
             <a href={personalInfo.links.linkedin} target="_blank" rel="noreferrer" className="text-cyan-700 hover:underline">linkedin</a>
             {' · '}
             <a href={personalInfo.links.github} target="_blank" rel="noreferrer" className="text-cyan-700 hover:underline">github</a>

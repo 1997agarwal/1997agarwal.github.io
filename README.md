@@ -2,7 +2,7 @@
 
 > Senior Product Manager · AI · Builder
 
-Live Production Deployment: **[https://1997agarwal.github.io](https://1997agarwal.github.io)**  
+Live Production Deployment: **[https://harshit.buzz](https://harshit.buzz)**  
 
 
 ---
@@ -43,7 +43,7 @@ By default the form opens the visitor's email app. To receive messages directly:
 
 ## 📄 Resume: Quick View + PDFs
 The resume modal has two tabs: **Quick View** (a 7-second, one-screen summary for recruiters) and **Full Resume** (ATS-friendly).
-- Shareable links: `https://1997agarwal.github.io/#resume` and `/#resume-full`.
+- Shareable links: `https://harshit.buzz/#resume` and `/#resume-full`.
 - On every deploy, `npm run build:pdf` (see `scripts/build-resume-pdf.mjs`) renders both views to
   `Harshit-Agarwal-Resume-1-Page.pdf` and `Harshit-Agarwal-Resume-Full.pdf`, so the PDFs always match `src/data/portfolioData.js`.
 - To build them locally: `npm run build && CHROME_PATH=/path/to/chrome npm run build:pdf`.
