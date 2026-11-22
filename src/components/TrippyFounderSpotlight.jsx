@@ -129,9 +129,13 @@ export default function TrippyFounderSpotlight({ onRequestWalkthrough }) {
                     href={t.liveUrl}
                     target="_blank"
                     rel="noreferrer"
-                    className="py-3 px-5 rounded-xl bg-gradient-to-r from-brand-cyan to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-slate-950 font-bold text-xs font-mono transition-all flex items-center justify-center gap-2 shadow-lg shadow-cyan-500/20"
+                    className={`py-3 px-5 rounded-xl text-slate-950 font-bold text-xs font-mono transition-all flex items-center justify-center gap-2 ${
+                      isTrippy
+                        ? 'bg-gradient-to-r from-teal-400 to-brand-cyan hover:from-teal-300 hover:to-cyan-300 shadow-lg shadow-teal-500/20'
+                        : 'bg-gradient-to-r from-brand-cyan to-blue-500 hover:from-cyan-300 hover:to-blue-400 shadow-lg shadow-cyan-500/20'
+                    }`}
                   >
-                    <span>▶ Launch Live FixIT App</span>
+                    <span>▶ Launch Live {t.name} App</span>
                     <span>↗</span>
                   </a>
                 ) : (
@@ -139,7 +143,7 @@ export default function TrippyFounderSpotlight({ onRequestWalkthrough }) {
                     onClick={() => onRequestWalkthrough(`${t.name}: Live Beta Access Request`)}
                     className="py-3 px-5 rounded-xl bg-gradient-to-r from-teal-500 to-brand-cyan hover:from-teal-400 hover:to-cyan-400 text-slate-950 font-bold text-xs font-mono transition-all flex items-center justify-center gap-2 shadow-lg shadow-teal-500/20"
                   >
-                    <span>▶ Explore Trippy Beta App</span>
+                    <span>▶ Explore {t.name} Beta App</span>
                     <span>↗</span>
                   </button>
                 )}
