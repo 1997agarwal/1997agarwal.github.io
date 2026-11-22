@@ -42,15 +42,15 @@ export default function OpenSourceSection() {
               </div>
 
               {/* Title & Tagline */}
-              <h3 className="text-2xl font-bold text-white group-hover:text-emerald-400 transition-colors mb-2">
+              <h3 className="text-2xl font-bold text-slate-900 dark:text-white group-hover:text-emerald-500 dark:group-hover:text-emerald-400 transition-colors mb-2">
                 {tool.name}
               </h3>
-              <p className="text-sm font-semibold text-slate-300 mb-5">
+              <p className="text-sm font-semibold text-slate-600 dark:text-slate-300 mb-5">
                 {tool.tagline}
               </p>
 
               <Expandable label="details & stack" className="mb-6">
-              <p className="text-sm text-slate-400 leading-relaxed mb-6">
+              <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
                 {tool.description}
               </p>
 

@@ -14,23 +14,23 @@ export default function Hero({ onOpenContact, onOpenResume }) {
           {/* Left Column: Core Positioning */}
           <div className="flex-1 text-center md:text-left">
             {/* Status Pill */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-surface-card border border-surface-border text-xs font-medium text-slate-300 mb-6 shadow-sm">
-              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-surface-card border border-surface-border text-xs font-medium text-slate-600 dark:text-slate-300 mb-6 shadow-sm">
+              <span className="w-2 h-2 rounded-full bg-emerald-500 dark:bg-emerald-400 animate-pulse" />
               <span>{personalInfo.status}</span>
             </div>
 
             {/* Headline */}
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white mb-6 leading-[1.15]">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 dark:text-white mb-6 leading-[1.15]">
               I turn ideas into products used by <span className="text-gradient">over a million people</span>.
             </h1>
 
             {/* Sub-headline */}
-            <p className="text-lg sm:text-xl text-slate-300 font-medium mb-4">
+            <p className="text-lg sm:text-xl text-slate-700 dark:text-slate-300 font-medium mb-4">
               {personalInfo.title}
             </p>
 
             {/* Short Bio */}
-            <p className="text-base text-slate-400 max-w-2xl mb-8 leading-relaxed">
+            <p className="text-base text-slate-600 dark:text-slate-400 max-w-2xl mb-8 leading-relaxed">
               {personalInfo.summary}
             </p>
 
@@ -48,7 +48,7 @@ export default function Hero({ onOpenContact, onOpenResume }) {
 
               <button
                 onClick={onOpenResume}
-                className="px-5 py-3 rounded-lg bg-surface-card hover:bg-slate-800 text-white border border-brand-cyan/40 font-medium text-sm transition-all flex items-center gap-2 shadow-sm"
+                className="px-5 py-3 rounded-lg bg-surface-card hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-900 dark:text-white border border-brand-cyan/40 font-medium text-sm transition-all flex items-center gap-2 shadow-sm"
               >
                 <svg className="w-4 h-4 text-brand-cyan" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
@@ -60,7 +60,7 @@ export default function Hero({ onOpenContact, onOpenResume }) {
                 href={personalInfo.links.github}
                 target="_blank"
                 rel="noreferrer"
-                className="p-3 rounded-lg bg-surface-card hover:bg-surface-border/50 text-slate-300 border border-surface-border font-medium text-sm transition-all hidden sm:flex items-center justify-center"
+                className="p-3 rounded-lg bg-surface-card hover:bg-slate-100 dark:hover:bg-surface-border/50 text-slate-600 dark:text-slate-300 border border-surface-border font-medium text-sm transition-all hidden sm:flex items-center justify-center shadow-sm"
                 title="View GitHub Profile"
               >
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -72,10 +72,10 @@ export default function Hero({ onOpenContact, onOpenResume }) {
             {/* 7-second proof points */}
             <dl className="grid grid-cols-2 lg:grid-cols-4 gap-3 max-w-3xl mx-auto md:mx-0 mt-8">
               {QUICK_VIEW.stats.map((s) => (
-                <div key={s.label} className="px-3 py-3 rounded-xl bg-white/[0.04] border border-white/10 text-left">
+                <div key={s.label} className="px-3 py-3 rounded-xl bg-black/[0.03] dark:bg-white/[0.04] border border-black/10 dark:border-white/10 text-left shadow-sm">
                   <dt className="sr-only">{s.label}</dt>
                   <dd className="text-xl sm:text-2xl font-extrabold text-brand-cyan font-mono leading-none">{s.value}</dd>
-                  <dd className="text-xs text-slate-400 mt-1.5 leading-snug">{s.label}</dd>
+                  <dd className="text-xs text-slate-600 dark:text-slate-400 mt-1.5 leading-snug">{s.label}</dd>
                 </div>
               ))}
             </dl>
@@ -83,8 +83,8 @@ export default function Hero({ onOpenContact, onOpenResume }) {
 
           {/* Right Column: Interactive Profile Card */}
           <div className="w-full md:w-auto flex justify-center">
-            <div className="relative p-1 rounded-2xl bg-gradient-to-br from-brand-cyan/30 via-slate-800/50 to-brand-blue/30 shadow-2xl backdrop-blur-sm max-w-sm">
-              <div className="bg-surface-card rounded-xl p-6 border border-surface-border">
+            <div className="relative p-1 rounded-2xl bg-gradient-to-br from-brand-cyan/30 via-slate-500/20 dark:via-slate-800/50 to-brand-blue/30 shadow-2xl backdrop-blur-sm max-w-sm">
+              <div className="bg-surface-card rounded-xl p-6 border border-surface-border shadow-md">
                 
                 {/* Avatar & Header */}
                 <div className="flex items-center gap-4 mb-5">
@@ -97,35 +97,35 @@ export default function Hero({ onOpenContact, onOpenResume }) {
                     <span className="absolute bottom-0 right-0 w-4 h-4 rounded-full bg-emerald-500 border-2 border-surface-card" />
                   </div>
                   <div>
-                    <h3 className="text-white font-bold text-lg">{personalInfo.name}</h3>
-                    <p className="text-xs text-brand-cyan font-mono">{personalInfo.location}</p>
-                    <p className="text-xs text-slate-400">Duke University (Postgraduate Certification in Product Management, 2020) • B.Tech (ECE)</p>
+                    <h3 className="text-slate-900 dark:text-white font-bold text-lg">{personalInfo.name}</h3>
+                    <p className="text-xs text-brand-cyan font-mono font-medium">{personalInfo.location}</p>
+                    <p className="text-xs text-slate-600 dark:text-slate-400">Duke University (Postgraduate Certification in Product Management, 2020) • B.Tech (ECE)</p>
                   </div>
                 </div>
 
                 {/* Core Philosophy */}
-                <div className="hidden md:block p-3 rounded-lg bg-surface-dark border border-surface-border/60 text-xs text-slate-300 italic mb-5 leading-relaxed">
+                <div className="hidden md:block p-3 rounded-lg bg-surface-dark border border-surface-border/60 text-xs text-slate-700 dark:text-slate-300 italic mb-5 leading-relaxed">
                   "{personalInfo.bio}"
                 </div>
 
                 {/* Refactored Quick Info Grid */}
                 <div className="hidden md:grid grid-cols-1 sm:grid-cols-3 gap-2.5 text-xs">
                   <div className="p-2.5 rounded-lg bg-surface-dark/80 border border-surface-border/60">
-                    <div className="text-slate-400 font-mono uppercase text-xs tracking-wider">Role</div>
-                    <div className="text-white font-semibold mt-1">PM @ Tekion</div>
+                    <div className="text-slate-500 dark:text-slate-400 font-mono uppercase text-xs tracking-wider">Role</div>
+                    <div className="text-slate-900 dark:text-white font-semibold mt-1">PM @ Tekion</div>
                   </div>
                   <div className="p-2.5 rounded-lg bg-surface-dark/80 border border-surface-border/60">
-                    <div className="text-slate-400 font-mono uppercase text-xs tracking-wider">Focus</div>
+                    <div className="text-slate-500 dark:text-slate-400 font-mono uppercase text-xs tracking-wider">Focus</div>
                     <div className="text-brand-cyan font-semibold mt-1">Product, AI & Building</div>
                   </div>
                   <div className="p-2.5 rounded-lg bg-surface-dark/80 border border-surface-border/60">
-                    <div className="text-slate-400 font-mono uppercase text-xs tracking-wider">Alumni</div>
-                    <div className="text-white font-semibold mt-1">Duke University</div>
+                    <div className="text-slate-500 dark:text-slate-400 font-mono uppercase text-xs tracking-wider">Alumni</div>
+                    <div className="text-slate-900 dark:text-white font-semibold mt-1">Duke University</div>
                   </div>
                 </div>
 
                 {/* Social Quick Links */}
-                <div className="md:mt-5 md:pt-4 md:border-t border-surface-border/40 flex items-center justify-between text-xs text-slate-400 mt-1">
+                <div className="md:mt-5 md:pt-4 md:border-t border-surface-border/40 flex items-center justify-between text-xs text-slate-500 dark:text-slate-400 mt-1">
                   <span className="font-mono">Handle: @1997agarwal</span>
                   <div className="flex gap-3">
                     <a href={personalInfo.links.linkedin} target="_blank" rel="noreferrer" className="hover:text-brand-cyan transition-colors">

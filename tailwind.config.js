@@ -9,9 +9,9 @@ export default {
     extend: {
       colors: {
         surface: {
-          dark: '#0B0F17',
-          card: '#111827',
-          border: '#1F2937',
+          dark: 'var(--color-surface-bg)',
+          card: 'var(--color-surface-card)',
+          border: 'var(--color-surface-border)',
         },
         brand: {
           cyan: '#06b6d4',

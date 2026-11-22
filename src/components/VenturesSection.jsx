@@ -65,10 +65,10 @@ export default function VenturesSection({ onRequestWalkthrough }) {
                   </span>
                 </div>
 
-                <h3 className="text-2xl font-bold text-white group-hover:text-brand-cyan transition-colors mb-2">
+                <h3 className="text-2xl font-bold text-slate-900 dark:text-white group-hover:text-brand-cyan transition-colors mb-2">
                   {item.name}
                 </h3>
-                <p className="text-sm font-semibold text-slate-300 mb-5">
+                <p className="text-sm font-semibold text-slate-600 dark:text-slate-300 mb-5">
                   {item.tagline}
                 </p>
 

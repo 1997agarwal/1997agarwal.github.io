@@ -13,21 +13,21 @@ function RoleCard({ exp, defaultOpen }) {
         <span className="w-2 h-2 rounded-full bg-brand-cyan" />
       </span>
 
-      <article className="bg-surface-card border border-surface-border rounded-2xl p-5 sm:p-7 hover:border-brand-cyan/30 transition-colors">
+      <article className="bg-surface-card border border-surface-border rounded-2xl p-5 sm:p-7 hover:border-brand-cyan/30 transition-colors shadow-sm">
         <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-3">
           <div>
-            <h3 className="text-xl sm:text-2xl font-bold text-white leading-snug">
+            <h3 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white leading-snug">
               {exp.role} <span className="text-brand-cyan">@ {exp.company}</span>
             </h3>
-            <p className="text-xs font-mono text-slate-400 mt-1">{exp.businessUnit}</p>
+            <p className="text-xs font-mono text-slate-500 dark:text-slate-400 mt-1">{exp.businessUnit}</p>
           </div>
-          <div className="sm:text-right text-xs font-mono text-slate-300 shrink-0">
+          <div className="sm:text-right text-xs font-mono text-slate-600 dark:text-slate-300 shrink-0">
             <div className="inline-block px-2.5 py-1 rounded-md bg-surface-dark border border-surface-border">{exp.period}</div>
-            <div className="text-slate-400 mt-1.5">{exp.location}</div>
+            <div className="text-slate-500 dark:text-slate-400 mt-1.5">{exp.location}</div>
           </div>
         </div>
 
-        <p className="text-sm sm:text-base text-slate-200 leading-relaxed font-medium">{exp.quickLine}</p>
+        <p className="text-sm sm:text-base text-slate-700 dark:text-slate-200 leading-relaxed font-medium">{exp.quickLine}</p>
 
         {exp.impact.length > 0 && (
           <dl className={`grid grid-cols-2 gap-2.5 mt-4 ${exp.impact.length === 3 ? 'sm:grid-cols-3' : 'sm:grid-cols-4'}`}>

@@ -105,7 +105,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-surface-dark text-slate-100 flex flex-col selection:bg-brand-cyan selection:text-slate-950 relative overflow-x-hidden">
+    <div className="min-h-screen bg-surface-dark text-slate-900 dark:text-slate-100 flex flex-col selection:bg-brand-cyan selection:text-slate-950 relative overflow-x-hidden transition-colors duration-300">
       {/* 3D Spatial Systems Monolith (Ambient, Inertial, High-Taste, Lazy-Loaded) */}
       <React.Suspense fallback={null}>
         <SpatialMonolithCanvas />

@@ -3,20 +3,20 @@ import { personalInfo } from '../data/portfolioData';
 
 export default function Footer({ onOpenContact }) {
   return (
-    <footer className="border-t border-surface-border bg-surface-dark/80 py-12 text-xs text-slate-400">
+    <footer className="border-t border-surface-border bg-surface-dark/80 py-12 text-xs text-slate-500 dark:text-slate-400">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           
           {/* Brand info */}
           <div className="text-center md:text-left">
-            <div className="font-bold text-white text-base tracking-tight mb-1">
+            <div className="font-bold text-slate-900 dark:text-white text-base tracking-tight mb-1">
               Harshit Agarwal
             </div>
-            <p className="text-slate-400 max-w-sm">
+            <p className="text-slate-600 dark:text-slate-400 max-w-sm">
               Senior Product Manager · AI · Builder. Founder of Trippy & FixIT.
             </p>
-            <p className="text-slate-300 max-w-sm sm:max-w-none sm:whitespace-nowrap mt-2">
-              <span className="font-semibold text-emerald-400">Open to roles:</span> Senior PM, VP Product, or co-founder.
+            <p className="text-slate-700 dark:text-slate-300 max-w-sm sm:max-w-none sm:whitespace-nowrap mt-2">
+              <span className="font-semibold text-emerald-600 dark:text-emerald-400">Open to roles:</span> Senior PM, VP Product, or co-founder.
             </p>
           </div>
 

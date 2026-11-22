@@ -13,11 +13,11 @@ export default function SectionHeader({ eyebrow, title, subtitle, accent = 'cyan
       <div className={`inline-flex items-center px-3 py-1 rounded-full border text-xs font-mono mb-4 ${ACCENTS[accent]}`}>
         {eyebrow}
       </div>
-      <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight leading-tight">
+      <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight leading-tight">
         {title}
       </h2>
       {subtitle && (
-        <p className="mt-4 text-sm sm:text-base text-slate-400 leading-relaxed">{subtitle}</p>
+        <p className="mt-4 text-sm sm:text-base text-slate-600 dark:text-slate-400 leading-relaxed">{subtitle}</p>
       )}
     </div>
   );

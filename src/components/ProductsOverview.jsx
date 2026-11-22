@@ -42,7 +42,7 @@ export default function ProductsOverview() {
         <h2 id="products-heading" className="text-xs font-mono uppercase tracking-widest text-brand-cyan mb-2">
           What I Build
         </h2>
-        <p className="text-xl sm:text-2xl font-extrabold text-white tracking-tight">
+        <p className="text-xl sm:text-2xl font-extrabold text-slate-900 dark:text-white tracking-tight">
           Three tiers of products, from startup to open source
         </p>
       </div>
@@ -52,13 +52,13 @@ export default function ProductsOverview() {
           <a
             key={t.href}
             href={t.href}
-            className={`group block p-5 rounded-2xl bg-surface-card border transition-all hover:-translate-y-0.5 ${t.accent.split(' ').slice(0, 2).join(' ')}`}
+            className={`group block p-5 rounded-2xl bg-surface-card border transition-all hover:-translate-y-0.5 shadow-sm ${t.accent.split(' ').slice(0, 2).join(' ')}`}
           >
             <div className={`text-xs font-mono font-bold uppercase tracking-wider mb-2 ${t.accent.split(' ').slice(2).join(' ')}`}>
               {t.step} · {t.label}
             </div>
-            <div className="text-lg font-bold text-white mb-1">{t.title}</div>
-            <p className="text-xs text-slate-400 leading-relaxed mb-3">{t.desc}</p>
+            <div className="text-lg font-bold text-slate-900 dark:text-white mb-1">{t.title}</div>
+            <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed mb-3">{t.desc}</p>
             <span className={`text-xs font-semibold ${t.accent.split(' ').slice(2).join(' ')}`}>
               {t.cta} <span aria-hidden="true">→</span>
             </span>

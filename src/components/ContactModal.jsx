@@ -98,10 +98,10 @@ export default function ContactModal({ isOpen, onClose, defaultSubject = '' }) {
           <div className="text-xs font-mono text-brand-cyan uppercase tracking-wider mb-1">
             Initiate Direct Discussion
           </div>
-          <h3 className="text-2xl font-bold text-white">
+          <h3 className="text-2xl font-bold text-slate-900 dark:text-white">
             Connect with Harshit Agarwal
           </h3>
-          <p className="text-xs text-slate-400 mt-1">
+          <p className="text-xs text-slate-600 dark:text-slate-400 mt-1">
             Available for Senior PM roles, venture collaborations, or private technical walkthroughs.
           </p>
         </div>
@@ -120,7 +120,7 @@ export default function ContactModal({ isOpen, onClose, defaultSubject = '' }) {
         ) : (
           <form onSubmit={handleSubmit} className="space-y-4 text-xs">
             <div>
-              <label htmlFor="contact-name" className="block text-slate-300 font-mono mb-1">Your Name</label>
+              <label htmlFor="contact-name" className="block text-slate-700 dark:text-slate-300 font-mono mb-1">Your Name</label>
               <input
                 id="contact-name"
                 type="text"
@@ -128,12 +128,12 @@ export default function ContactModal({ isOpen, onClose, defaultSubject = '' }) {
                 value={senderName}
                 onChange={(e) => setSenderName(e.target.value)}
                 placeholder="e.g. Elena Vance"
-                className="w-full px-3 py-2.5 rounded-lg bg-surface-dark border border-surface-border text-slate-200 focus:outline-none focus:border-brand-cyan"
+                className="w-full px-3 py-2.5 rounded-lg bg-surface-dark border border-surface-border text-slate-900 dark:text-slate-200 focus:outline-none focus:border-brand-cyan"
               />
             </div>
 
             <div>
-              <label htmlFor="contact-email" className="block text-slate-300 font-mono mb-1">Your Email</label>
+              <label htmlFor="contact-email" className="block text-slate-700 dark:text-slate-300 font-mono mb-1">Your Email</label>
               <input
                 id="contact-email"
                 type="email"
@@ -141,12 +141,12 @@ export default function ContactModal({ isOpen, onClose, defaultSubject = '' }) {
                 value={senderEmail}
                 onChange={(e) => setSenderEmail(e.target.value)}
                 placeholder="elena@enterprise.com"
-                className="w-full px-3 py-2.5 rounded-lg bg-surface-dark border border-surface-border text-slate-200 focus:outline-none focus:border-brand-cyan"
+                className="w-full px-3 py-2.5 rounded-lg bg-surface-dark border border-surface-border text-slate-900 dark:text-slate-200 focus:outline-none focus:border-brand-cyan"
               />
             </div>
 
             <div>
-              <label htmlFor="contact-subject" className="block text-slate-300 font-mono mb-1">Subject</label>
+              <label htmlFor="contact-subject" className="block text-slate-700 dark:text-slate-300 font-mono mb-1">Subject</label>
               <input
                 id="contact-subject"
                 type="text"
@@ -154,12 +154,12 @@ export default function ContactModal({ isOpen, onClose, defaultSubject = '' }) {
                 value={subject}
                 onChange={(e) => setSubject(e.target.value)}
                 placeholder="Discussion / Venture Demo Request"
-                className="w-full px-3 py-2.5 rounded-lg bg-surface-dark border border-surface-border text-slate-200 focus:outline-none focus:border-brand-cyan"
+                className="w-full px-3 py-2.5 rounded-lg bg-surface-dark border border-surface-border text-slate-900 dark:text-slate-200 focus:outline-none focus:border-brand-cyan"
               />
             </div>
 
             <div>
-              <label htmlFor="contact-message" className="block text-slate-300 font-mono mb-1">Message</label>
+              <label htmlFor="contact-message" className="block text-slate-700 dark:text-slate-300 font-mono mb-1">Message</label>
               <textarea
                 id="contact-message"
                 rows={4}
@@ -167,7 +167,7 @@ export default function ContactModal({ isOpen, onClose, defaultSubject = '' }) {
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
                 placeholder="Tell me about your team, challenge, or what you'd like to dive into..."
-                className="w-full px-3 py-2.5 rounded-lg bg-surface-dark border border-surface-border text-slate-200 focus:outline-none focus:border-brand-cyan resize-none"
+                className="w-full px-3 py-2.5 rounded-lg bg-surface-dark border border-surface-border text-slate-900 dark:text-slate-200 focus:outline-none focus:border-brand-cyan resize-none"
               />
             </div>
 

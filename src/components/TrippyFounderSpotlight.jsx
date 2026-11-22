@@ -101,24 +101,24 @@ export default function TrippyFounderSpotlight({ onRequestWalkthrough }) {
               
               <div>
                 <div className="flex items-center gap-3 mb-2">
-                  <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight">
+                  <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 dark:text-white tracking-tight">
                     {t.name}
                   </h2>
                   <span className={`text-xs font-mono font-bold px-2.5 py-1 rounded border ${
                     isTrippy
-                      ? 'bg-teal-500/10 text-teal-300 border-teal-500/30'
-                      : 'bg-cyan-500/10 text-cyan-300 border-cyan-500/30'
+                      ? 'bg-teal-500/10 text-teal-600 dark:text-teal-300 border-teal-500/30'
+                      : 'bg-cyan-500/10 text-cyan-600 dark:text-cyan-300 border-cyan-500/30'
                   }`}>
                     {t.category}
                   </span>
                 </div>
                 <p className={`text-base sm:text-lg font-semibold ${
-                  isTrippy ? 'text-teal-400' : 'text-cyan-400'
+                  isTrippy ? 'text-teal-600 dark:text-teal-400' : 'text-cyan-600 dark:text-cyan-400'
                 }`}>
                   {t.tagline}
                 </p>
-                <p className="text-xs font-mono text-amber-300/90 mt-1">
-                  Founder Role: <span className="text-white font-bold">{t.founderRole}</span>
+                <p className="text-xs font-mono text-amber-500 dark:text-amber-300/90 mt-1">
+                  Founder Role: <span className="text-slate-900 dark:text-white font-bold">{t.founderRole}</span>
                 </p>
               </div>
 
