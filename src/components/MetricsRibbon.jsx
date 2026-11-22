@@ -11,10 +11,10 @@ export default function MetricsRibbon() {
               <span className="text-3xl sm:text-4xl font-extrabold text-brand-cyan tracking-tight font-mono">
                 {metric.value}
               </span>
-              <span className="text-xs font-semibold text-slate-200 mt-1 uppercase tracking-wider">
+              <span className="text-xs font-semibold text-slate-800 dark:text-slate-200 mt-1 uppercase tracking-wider">
                 {metric.label}
               </span>
-              <span className="text-xs text-slate-400 mt-0.5 font-light">
+              <span className="text-xs text-slate-600 dark:text-slate-400 mt-0.5 font-medium">
                 {metric.detail}
               </span>
             </div>

@@ -12,7 +12,7 @@ export default function Expandable({ label, children, className = '', defaultOpe
         type="button"
         onClick={() => setOpen((o) => !o)}
         aria-expanded={open}
-        className="lg:hidden w-full flex items-center justify-between text-xs font-mono text-slate-300 px-3.5 py-3 rounded-lg bg-surface-dark/80 border border-surface-border hover:border-slate-600 transition-colors"
+        className="lg:hidden w-full flex items-center justify-between text-xs font-mono text-slate-700 dark:text-slate-300 px-3.5 py-3 rounded-lg bg-surface-dark/80 border border-surface-border hover:border-slate-400 dark:hover:border-slate-600 transition-colors shadow-sm"
       >
         <span>{open ? 'Hide' : 'Show'} {label}</span>
         <span aria-hidden="true" className="text-brand-cyan text-base leading-none">{open ? '−' : '+'}</span>

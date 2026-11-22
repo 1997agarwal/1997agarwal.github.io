@@ -86,7 +86,7 @@ export default function ContactModal({ isOpen, onClose, defaultSubject = '' }) {
         <button
           onClick={onClose}
           aria-label="Close contact form"
-          className="absolute top-4 right-4 text-slate-400 hover:text-white p-2"
+          className="absolute top-4 right-4 text-slate-400 hover:text-slate-900 dark:hover:text-white p-2"
         >
           <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -109,7 +109,7 @@ export default function ContactModal({ isOpen, onClose, defaultSubject = '' }) {
         {status === 'sent' ? (
           <div className="py-8 text-center space-y-4">
             <div className="text-emerald-400 text-lg font-bold">Message sent ✓</div>
-            <p className="text-xs text-slate-400">Thanks for reaching out — I'll get back to you soon.</p>
+            <p className="text-xs text-slate-600 dark:text-slate-400">Thanks for reaching out — I'll get back to you soon.</p>
             <button
               onClick={onClose}
               className="px-6 py-2.5 rounded-lg bg-brand-cyan hover:bg-cyan-400 text-slate-950 font-bold text-xs"
@@ -197,7 +197,7 @@ export default function ContactModal({ isOpen, onClose, defaultSubject = '' }) {
         )}
 
         {/* Quick Contacts Footer */}
-        <div className="mt-6 pt-4 border-t border-surface-border flex items-center justify-between text-xs text-slate-400 font-mono">
+        <div className="mt-6 pt-4 border-t border-surface-border flex items-center justify-between text-xs text-slate-600 dark:text-slate-400 font-mono">
           <span>Direct: {personalInfo.email}</span>
           <a
             href={personalInfo.links.linkedin}

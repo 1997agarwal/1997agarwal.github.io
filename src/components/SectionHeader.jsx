@@ -2,9 +2,9 @@ import React from 'react';
 
 const ACCENTS = {
   cyan: 'bg-brand-cyan/10 border-brand-cyan/30 text-brand-cyan',
-  emerald: 'bg-emerald-500/10 border-emerald-500/30 text-emerald-400',
-  amber: 'bg-amber-500/10 border-amber-500/30 text-amber-400',
-  slate: 'bg-white/5 border-white/10 text-slate-300',
+  emerald: 'bg-emerald-500/10 border-emerald-500/30 text-emerald-600 dark:text-emerald-400',
+  amber: 'bg-amber-500/10 border-amber-500/30 text-amber-700 dark:text-amber-400',
+  slate: 'bg-slate-200/80 dark:bg-white/5 border-slate-300 dark:border-white/10 text-slate-700 dark:text-slate-300',
 };
 
 export default function SectionHeader({ eyebrow, title, subtitle, accent = 'cyan' }) {

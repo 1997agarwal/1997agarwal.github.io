@@ -18,12 +18,12 @@ export default function OpenSourceSection() {
         {(openSourceTools || []).map((tool) => (
           <div
             key={tool.name}
-            className="bg-surface-card border border-surface-border rounded-2xl p-5 sm:p-6 flex flex-col justify-between hover:border-emerald-500/40 transition-all hover:shadow-xl hover:shadow-emerald-500/5 group"
+            className="bg-surface-card border border-surface-border rounded-2xl p-5 sm:p-6 flex flex-col justify-between hover:border-emerald-500/40 transition-all hover:shadow-xl hover:shadow-emerald-500/5 group shadow-sm"
           >
             <div>
               {/* Badge & Stars */}
               <div className="flex items-center justify-between mb-4">
-                <span className="text-xs font-mono font-bold px-2.5 py-1 rounded bg-surface-dark text-emerald-400 border border-surface-border">
+                <span className="text-xs font-mono font-bold px-2.5 py-1 rounded bg-surface-dark text-emerald-600 dark:text-emerald-400 border border-surface-border">
                   {tool.category || 'Developer Tool'}
                 </span>
                 <a
@@ -56,12 +56,12 @@ export default function OpenSourceSection() {
 
               {/* Highlights */}
               <div className="mb-6 space-y-2">
-                <span className="text-xs font-mono text-slate-400 uppercase tracking-wider block mb-1">
+                <span className="text-xs font-mono text-slate-600 dark:text-slate-400 uppercase tracking-wider block mb-1 font-semibold">
                   Core Engineering Primitives
                 </span>
                 {(tool.highlights || []).map((h, idx) => (
-                  <div key={idx} className="flex items-start gap-2 text-xs text-slate-300">
-                    <span className="text-emerald-400 font-bold">✓</span>
+                  <div key={idx} className="flex items-start gap-2 text-xs text-slate-700 dark:text-slate-300">
+                    <span className="text-emerald-600 dark:text-emerald-400 font-bold">✓</span>
                     <span>{h}</span>
                   </div>
                 ))}
@@ -70,7 +70,7 @@ export default function OpenSourceSection() {
               {/* Stack Chips */}
               <div className="flex flex-wrap gap-1.5">
                 {(tool.stack || []).map((tech, idx) => (
-                  <span key={idx} className="text-xs px-2 py-0.5 rounded bg-surface-dark text-slate-300 border border-surface-border font-mono">
+                  <span key={idx} className="text-xs px-2 py-0.5 rounded bg-surface-dark text-slate-700 dark:text-slate-300 border border-surface-border font-mono">
                     {tech}
                   </span>
                 ))}
@@ -80,7 +80,7 @@ export default function OpenSourceSection() {
 
             {/* Bottom Actions */}
             <div className="pt-4 border-t border-surface-border flex flex-wrap items-center justify-between gap-3">
-              <span className="text-xs font-mono text-slate-400">
+              <span className="text-xs font-mono text-slate-500 dark:text-slate-400">
                 License: {tool.license || 'MIT'}
               </span>
               <div className="flex items-center gap-2">

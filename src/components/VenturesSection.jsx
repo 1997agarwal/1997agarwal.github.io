@@ -4,9 +4,9 @@ import Expandable from './Expandable';
 import SectionHeader from './SectionHeader';
 
 const STAGE_STYLES = {
-  BETA: 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20',
-  ALPHA: 'bg-amber-500/10 text-amber-400 border-amber-500/20',
-  PROTOTYPE: 'bg-slate-500/10 text-slate-300 border-slate-500/20',
+  BETA: 'bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border-emerald-500/20',
+  ALPHA: 'bg-amber-500/10 text-amber-600 dark:text-amber-400 border-amber-500/20',
+  PROTOTYPE: 'bg-slate-500/10 text-slate-600 dark:text-slate-300 border-slate-500/20',
 };
 
 export default function VenturesSection({ onRequestWalkthrough }) {
@@ -39,7 +39,7 @@ export default function VenturesSection({ onRequestWalkthrough }) {
               className={`px-4 py-2 rounded-lg text-xs font-mono transition-all ${
                 activeStage === stage
                   ? 'bg-brand-cyan text-slate-950 font-bold shadow-md shadow-cyan-500/20'
-                  : 'bg-surface-card text-slate-400 border border-surface-border hover:text-white'
+                  : 'bg-surface-card text-slate-600 dark:text-slate-400 border border-surface-border hover:text-slate-900 dark:hover:text-white shadow-sm'
               }`}
             >
               {stage}
@@ -52,7 +52,7 @@ export default function VenturesSection({ onRequestWalkthrough }) {
           {filteredVentures.map((item) => (
             <div
               key={item.name}
-              className="bg-surface-card border border-surface-border rounded-2xl p-5 sm:p-6 flex flex-col justify-between hover:border-brand-cyan/50 transition-all hover:shadow-xl hover:shadow-cyan-500/5 group"
+              className="bg-surface-card border border-surface-border rounded-2xl p-5 sm:p-6 flex flex-col justify-between hover:border-brand-cyan/50 transition-all hover:shadow-xl hover:shadow-cyan-500/5 group shadow-sm"
             >
               {/* Card Top */}
               <div>
@@ -74,27 +74,27 @@ export default function VenturesSection({ onRequestWalkthrough }) {
 
                 <Expandable label="problem & solution" className="mb-6">
                   <div className="space-y-3 text-sm mb-5">
-                    <div className="p-3 rounded-lg bg-surface-dark/80 border border-surface-border">
-                      <span className="font-mono text-rose-400 uppercase tracking-wider block text-xs mb-1 font-bold">
+                    <div className="p-3 rounded-lg bg-surface-dark/80 border border-surface-border shadow-sm">
+                      <span className="font-mono text-rose-500 dark:text-rose-400 uppercase tracking-wider block text-xs mb-1 font-bold">
                         Problem Addressed
                       </span>
-                      <p className="text-slate-300 leading-relaxed">{item.problem}</p>
+                      <p className="text-slate-700 dark:text-slate-300 leading-relaxed">{item.problem}</p>
                     </div>
 
-                    <div className="p-3 rounded-lg bg-surface-dark/80 border border-surface-border">
+                    <div className="p-3 rounded-lg bg-surface-dark/80 border border-surface-border shadow-sm">
                       <span className="font-mono text-brand-cyan uppercase tracking-wider block text-xs mb-1 font-bold">
                         0→1 Architectural Solution
                       </span>
-                      <p className="text-slate-300 leading-relaxed">{item.solution}</p>
+                      <p className="text-slate-700 dark:text-slate-300 leading-relaxed">{item.solution}</p>
                     </div>
                   </div>
 
-                  <span className="text-xs font-mono text-slate-400 block mb-2 uppercase">
+                  <span className="text-xs font-mono text-slate-600 dark:text-slate-400 block mb-2 uppercase font-semibold">
                     Shipped Surfaces & Features
                   </span>
                   <div className="flex flex-wrap gap-1.5">
                     {item.surfaces.map((s, idx) => (
-                      <span key={idx} className="text-xs px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700 font-mono">
+                      <span key={idx} className="text-xs px-2 py-0.5 rounded bg-black/[0.04] dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-black/10 dark:border-slate-700 font-mono">
                         {s}
                       </span>
                     ))}
@@ -104,8 +104,8 @@ export default function VenturesSection({ onRequestWalkthrough }) {
 
               {/* Card Bottom / Footer CTA */}
               <div className="pt-4 border-t border-surface-border flex flex-wrap items-center justify-between gap-3">
-                <div className="flex items-center gap-1.5 text-xs text-slate-400 font-mono">
-                  <svg className="w-3.5 h-3.5 text-amber-400" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                <div className="flex items-center gap-1.5 text-xs text-slate-500 dark:text-slate-400 font-mono">
+                  <svg className="w-3.5 h-3.5 text-amber-500 dark:text-amber-400" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
                     <path fillRule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clipRule="evenodd" />
                   </svg>
                   <span>Private IP</span>
@@ -117,7 +117,7 @@ export default function VenturesSection({ onRequestWalkthrough }) {
                       href={item.demoUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-xs font-semibold text-brand-cyan hover:text-cyan-300 flex items-center gap-1 transition-colors px-3 py-2 rounded-lg bg-brand-cyan/10 border border-brand-cyan/20"
+                      className="text-xs font-semibold text-brand-cyan hover:text-cyan-400 flex items-center gap-1 transition-colors px-3 py-2 rounded-lg bg-brand-cyan/10 border border-brand-cyan/20"
                     >
                       <span>▶ Live Showcase ↗</span>
                     </a>
@@ -125,7 +125,7 @@ export default function VenturesSection({ onRequestWalkthrough }) {
 
                   <button
                     onClick={() => onRequestWalkthrough(item.name)}
-                    className="text-xs font-semibold text-slate-300 hover:text-white flex items-center gap-1 transition-colors px-2 py-2"
+                    className="text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white flex items-center gap-1 transition-colors px-2 py-2"
                   >
                     <span>Request Walkthrough</span>
                     <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">

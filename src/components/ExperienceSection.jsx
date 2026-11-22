@@ -32,9 +32,9 @@ function RoleCard({ exp, defaultOpen }) {
         {exp.impact.length > 0 && (
           <dl className={`grid grid-cols-2 gap-2.5 mt-4 ${exp.impact.length === 3 ? 'sm:grid-cols-3' : 'sm:grid-cols-4'}`}>
             {exp.impact.map((m) => (
-              <div key={m.label} className="rounded-xl bg-surface-dark/80 border border-surface-border px-3 py-2.5">
+              <div key={m.label} className="rounded-xl bg-surface-dark/80 border border-surface-border px-3 py-2.5 shadow-sm">
                 <dd className="text-lg sm:text-xl font-extrabold text-brand-cyan font-mono leading-none">{m.value}</dd>
-                <dt className="text-xs text-slate-400 mt-1.5 leading-tight">{m.label}</dt>
+                <dt className="text-xs text-slate-600 dark:text-slate-400 mt-1.5 leading-tight">{m.label}</dt>
               </div>
             ))}
           </dl>
@@ -43,7 +43,7 @@ function RoleCard({ exp, defaultOpen }) {
         {exp.awards && exp.awards.length > 0 && (
           <ul className="flex flex-wrap gap-2 mt-4">
             {exp.awards.map((award) => (
-              <li key={award} className="text-xs px-2.5 py-1 rounded-full bg-amber-500/10 text-amber-300 border border-amber-500/25">
+              <li key={award} className="text-xs px-2.5 py-1 rounded-full bg-amber-500/10 text-amber-700 dark:text-amber-300 border border-amber-500/25 font-medium">
                 ★ {award}
               </li>
             ))}
@@ -54,7 +54,7 @@ function RoleCard({ exp, defaultOpen }) {
           type="button"
           onClick={() => setOpen((o) => !o)}
           aria-expanded={open}
-          className="mt-5 text-xs font-mono font-semibold text-brand-cyan hover:text-cyan-300 flex items-center gap-1.5"
+          className="mt-5 text-xs font-mono font-semibold text-brand-cyan hover:text-cyan-400 flex items-center gap-1.5"
         >
           <span>{open ? 'Hide details' : `Show ${exp.highlights.length} key deliverables`}</span>
           <span aria-hidden="true" className={`transition-transform ${open ? 'rotate-180' : ''}`}>⌄</span>
@@ -64,7 +64,7 @@ function RoleCard({ exp, defaultOpen }) {
           <div className="mt-4 pt-4 border-t border-surface-border">
             <ul className="space-y-3">
               {exp.highlights.map((bullet, idx) => (
-                <li key={idx} className="flex items-start gap-3 text-sm text-slate-300 leading-relaxed">
+                <li key={idx} className="flex items-start gap-3 text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
                   <span className="text-brand-cyan mt-1.5 w-1.5 h-1.5 rounded-full bg-brand-cyan shrink-0" aria-hidden="true" />
                   <span>{bullet}</span>
                 </li>
@@ -72,7 +72,7 @@ function RoleCard({ exp, defaultOpen }) {
             </ul>
             <div className="flex flex-wrap gap-2 mt-5">
               {exp.skills.map((skill) => (
-                <span key={skill} className="px-2.5 py-1 rounded bg-surface-dark text-slate-300 border border-surface-border text-xs font-mono">
+                <span key={skill} className="px-2.5 py-1 rounded bg-surface-dark text-slate-700 dark:text-slate-300 border border-surface-border text-xs font-mono">
                   {skill}
                 </span>
               ))}

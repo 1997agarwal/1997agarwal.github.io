@@ -32,13 +32,13 @@ export default function Footer({ onOpenContact }) {
           </div>
 
           {/* Socials & Copyright */}
-          <div className="text-center md:text-right font-mono text-xs text-slate-400">
+          <div className="text-center md:text-right font-mono text-xs text-slate-600 dark:text-slate-400">
             <div className="flex justify-center md:justify-end gap-4 mb-2">
-              <a href={personalInfo.links.github} target="_blank" rel="noreferrer" className="hover:text-white">
+              <a href={personalInfo.links.github} target="_blank" rel="noreferrer" className="hover:text-slate-900 dark:hover:text-white">
                 GitHub: 1997agarwal
               </a>
               <span>•</span>
-              <a href={personalInfo.links.linkedin} target="_blank" rel="noreferrer" className="hover:text-white">
+              <a href={personalInfo.links.linkedin} target="_blank" rel="noreferrer" className="hover:text-slate-900 dark:hover:text-white">
                 LinkedIn: 1997agarwal
               </a>
             </div>

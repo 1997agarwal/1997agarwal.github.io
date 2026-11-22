@@ -18,8 +18,6 @@ import ContactModal from './components/ContactModal';
 import ResumeModal from './components/ResumeModal';
 import Footer from './components/Footer';
 
-const SpatialFounderStudioCanvas = React.lazy(() => import('./components/SpatialFounderStudioCanvas'));
-
 export default function App() {
   const [isContactOpen, setIsContactOpen] = useState(false);
   const [isResumeOpen, setIsResumeOpen] = useState(false);
@@ -106,11 +104,6 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-surface-dark text-slate-900 dark:text-slate-100 flex flex-col selection:bg-brand-cyan selection:text-slate-950 relative overflow-x-hidden transition-colors duration-300">
-      {/* 3D Spatial Founder Studio (Abhishek Yadav style: Founder Avatar, Workstation & Scroll Choreography) */}
-      <React.Suspense fallback={null}>
-        <SpatialFounderStudioCanvas />
-      </React.Suspense>
-
       {/* Top Navigation */}
       <Navbar
         onOpenContact={handleOpenContact}

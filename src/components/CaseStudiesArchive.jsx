@@ -35,7 +35,7 @@ export default function CaseStudiesArchive() {
               className={`px-3.5 py-2 rounded-lg text-xs font-mono transition-all ${
                 filter === cat
                   ? 'bg-brand-cyan text-slate-950 font-bold shadow-md shadow-cyan-500/20'
-                  : 'bg-surface-card text-slate-400 border border-surface-border hover:text-white'
+                  : 'bg-surface-card text-slate-600 dark:text-slate-400 border border-surface-border hover:text-slate-900 dark:hover:text-white shadow-sm'
               }`}
             >
               {cat}
@@ -48,11 +48,11 @@ export default function CaseStudiesArchive() {
           {filtered.map((study) => (
             <div
               key={study.id}
-              className="bg-surface-card border border-surface-border rounded-xl p-6 flex flex-col justify-between hover:border-brand-cyan/50 transition-all hover:shadow-lg group"
+              className="bg-surface-card border border-surface-border rounded-xl p-6 flex flex-col justify-between hover:border-brand-cyan/50 transition-all hover:shadow-lg group shadow-sm"
             >
               <div>
-                <div className="flex items-center justify-between text-xs font-mono text-slate-400 mb-3">
-                  <span className="px-2 py-0.5 rounded bg-surface-dark border border-surface-border text-brand-cyan">
+                <div className="flex items-center justify-between text-xs font-mono text-slate-500 dark:text-slate-400 mb-3">
+                  <span className="px-2 py-0.5 rounded bg-surface-dark border border-surface-border text-brand-cyan font-medium">
                     {study.category}
                   </span>
                 </div>
@@ -72,7 +72,7 @@ export default function CaseStudiesArchive() {
                     href={study.link}
                     target="_blank"
                     rel="noreferrer"
-                    className="w-full py-2 px-3 rounded-lg bg-surface-dark hover:bg-brand-cyan/20 border border-surface-border hover:border-brand-cyan/40 text-xs font-semibold text-slate-200 hover:text-white transition-all flex items-center justify-center gap-2"
+                    className="w-full py-2 px-3 rounded-lg bg-surface-dark hover:bg-brand-cyan/20 border border-surface-border hover:border-brand-cyan/40 text-xs font-semibold text-slate-800 dark:text-slate-200 hover:text-brand-cyan dark:hover:text-white transition-all flex items-center justify-center gap-2"
                   >
                     <span>View Artifact / Document</span>
                     <svg className="w-3.5 h-3.5 text-brand-cyan" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -80,7 +80,7 @@ export default function CaseStudiesArchive() {
                     </svg>
                   </a>
                 ) : (
-                  <div className="w-full py-2 px-3 rounded-lg bg-surface-dark/50 border border-surface-border text-xs text-center text-slate-400 font-mono">
+                  <div className="w-full py-2 px-3 rounded-lg bg-surface-dark/50 border border-surface-border text-xs text-center text-slate-500 dark:text-slate-400 font-mono">
                     Available Upon Request
                   </div>
                 )}
@@ -94,7 +94,7 @@ export default function CaseStudiesArchive() {
           <div className="mt-10 text-center">
             <button
               onClick={() => setShowAll((v) => !v)}
-              className="px-6 py-2.5 rounded-lg bg-surface-card hover:bg-slate-800 border border-surface-border hover:border-brand-cyan/50 text-xs font-mono text-slate-200 transition-all"
+              className="px-6 py-2.5 rounded-lg bg-surface-card hover:bg-slate-100 dark:hover:bg-slate-800 border border-surface-border hover:border-brand-cyan/50 text-xs font-mono text-slate-800 dark:text-slate-200 transition-all shadow-sm"
             >
               {showAll ? 'Show fewer' : `Show all ${matching.length} case studies`}
             </button>

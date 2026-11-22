@@ -23,7 +23,7 @@ export default function TrippyFounderSpotlight({ onRequestWalkthrough }) {
   const t = isTrippy ? TRIPPY_FOUNDER_SPOTLIGHT : FIXIT_FOUNDER_SPOTLIGHT;
 
   return (
-    <section id="startups" className="relative py-16 sm:py-24 bg-gradient-to-b from-surface-dark via-[#0d1424] to-surface-dark border-t border-b border-surface-border/80 overflow-hidden">
+    <section id="startups" className="relative py-16 sm:py-24 bg-gradient-to-b from-surface-dark via-[#0d1424]/30 dark:via-[#0d1424] to-surface-dark border-t border-b border-surface-border/80 overflow-hidden">
       {/* Anchor targets for direct deep-linking */}
       <div id="trippy" className="absolute -top-24 pointer-events-none" />
       <div id="fixit" className="absolute -top-24 pointer-events-none" />
@@ -40,18 +40,18 @@ export default function TrippyFounderSpotlight({ onRequestWalkthrough }) {
         
         {/* Top Header Tag & Startup Switcher */}
         <div className="flex flex-wrap items-center justify-between gap-4 mb-8">
-          <div className="flex items-center gap-2 p-1.5 rounded-2xl bg-surface-card border border-surface-border shadow-inner">
+          <div className="flex items-center gap-2 p-1.5 rounded-2xl bg-surface-card border border-surface-border shadow-sm">
             <button
               onClick={() => setActiveStartup('trippy')}
               className={`px-4 py-2 rounded-xl text-xs font-mono font-bold transition-all flex items-center gap-2 ${
                 isTrippy
-                  ? 'bg-gradient-to-r from-amber-500/20 via-teal-500/20 to-brand-cyan/20 border border-amber-500/50 text-amber-300 shadow-md shadow-amber-500/10'
-                  : 'text-slate-400 hover:text-white'
+                  ? 'bg-gradient-to-r from-amber-500/20 via-teal-500/20 to-brand-cyan/20 border border-amber-500/50 text-amber-600 dark:text-amber-300 shadow-md shadow-amber-500/10'
+                  : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
               }`}
             >
               <span className="text-sm">🏕️</span>
               <span>Trippy</span>
-              <span className="text-[10px] px-2 py-0.5 rounded-full bg-teal-500/20 text-teal-300 border border-teal-500/30">
+              <span className="text-[10px] px-2 py-0.5 rounded-full bg-teal-500/20 text-teal-700 dark:text-teal-300 border border-teal-500/30">
                 Consumer AI
               </span>
             </button>
@@ -60,43 +60,43 @@ export default function TrippyFounderSpotlight({ onRequestWalkthrough }) {
               onClick={() => setActiveStartup('fixit')}
               className={`px-4 py-2 rounded-xl text-xs font-mono font-bold transition-all flex items-center gap-2 ${
                 !isTrippy
-                  ? 'bg-gradient-to-r from-cyan-500/20 via-indigo-500/20 to-brand-cyan/20 border border-cyan-500/50 text-cyan-300 shadow-md shadow-cyan-500/10'
-                  : 'text-slate-400 hover:text-white'
+                  ? 'bg-gradient-to-r from-cyan-500/20 via-indigo-500/20 to-brand-cyan/20 border border-cyan-500/50 text-cyan-700 dark:text-cyan-300 shadow-md shadow-cyan-500/10'
+                  : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
               }`}
             >
               <span className="text-sm">🛠️</span>
               <span>FixIT</span>
-              <span className="text-[10px] px-2 py-0.5 rounded-full bg-cyan-500/20 text-cyan-300 border border-cyan-500/30">
+              <span className="text-[10px] px-2 py-0.5 rounded-full bg-cyan-500/20 text-cyan-700 dark:text-cyan-300 border border-cyan-500/30">
                 B2B SaaS
               </span>
             </button>
           </div>
 
-          <div className="inline-flex items-center gap-2 text-xs font-mono text-slate-400">
-            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
-            <span className="text-emerald-400 font-semibold">
+          <div className="inline-flex items-center gap-2 text-xs font-mono text-slate-600 dark:text-slate-400">
+            <span className="w-2 h-2 rounded-full bg-emerald-500 dark:bg-emerald-400 animate-ping" />
+            <span className="text-emerald-600 dark:text-emerald-400 font-semibold">
               {isTrippy ? 'Testing with Live Cohorts' : '76/76 Tests Passing · Active Beta'}
             </span>
-            <span className="text-slate-600">|</span>
+            <span className="text-slate-400 dark:text-slate-600">|</span>
             <span>{t.brandOrg}</span>
           </div>
         </div>
 
         {/* Main Founder Card */}
-        <div className={`bg-surface-card/90 backdrop-blur-xl border-2 rounded-3xl p-5 sm:p-10 lg:p-12 shadow-2xl relative overflow-hidden transition-all duration-500 ${
+        <div className={`bg-surface-card border-2 rounded-3xl p-5 sm:p-10 lg:p-12 shadow-xl relative overflow-hidden transition-all duration-500 ${
           isTrippy
-            ? 'border-teal-500/30 shadow-teal-950/30'
-            : 'border-cyan-500/30 shadow-cyan-950/30'
+            ? 'border-teal-500/30 shadow-teal-950/5 dark:shadow-teal-950/30'
+            : 'border-cyan-500/30 shadow-cyan-950/5 dark:shadow-cyan-950/30'
         }`}>
           
           {/* Subtle watermark / decorative brand tag */}
-          <div className="absolute -right-8 -bottom-10 text-9xl font-black text-white/[0.02] font-mono select-none pointer-events-none uppercase">
+          <div className="absolute -right-8 -bottom-10 text-9xl font-black text-black/[0.02] dark:text-white/[0.02] font-mono select-none pointer-events-none uppercase">
             {t.name}
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 relative z-10">
             
-            {/* Left Col: Narrative, Problem/Solution, Founder Role */}
+            {/* Left Col: Brand Hero, Category & Thesis */}
             <div className="lg:col-span-7 space-y-6">
               
               <div>
@@ -106,8 +106,8 @@ export default function TrippyFounderSpotlight({ onRequestWalkthrough }) {
                   </h2>
                   <span className={`text-xs font-mono font-bold px-2.5 py-1 rounded border ${
                     isTrippy
-                      ? 'bg-teal-500/10 text-teal-600 dark:text-teal-300 border-teal-500/30'
-                      : 'bg-cyan-500/10 text-cyan-600 dark:text-cyan-300 border-cyan-500/30'
+                      ? 'bg-teal-500/10 text-teal-700 dark:text-teal-300 border-teal-500/30'
+                      : 'bg-cyan-500/10 text-cyan-700 dark:text-cyan-300 border-cyan-500/30'
                   }`}>
                     {t.category}
                   </span>
@@ -117,7 +117,7 @@ export default function TrippyFounderSpotlight({ onRequestWalkthrough }) {
                 }`}>
                   {t.tagline}
                 </p>
-                <p className="text-xs font-mono text-amber-500 dark:text-amber-300/90 mt-1">
+                <p className="text-xs font-mono text-amber-600 dark:text-amber-300/90 mt-1 font-medium">
                   Founder Role: <span className="text-slate-900 dark:text-white font-bold">{t.founderRole}</span>
                 </p>
               </div>
@@ -128,50 +128,52 @@ export default function TrippyFounderSpotlight({ onRequestWalkthrough }) {
                   <a
                     href={t.liveUrl}
                     target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-center py-3 px-5 rounded-xl bg-teal-500 hover:bg-teal-400 text-slate-950 font-bold text-xs font-mono transition-all shadow-md shadow-teal-500/20"
+                    rel="noreferrer"
+                    className="py-3 px-5 rounded-xl bg-gradient-to-r from-brand-cyan to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-slate-950 font-bold text-xs font-mono transition-all flex items-center justify-center gap-2 shadow-lg shadow-cyan-500/20"
                   >
-                    ▶ Explore {t.name} Beta App ↗
+                    <span>▶ Launch Live FixIT App</span>
+                    <span>↗</span>
                   </a>
                 ) : (
                   <button
-                    onClick={() => onRequestWalkthrough(`${t.name}: Enterprise B2B Pilot & Architecture Walkthrough`)}
-                    className="py-3 px-5 rounded-xl bg-brand-cyan hover:bg-cyan-300 text-slate-950 font-bold text-xs font-mono transition-all shadow-md shadow-cyan-500/20"
+                    onClick={() => onRequestWalkthrough(`${t.name}: Live Beta Access Request`)}
+                    className="py-3 px-5 rounded-xl bg-gradient-to-r from-teal-500 to-brand-cyan hover:from-teal-400 hover:to-cyan-400 text-slate-950 font-bold text-xs font-mono transition-all flex items-center justify-center gap-2 shadow-lg shadow-teal-500/20"
                   >
-                    ▶ Request B2B Pilot / Tech Walkthrough →
+                    <span>▶ Explore Trippy Beta App</span>
+                    <span>↗</span>
                   </button>
                 )}
                 <button
-                  onClick={() => onRequestWalkthrough(`${t.name}: Investment & Co-founder Discussion`)}
-                  className="py-3 px-5 rounded-xl bg-surface-dark hover:bg-slate-800 text-amber-300 hover:text-white border border-amber-500/50 font-bold text-xs font-mono transition-all"
+                  onClick={() => onRequestWalkthrough(`${t.name}: Founder Walkthrough Request`)}
+                  className="py-3 px-5 rounded-xl bg-surface-dark hover:bg-slate-100 dark:hover:bg-slate-800 text-amber-600 dark:text-amber-300 hover:text-slate-900 dark:hover:text-white border border-amber-500/50 font-bold text-xs font-mono transition-all"
                 >
                   Talk to the Founder →
                 </button>
               </div>
 
               {/* The Mission Quote */}
-              <blockquote className="border-l-4 border-amber-400/80 pl-4 py-1 italic text-slate-200 text-sm sm:text-base font-medium">
+              <blockquote className="border-l-4 border-amber-500 dark:border-amber-400/80 pl-4 py-1 italic text-slate-800 dark:text-slate-200 text-sm sm:text-base font-medium">
                 "{t.mission}"
               </blockquote>
 
               {/* Market Thesis & 0-to-1 Architecture */}
               <div className="space-y-3 text-xs sm:text-sm">
-                <div className="p-4 rounded-xl bg-surface-dark/90 border border-surface-border">
-                  <span className="font-mono text-rose-400 uppercase tracking-wider block text-xs font-bold mb-1">
+                <div className="p-4 rounded-xl bg-surface-dark/90 border border-surface-border shadow-sm">
+                  <span className="font-mono text-rose-500 dark:text-rose-400 uppercase tracking-wider block text-xs font-bold mb-1">
                     Market Friction & Founder Thesis
                   </span>
-                  <p className="text-slate-300 leading-relaxed">
+                  <p className="text-slate-700 dark:text-slate-300 leading-relaxed">
                     {t.problem}
                   </p>
                 </div>
 
-                <div className="p-4 rounded-xl bg-surface-dark/90 border border-surface-border">
+                <div className="p-4 rounded-xl bg-surface-dark/90 border border-surface-border shadow-sm">
                   <span className={`font-mono uppercase tracking-wider block text-xs font-bold mb-1 ${
-                    isTrippy ? 'text-teal-300' : 'text-cyan-300'
+                    isTrippy ? 'text-teal-600 dark:text-teal-300' : 'text-cyan-600 dark:text-cyan-300'
                   }`}>
                     0→1 Product Solution & Systems Engine
                   </span>
-                  <p className="text-slate-300 leading-relaxed">
+                  <p className="text-slate-700 dark:text-slate-300 leading-relaxed">
                     {t.solution}
                   </p>
                 </div>
@@ -179,16 +181,16 @@ export default function TrippyFounderSpotlight({ onRequestWalkthrough }) {
 
               {/* Shipped Operational Surfaces */}
               <Expandable label="product surfaces">
-                <span className="text-xs font-mono text-slate-400 block mb-2 uppercase font-semibold">
+                <span className="text-xs font-mono text-slate-600 dark:text-slate-400 block mb-2 uppercase font-semibold">
                   Delivered Surfaces & Sub-Systems
                 </span>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                   {t.surfaces.map((s, idx) => (
                     <div key={idx} className="p-2.5 rounded-lg bg-surface-dark/60 border border-surface-border/80 flex items-start gap-2">
-                      <span className={`mt-0.5 ${isTrippy ? 'text-teal-400' : 'text-cyan-400'}`}>✦</span>
+                      <span className={`mt-0.5 ${isTrippy ? 'text-teal-600 dark:text-teal-400' : 'text-cyan-600 dark:text-cyan-400'}`}>✦</span>
                       <div>
-                        <div className="text-xs font-bold text-slate-100">{s.name}</div>
-                        <div className="text-xs text-slate-400 leading-tight">{s.desc}</div>
+                        <div className="text-xs font-bold text-slate-900 dark:text-slate-100">{s.name}</div>
+                        <div className="text-xs text-slate-600 dark:text-slate-400 leading-tight">{s.desc}</div>
                       </div>
                     </div>
                   ))}
@@ -203,11 +205,11 @@ export default function TrippyFounderSpotlight({ onRequestWalkthrough }) {
               {/* Product Pillars */}
               <div className="grid grid-cols-2 gap-3">
                 {t.pillars.map((p, idx) => (
-                  <div key={idx} className="p-4 rounded-2xl bg-surface-dark/80 border border-surface-border">
-                    <div className="text-sm font-bold text-white leading-tight">
+                  <div key={idx} className="p-4 rounded-2xl bg-surface-dark/80 border border-surface-border shadow-sm">
+                    <div className="text-sm font-bold text-slate-900 dark:text-white leading-tight">
                       {p.label}
                     </div>
-                    <div className="text-[11px] text-slate-400 mt-1.5 leading-snug">
+                    <div className="text-[11px] text-slate-600 dark:text-slate-400 mt-1.5 leading-snug">
                       {p.desc}
                     </div>
                   </div>
@@ -216,14 +218,14 @@ export default function TrippyFounderSpotlight({ onRequestWalkthrough }) {
 
               {/* Tech Stack Chips */}
               <Expandable label="engineering stack">
-                <div className="p-4 rounded-2xl bg-surface-dark/70 border border-surface-border">
-                  <span className="text-xs font-mono text-slate-400 block mb-2 uppercase font-semibold">
+                <div className="p-4 rounded-2xl bg-surface-dark/70 border border-surface-border shadow-sm">
+                  <span className="text-xs font-mono text-slate-600 dark:text-slate-400 block mb-2 uppercase font-semibold">
                     Production Engineering Stack
                   </span>
                   <div className="flex flex-wrap gap-1.5">
                     {t.techStack.map((tech, idx) => (
-                      <span key={idx} className={`text-xs px-2.5 py-1 rounded-md bg-slate-800/90 border border-slate-700/80 font-mono ${
-                        isTrippy ? 'text-teal-300' : 'text-cyan-300'
+                      <span key={idx} className={`text-xs px-2.5 py-1 rounded-md bg-black/[0.04] dark:bg-slate-800/90 border border-black/10 dark:border-slate-700/80 font-mono font-medium ${
+                        isTrippy ? 'text-teal-700 dark:text-teal-300' : 'text-cyan-700 dark:text-cyan-300'
                       }`}>
                         {tech}
                       </span>
@@ -236,40 +238,40 @@ export default function TrippyFounderSpotlight({ onRequestWalkthrough }) {
               <div className="p-5 rounded-2xl bg-gradient-to-br from-amber-500/10 via-surface-dark to-brand-cyan/10 border-2 border-amber-500/40 space-y-3 shadow-lg shadow-amber-500/5">
                 <div className="flex items-center gap-2">
                   <span className="text-lg">🤝</span>
-                  <h3 className="text-sm font-bold text-white uppercase tracking-wider font-mono">
+                  <h3 className="text-sm font-bold text-slate-900 dark:text-white uppercase tracking-wider font-mono">
                     Investors & Partners Callout
                   </h3>
                 </div>
                 
                 {isTrippy ? (
                   <>
-                    <p className="text-xs text-slate-300 leading-relaxed">
+                    <p className="text-xs text-slate-700 dark:text-slate-300 leading-relaxed">
                       Trippy is in active beta testing. We are acquiring our dedicated custom domain and incorporating as an independent traveltech startup. 
                       Open to conversations with:
                     </p>
 
-                    <ul className="text-xs text-slate-300 space-y-1.5 list-disc list-inside">
-                      <li><strong className="text-amber-300">Angel Investors & Micro-VCs:</strong> Exploring early pre-seed allocation and strategic growth partnerships.</li>
-                      <li><strong className="text-teal-300">Prospective Co-founders & Early Team:</strong> Looking for a technical co-founder / founding engineers (Full-Stack & React Native) and travel community leads.</li>
+                    <ul className="text-xs text-slate-700 dark:text-slate-300 space-y-1.5 list-disc list-inside">
+                      <li><strong className="text-amber-700 dark:text-amber-300 font-bold">Angel Investors & Micro-VCs:</strong> Exploring early pre-seed allocation and strategic growth partnerships.</li>
+                      <li><strong className="text-teal-700 dark:text-teal-300 font-bold">Prospective Co-founders & Early Team:</strong> Looking for a technical co-founder / founding engineers (Full-Stack & React Native) and travel community leads.</li>
                     </ul>
                   </>
                 ) : (
                   <>
-                    <p className="text-xs text-slate-300 leading-relaxed">
+                    <p className="text-xs text-slate-700 dark:text-slate-300 leading-relaxed">
                       FixIT is in active beta testing with early engineering and product teams. Formulating enterprise pilots and pre-seed syndicate allocation.
                       Open to conversations with:
                     </p>
 
-                    <ul className="text-xs text-slate-300 space-y-1.5 list-disc list-inside">
-                      <li><strong className="text-amber-300">Angel Investors & B2B SaaS VCs:</strong> Exploring early pre-seed allocation and B2B SaaS GTM acceleration.</li>
-                      <li><strong className="text-cyan-300">Enterprise Design Partners & Solvers:</strong> Engineering leaders looking to cut bug backlog debt and freelance technocrats seeking paid bounties.</li>
+                    <ul className="text-xs text-slate-700 dark:text-slate-300 space-y-1.5 list-disc list-inside">
+                      <li><strong className="text-amber-700 dark:text-amber-300 font-bold">Angel Investors & B2B SaaS VCs:</strong> Exploring early pre-seed allocation and B2B SaaS GTM acceleration.</li>
+                      <li><strong className="text-cyan-700 dark:text-cyan-300 font-bold">Enterprise Design Partners & Solvers:</strong> Engineering leaders looking to cut bug backlog debt and freelance technocrats seeking paid bounties.</li>
                     </ul>
                   </>
                 )}
 
                 <button
                   onClick={() => onRequestWalkthrough(`${t.name}: Investment & Partnership Discussion`)}
-                  className="w-full py-2.5 px-4 rounded-xl bg-surface-card hover:bg-slate-800 text-amber-300 hover:text-white border border-amber-500/50 font-bold text-xs font-mono transition-all flex items-center justify-center gap-1.5"
+                  className="w-full py-2.5 px-4 rounded-xl bg-surface-card hover:bg-slate-100 dark:hover:bg-slate-800 text-amber-700 dark:text-amber-300 hover:text-slate-900 dark:hover:text-white border border-amber-500/50 font-bold text-xs font-mono transition-all flex items-center justify-center gap-1.5 shadow-sm"
                 >
                   <span>Connect with Founder</span>
                   <span>→</span>
