@@ -80,6 +80,7 @@ export default function ProjectScroller({ items, onRequest }) {
     <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16">
       {/* Mobile: horizontal index, pinned under the navigation bar */}
       <nav aria-label="Projects" className="lg:hidden sticky top-16 z-30 -mx-4 px-4 py-3 bg-surface-dark/90 backdrop-blur-xl border-b border-surface-border">
+        <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-12 bg-gradient-to-l from-surface-dark to-transparent" aria-hidden="true" />
         <div className="flex gap-2 overflow-x-auto scrollbar-none">
           {items.map((it, i) => (
             <button

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import {
   CORPORATE_EXPERIENCE,
@@ -120,10 +120,15 @@ export default function Lanes() {
 
 // A short list of rows separated by hairlines. Reads as a list, not a grid of boxes.
 function Rows({ rows, hover }) {
+  const [showAll, setShowAll] = useState(false);
+  const PHONE_LIMIT = 3;
+  const hiddenCount = rows.length - PHONE_LIMIT;
+
   return (
+    <>
     <ul className="divide-y divide-surface-border border-y border-surface-border">
-      {rows.map((r) => (
-        <li key={r.key}>
+      {rows.map((r, i) => (
+        <li key={r.key} className={i >= PHONE_LIMIT && !showAll ? 'hidden sm:block' : ''}>
           <Link to={r.to} className="group flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-6 py-4">
             <div className="sm:w-56 flex-shrink-0">
               <div className={`text-lg font-bold text-slate-900 dark:text-white transition-colors ${hover}`}>{r.title}</div>
@@ -135,6 +140,17 @@ function Rows({ rows, hover }) {
         </li>
       ))}
     </ul>
+    {hiddenCount > 0 && (
+      <button
+        type="button"
+        onClick={() => setShowAll((v) => !v)}
+        aria-expanded={showAll}
+        className="sm:hidden mt-4 w-full py-3 rounded-full glass text-sm font-semibold text-slate-900 dark:text-white"
+      >
+        {showAll ? 'Show fewer' : `Show all ${rows.length}`}
+      </button>
+    )}
+    </>
   );
 }
 

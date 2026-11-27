@@ -35,7 +35,7 @@ export default function Hero() {
             Open to senior PM, VP Product, or co-founder roles
           </div>
 
-          <div className="flex items-center gap-3 mb-7 justify-center lg:justify-start">
+          <div className="hidden sm:flex items-center gap-3 mb-7 justify-center lg:justify-start">
             <div className="p-[2px] rounded-full bg-gradient-to-tr from-brand-cyan to-brand-blue">
               <img src="/avatar.png" alt={personalInfo.name} className="w-12 h-12 rounded-full object-cover object-top bg-surface-card" />
             </div>
