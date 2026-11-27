@@ -12,6 +12,12 @@ const NAV_LINKS = [
   { name: 'About', to: '/about', match: ['/about'] },
 ];
 
+// Mobile menu groups the same links: what to look at, and the background pages.
+const MOBILE_GROUPS = [
+  { label: 'Work', links: NAV_LINKS.slice(0, 5) },
+  { label: 'More', links: NAV_LINKS.slice(5) },
+];
+
 // Desktop shows the five core sections; Case Studies and About are in the mobile menu and footer.
 const DESKTOP_LINKS = NAV_LINKS.slice(0, 5);
 
@@ -185,10 +191,15 @@ export default function Navbar({ onOpenContact, onOpenResume }) {
       {/* Mobile dropdown menu */}
       {mobileMenuOpen && (
         <div className="lg:hidden bg-[#F5F5F7]/95 dark:bg-[#0B0F17]/95 border-b border-black/10 dark:border-white/10 px-4 pt-3 pb-6 space-y-3 backdrop-blur-xl transition-colors">
-          {NAV_LINKS.map((link) => (
-            <Link key={link.name} to={link.to} className={linkClass(link, true)}>
-              {link.name}
-            </Link>
+          {MOBILE_GROUPS.map((group) => (
+            <div key={group.label} className="pt-1">
+              <div className="text-[10px] font-mono uppercase tracking-widest text-slate-500 dark:text-slate-400 mb-1">{group.label}</div>
+              {group.links.map((link) => (
+                <Link key={link.name} to={link.to} className={linkClass(link, true)}>
+                  {link.name}
+                </Link>
+              ))}
+            </div>
           ))}
           <button
             onClick={() => { setMobileMenuOpen(false); onOpenResume(); }}
