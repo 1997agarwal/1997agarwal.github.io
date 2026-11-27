@@ -51,7 +51,7 @@ export default function CaseStudiesArchive() {
               className="bg-surface-card border border-surface-border rounded-xl p-6 flex flex-col justify-between hover:border-brand-cyan/50 transition-all hover:shadow-lg group shadow-sm"
             >
               <div>
-                <div className="flex items-center justify-between text-xs font-mono text-slate-500 dark:text-slate-400 mb-3">
+                <div className="flex items-center justify-between text-xs font-mono text-slate-600 dark:text-slate-400 mb-3">
                   <span className="px-2 py-0.5 rounded bg-surface-dark border border-surface-border text-brand-cyan font-medium">
                     {study.category}
                   </span>
@@ -80,7 +80,7 @@ export default function CaseStudiesArchive() {
                     </svg>
                   </a>
                 ) : (
-                  <div className="w-full py-2 px-3 rounded-lg bg-surface-dark/50 border border-surface-border text-xs text-center text-slate-500 dark:text-slate-400 font-mono">
+                  <div className="w-full py-2 px-3 rounded-lg bg-surface-dark/50 border border-surface-border text-xs text-center text-slate-600 dark:text-slate-400 font-mono">
                     Available Upon Request
                   </div>
                 )}

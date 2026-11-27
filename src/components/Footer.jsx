@@ -1,9 +1,10 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { personalInfo } from '../data/portfolioData';
 
 export default function Footer({ onOpenContact }) {
   return (
-    <footer className="border-t border-surface-border bg-surface-dark/80 py-12 text-xs text-slate-500 dark:text-slate-400">
+    <footer className="border-t border-surface-border bg-surface-dark/80 py-12 text-xs text-slate-600 dark:text-slate-400">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           
@@ -22,12 +23,12 @@ export default function Footer({ onOpenContact }) {
 
           {/* Nav Links */}
           <div className="flex flex-wrap justify-center gap-6 font-mono text-xs">
-            <a href="#experience" className="hover:text-brand-cyan transition-colors">Experience</a>
-            <a href="#startups" className="hover:text-brand-cyan transition-colors">Startups</a>
-            <a href="#ventures" className="hover:text-brand-cyan transition-colors">Platforms</a>
-            <a href="#opensource" className="hover:text-brand-cyan transition-colors">Open Source</a>
-            <a href="#casestudies" className="hover:text-brand-cyan transition-colors">Case Studies</a>
-            <a href="#accolades" className="hover:text-brand-cyan transition-colors">Accolades</a>
+            <Link to="/experience" className="hover:text-brand-cyan transition-colors">Experience</Link>
+            <Link to="/startups" className="hover:text-brand-cyan transition-colors">Startups</Link>
+            <Link to="/ventures" className="hover:text-brand-cyan transition-colors">Commercial Projects</Link>
+            <Link to="/open-source" className="hover:text-brand-cyan transition-colors">Open Source</Link>
+            <Link to="/case-studies" className="hover:text-brand-cyan transition-colors">Case Studies</Link>
+            <Link to="/about" className="hover:text-brand-cyan transition-colors">About</Link>
             <button onClick={onOpenContact} className="text-brand-cyan hover:underline">Contact</button>
           </div>
 

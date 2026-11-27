@@ -58,7 +58,7 @@ export default function AccoladesSection() {
                 <div key={idx} className="p-3.5 rounded-lg bg-surface-dark/70 border border-surface-border hover:border-brand-cyan/30 transition-all">
                   <div className="flex items-start justify-between gap-2">
                     <h4 className="text-sm font-bold text-slate-900 dark:text-white leading-snug">{edu.degree}</h4>
-                    <span className="text-[11px] font-mono text-slate-500 dark:text-slate-400 shrink-0">{edu.period}</span>
+                    <span className="text-[11px] font-mono text-slate-600 dark:text-slate-400 shrink-0">{edu.period}</span>
                   </div>
                   <div className="text-xs text-brand-cyan font-mono mt-0.5">{edu.institution}</div>
                   {edu.desc && <p className="text-xs text-slate-600 dark:text-slate-400 mt-1.5 leading-relaxed">{edu.desc}</p>}

@@ -19,11 +19,11 @@ function RoleCard({ exp, defaultOpen }) {
             <h3 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white leading-snug">
               {exp.role} <span className="text-brand-cyan">@ {exp.company}</span>
             </h3>
-            <p className="text-xs font-mono text-slate-500 dark:text-slate-400 mt-1">{exp.businessUnit}</p>
+            <p className="text-xs font-mono text-slate-600 dark:text-slate-400 mt-1">{exp.businessUnit}</p>
           </div>
           <div className="sm:text-right text-xs font-mono text-slate-600 dark:text-slate-300 shrink-0">
             <div className="inline-block px-2.5 py-1 rounded-md bg-surface-dark border border-surface-border">{exp.period}</div>
-            <div className="text-slate-500 dark:text-slate-400 mt-1.5">{exp.location}</div>
+            <div className="text-slate-600 dark:text-slate-400 mt-1.5">{exp.location}</div>
           </div>
         </div>
 

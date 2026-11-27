@@ -39,6 +39,11 @@ jobs:
         env:
           CHROME_PATH: /usr/bin/google-chrome
 
+      # GitHub Pages serves 404.html for unknown paths, so deep links such as
+      # /trippy or /ventures/startup-os load the app and the router takes over.
+      - name: Create SPA fallback for deep links
+        run: cp dist/index.html dist/404.html
+
       - name: Setup Pages
         uses: actions/configure-pages@v4
 

@@ -12,7 +12,7 @@ export const PERSONAL_INFO = {
   github: 'https://github.com/1997agarwal',
   twitter: 'https://x.com/1997agarwal',
   medium: 'https://medium.com/@1997agarwal',
-  avatarUrl: './avatar.png',
+  avatarUrl: '/avatar.png',
   yearsExperience: '7+',
   usersScaled: 'Over 1M+',
   awardsCount: '7',
@@ -107,7 +107,7 @@ export const FIXIT_FOUNDER_SPOTLIGHT = {
 export const CORPORATE_EXPERIENCE = [
   {
     id: 'tekion',
-    company: 'Tekion Corp',
+    company: 'Tekion',
     role: 'Product Manager',
     period: 'Jun 2024 – Present',
     duration: 'Current',
@@ -131,7 +131,7 @@ export const CORPORATE_EXPERIENCE = [
   },
   {
     id: 'tally',
-    company: 'Tally Solutions',
+    company: 'Tally',
     role: 'Product Manager',
     period: 'Apr 2021 – Jun 2024',
     duration: '3 yrs 3 mos',
@@ -445,7 +445,7 @@ export const personalInfo = {
   title: PERSONAL_INFO.role,
   summary: PERSONAL_INFO.tagline,
   bio: "The best product managers don't just manage the backlog — they understand the system, prototype the future, and ship value.",
-  status: "Product Manager @ Tekion Corp • Founder @ Trippy & FixIT",
+  status: "Product Manager @ Tekion • Founder @ Trippy & FixIT",
   location: PERSONAL_INFO.location,
   education: "Duke University (Postgraduate Certification in Product Management) • B.Tech (ECE)",
   email: PERSONAL_INFO.email,
@@ -480,6 +480,7 @@ export const experiences = CORPORATE_EXPERIENCE.map(c => ({
 }));
 
 export const ventures = COMMERCIAL_VENTURES.map(v => ({
+  id: v.id,
   name: v.name,
   tagline: v.tagline,
   category: v.category,
